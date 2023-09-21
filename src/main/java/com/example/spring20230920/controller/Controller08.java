@@ -15,4 +15,11 @@ public class Controller08 {
 
         // forward to /WEB-INF/jsp/main8/sub1.jsp
     }
+
+    @RequestMapping("sub2")
+    public void method(Model model) {
+        model.addAttribute("propone", "😎");
+        model.addAttribute("propTWO", "🙄");
+        
+    }
 }
