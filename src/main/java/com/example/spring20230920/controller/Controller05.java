@@ -14,8 +14,5 @@ public class Controller05 {
         System.out.println("name = " + name);
         System.out.println("age = " + age);
         System.out.println("address = " + address);
-
-//        service.method(name, age, address);
-
     }
 }
