@@ -33,5 +33,9 @@ public class Controller04 {
         System.out.println("name = " + name);
         System.out.println("married = " + married);
     }
+
+    // /main4/sub4?check=true&email=abc@naver.com&age=55
+    // method4 작성
     
+
 }
