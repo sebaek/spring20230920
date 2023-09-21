@@ -76,6 +76,25 @@ public class Controller03 {
 
     // /main2/sub8?address=seoul&married=false&age=66
     // method8 작성
+    @RequestMapping("sub8")
+    public void method8(@RequestParam("address") String address,
+                        @RequestParam("married") Boolean m,
+                        @RequestParam("age") Integer age) {
+        System.out.println("address = " + address);
+        System.out.println("m = " + m);
+        System.out.println("age = " + age);
+    }
+
+    // /main2/sub9?name=son
+    @RequestMapping("sub9")
+    public void method9(@RequestParam(value = "name", required = false) String name) {
+        System.out.println("name = " + name);
+    }
+
+    // /main2/sub10?address=seoul&age=30
+    // /main2/sub10?address=jeju
+    // method10 작성
+
 
 
 }
