@@ -47,5 +47,12 @@ public class Controller03 {
 
     // /main2/sub5?email=abc@gmail.com&gender=남자&number=010-9999
     // method5 작성
-    
+    @RequestMapping("sub5")
+    public void method5(@RequestParam("email") String mail,
+                        @RequestParam("gender") String gender,
+                        @RequestParam("number") String phone) {
+        System.out.println("mail = " + mail);
+        System.out.println("gender = " + gender);
+        System.out.println("phone = " + phone);
+    }
 }
