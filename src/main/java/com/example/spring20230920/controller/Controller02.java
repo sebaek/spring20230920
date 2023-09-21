@@ -18,5 +18,9 @@ public class Controller02 {
     }
 
     // /main1/sub3 요청에 일하는 method3() 작성
-    
+    @RequestMapping("sub3")
+    public void method3() {
+        System.out.println("Controller02.method3");
+
+    }
 }
