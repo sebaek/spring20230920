@@ -74,5 +74,8 @@ public class Controller03 {
         System.out.println("age = " + age);
     }
 
+    // /main2/sub8?address=seoul&married=false&age=66
+    // method8 작성
+
 
 }
