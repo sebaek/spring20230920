@@ -36,6 +36,16 @@ public class Controller04 {
 
     // /main4/sub4?check=true&email=abc@naver.com&age=55
     // method4 작성
-    
+    @RequestMapping("sub4")
+    public void method4(
+            String email,
+            Boolean check,
+            Integer age
+    ) {
+        System.out.println("email = " + email);
+        System.out.println("check = " + check);
+        System.out.println("age = " + age);
+
+    }
 
 }
