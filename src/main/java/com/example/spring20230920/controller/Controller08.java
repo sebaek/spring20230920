@@ -20,6 +20,6 @@ public class Controller08 {
     public void method(Model model) {
         model.addAttribute("propone", "😎");
         model.addAttribute("propTWO", "🙄");
-        
+
     }
 }
