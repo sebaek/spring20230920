@@ -18,4 +18,20 @@ public class Controller04 {
 
     // /main4/sub2?address=seoul&email=abc@gmail.com&age=44
     // 메소드 작성
+    @RequestMapping("sub2")
+    public void method2(@RequestParam String address,
+                        @RequestParam String email,
+                        @RequestParam Integer age) {
+        System.out.println("address = " + address);
+        System.out.println("email = " + email);
+        System.out.println("age = " + age);
+    }
+
+    // /main4/sub3?name=son&married=true
+    @RequestMapping("sub3")
+    public void method3(String name, Boolean married) {
+        System.out.println("name = " + name);
+        System.out.println("married = " + married);
+    }
+    
 }
