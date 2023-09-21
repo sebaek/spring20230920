@@ -94,7 +94,12 @@ public class Controller03 {
     // /main2/sub10?address=seoul&age=30
     // /main2/sub10?address=jeju
     // method10 작성
-
+    @RequestMapping("sub10")
+    public void method10(@RequestParam("address") String address,
+                         @RequestParam(value = "age", required = false) Integer age) {
+        System.out.println("address = " + address);
+        System.out.println("age = " + age);
+    }
 
 
 }
