@@ -13,5 +13,9 @@
 <body>
 <h1>main8/sub1.jsp</h1>
 <h1>${attr1}</h1>
+<h1>${attr2}</h1>
+<p>속성1 : ${attr1}</p>
+<p>속성2 : ${attr2}</p>
+
 </body>
 </html>
