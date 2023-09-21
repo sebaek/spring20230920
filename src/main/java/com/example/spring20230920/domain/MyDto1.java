@@ -2,9 +2,11 @@ package com.example.spring20230920.domain;
 
 public class MyDto1 {
     // property 명 : get/set 없애고 소문자로 시작
-
+    // boolean type property 읽기 메소드는 is로 시작할 수 있음
+    
     // name property
     // homeAddress property
+    
 
     private String name;
     private String homeAddress;
