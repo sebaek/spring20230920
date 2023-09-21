@@ -101,5 +101,11 @@ public class Controller03 {
         System.out.println("age = " + age);
     }
 
+    // /main2/sub11
+    @RequestMapping("sub11")
+    public void method11(@RequestParam(value = "age", defaultValue = "0") Integer age) {
+        System.out.println("age = " + age);
+    }
+
 
 }
