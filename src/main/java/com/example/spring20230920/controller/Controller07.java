@@ -32,4 +32,16 @@ public class Controller07 {
         System.out.println("Controller07.method3");
     }
 
+    // /WEB-INF/jsp/main7/html4.jsp
+    @RequestMapping("sub4")
+    public String method4() {
+        return "/main7/html4";
+    }
+
+    // /WEB-INF/jsp/main7/sub5.jsp
+    @RequestMapping("sub5")
+    public void method5() {
+
+    }
+
 }
