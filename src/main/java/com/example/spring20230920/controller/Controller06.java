@@ -13,4 +13,10 @@ public class Controller06 {
     public void method1(MyDto3 obj) {
         System.out.println("obj = " + obj);
     }
+
+    // /main6/sub2?signed=true&email=ab@gmail.com&gender=male
+    @RequestMapping("sub2")
+    public void method2(MyDto4 obj) {
+
+    }
 }
