@@ -55,4 +55,24 @@ public class Controller03 {
         System.out.println("gender = " + gender);
         System.out.println("phone = " + phone);
     }
+
+    @RequestMapping("sub6")
+    public void method6(@RequestParam("name") String name,
+                        @RequestParam("age") String age) {
+        System.out.println("name = " + name);
+        System.out.println("age = " + age);
+
+        Integer a = Integer.valueOf(age);
+
+    }
+
+    // /main2/sub7?name=손&age=40
+    @RequestMapping("sub7")
+    public void method7(@RequestParam("name") String name,
+                        @RequestParam("age") Integer age) {
+        System.out.println("name = " + name);
+        System.out.println("age = " + age);
+    }
+
+
 }

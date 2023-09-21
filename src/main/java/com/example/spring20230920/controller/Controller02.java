@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("main1")
 public class Controller02 {
+
     @RequestMapping("sub1")
     public void method1() {
         System.out.println("Controller02.method1");
