@@ -35,6 +35,10 @@ public class Controller05 {
     public void method3(Person5 person5) {
         System.out.println("person5 = " + person5);
     }
+
+    // /main5/sub4?email=ab@gmail.com&married=true&age=33&info=programmer
+    // method4(Sutdent5 s) 작성
+    // Student5 클래스 작성
 }
 
 class Person5 {
