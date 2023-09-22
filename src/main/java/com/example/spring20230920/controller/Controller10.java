@@ -55,6 +55,12 @@ public class Controller10 {
     public void method4(Model model) {
         model.addAttribute("myList", List.of("tesla", "kia", "benz"));
     }
+
+    @RequestMapping("sub5")
+    public void method5(Model model) {
+        model.addAttribute("foodList", List.of("pizza", "milk", "water", "salad"));
+        model.addAttribute("names", List.of("두식", "봉석", "희수", "미현"));
+    }
 }
 
 
