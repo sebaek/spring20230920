@@ -15,5 +15,9 @@
 <h1>${attr2}</h1>
 <h1>${attr3}</h1>
 <h1>${attr3.name}</h1>
+
+<h1>${attr3.address}</h1>
+<h1>${attr3.email}</h1>
+<h1>${attr3.age}</h1>
 </body>
 </html>
