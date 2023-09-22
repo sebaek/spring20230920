@@ -22,4 +22,14 @@ public class Controller09 {
 
 
     }
+
+    @RequestMapping("sub2")
+    public void method2(Model model) {
+        model.addAttribute("myName", new String[] {"김두식", "봉석"});
+        model.addAttribute("yourEmail", new String[] {"ab@", "bc@", "de@"});
+        model.addAttribute("herAddress", new String[] {"seoul"});
+
+
+
+    }
 }
