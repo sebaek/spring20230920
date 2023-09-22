@@ -70,4 +70,16 @@ public class Controller09 {
         model.addAttribute("attr3", map3);
 
     }
+
+    @RequestMapping("sub5")
+    public void method5(Model model) {
+        var map1 = Map.of("phone1", "iphone", "phone2", "galaxy");
+        var map2 = Map.of("korea", "seoul", "us", "ny");
+        var map3 = Map.of("1st", "hamburger", "2nd", "pizza");
+
+        model.addAttribute("phones", map1);
+        model.addAttribute("caps", map2);
+        model.addAttribute("foods", map3);
+        
+    }
 }
