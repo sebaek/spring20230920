@@ -1,11 +1,13 @@
 package com.example.spring20230920.controller;
 
+import com.example.spring20230920.domain.MyDto7;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 @Controller
 @RequestMapping("main9")
@@ -83,4 +85,12 @@ public class Controller09 {
         model.addAttribute("foods", map3);
 
     }
+
+    @RequestMapping("sub6")
+    public void method6(Model model) {
+        model.addAttribute("attr1", new Object());
+        model.addAttribute("attr2", new Scanner(System.in));
+        model.addAttribute("attr3", new MyDto7());
+    }
 }
+
