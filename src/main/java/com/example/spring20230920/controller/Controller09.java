@@ -77,9 +77,10 @@ public class Controller09 {
         var map2 = Map.of("korea", "seoul", "us", "ny");
         var map3 = Map.of("1st", "hamburger", "2nd", "pizza");
 
+        model.addAttribute("korea", "us");
         model.addAttribute("phones", map1);
         model.addAttribute("caps", map2);
         model.addAttribute("foods", map3);
-        
+
     }
 }
