@@ -64,5 +64,15 @@
         </div>
     </div>
 </c:forEach>
+
+<hr>
+<%--
+<ul>
+  <li> 1 : pizza </li>
+  <li> 2 : milk </li>
+  <li> 3 : water </li>
+  <li> 4 : salad </li>
+</ul>
+--%>
 </body>
 </html>
