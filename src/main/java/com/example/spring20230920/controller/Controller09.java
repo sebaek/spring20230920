@@ -2,6 +2,7 @@ package com.example.spring20230920.controller;
 
 import com.example.spring20230920.domain.MyDto7;
 import com.example.spring20230920.domain.MyDto8;
+import com.example.spring20230920.domain.MyDto9;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -103,6 +104,18 @@ public class Controller09 {
 
         model.addAttribute("person1", o1);
 
+    }
+
+    @RequestMapping("sub8")
+    public void method8(Model model) {
+        MyDto9 obj = new MyDto9();
+        obj.setId(9999L);
+        obj.setClassName("java");
+        obj.setLastName("son");
+        obj.setFirstName("kangin");
+        obj.setPhoneNumber("0299999999");
+
+        model.addAttribute("student", obj);
     }
 }
 
