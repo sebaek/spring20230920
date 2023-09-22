@@ -18,7 +18,7 @@
 <h3>${student.phoneNumber}</h3>
 <%--
 Controller09 에 8번째 메소드 작성
-MyDto10 작성 후 객체 생성해서 model attribute 로 넣기
+MyDto9 작성 후 객체 생성해서 model attribute 로 넣기
 --%>
 </body>
 </html>
