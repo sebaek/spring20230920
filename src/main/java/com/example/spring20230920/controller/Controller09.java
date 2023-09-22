@@ -53,5 +53,21 @@ public class Controller09 {
 
         model.addAttribute("myMap", map1);
 
+        var map2 = Map.of("seoul", "특별시", "busan", "광역시");
+
+        model.addAttribute("cityMap", map2);
+        model.addAttribute("color", Map.of(
+                "red", "#ff0000",
+                "blue", "#0000ff",
+                "black", "#000000"
+        ));
+
+        var map3 = Map.of(
+                "name", "두식",
+                "my name", "봉석",
+                "your-name", "희수"
+        );
+        model.addAttribute("attr3", map3);
+
     }
 }

@@ -11,6 +11,14 @@
     <title>Title</title>
 </head>
 <body>
+    <h3>${attr3.name}</h3>
+    <h3>${attr3["name"]}</h3>
+    <%--<h3>${attr3.my name}</h3>--%>
+    <h3>${attr3["my name"]}</h3>
+    <%--<h3>${attr3.your-name}</h3>--%>
+    <h3>${attr3["your-name"]}</h3>
+
+    <hr>
     <h3>${myMap}</h3>
     <h3>${myMap["son"]}</h3>
     <h3>${myMap["lee"]}</h3>
