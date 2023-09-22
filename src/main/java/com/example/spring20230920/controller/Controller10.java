@@ -72,7 +72,7 @@ public class Controller10 {
         list.add(new MyDto9(34L, "김", "봉석", "부산", "03"));
         list.add(new MyDto9(35L, "장", "희수", "제주", "05"));
 
-        
+        model.addAttribute("moving", list);
 
     }
 }
