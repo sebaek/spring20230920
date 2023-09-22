@@ -10,8 +10,41 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 1px solid black;
+            width: 100%;
+        }
+        th {
+            background-color: #eee;
+        }
+        th, td {
+            padding: 5px;
+        }
+    </style>
 </head>
 <body>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>FIRST NAME</th>
+        <th>LAST NAME</th>
+        <th>CLASS</th>
+        <th>PHONE</th>
+    </tr>
+    <c:forEach items="${moving}" var="item">
+
+        <tr>
+            <td>${item.id}</td>
+            <td>${item.firstName}</td>
+            <td>${item.lastName}</td>
+            <td>${item.className}</td>
+            <td>${item.phoneNumber}</td>
+        </tr>
+
+    </c:forEach>
+</table>
 
 </body>
 </html>
