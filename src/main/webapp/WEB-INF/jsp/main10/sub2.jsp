@@ -14,6 +14,8 @@
     <h3>${personMap.person1.lastName}</h3>
     <h3>${personMap.person2.lastName}</h3>
 
-
+    <hr>
+    <h3>${people["1st"].lastName}</h3>
+    <h3>${people["2nd"].lastName}</h3>
 </body>
 </html>
