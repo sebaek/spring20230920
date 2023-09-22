@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("main9")
 public class Controller09 {
@@ -28,8 +30,10 @@ public class Controller09 {
         model.addAttribute("myName", new String[] {"김두식", "봉석"});
         model.addAttribute("yourEmail", new String[] {"ab@", "bc@", "de@"});
         model.addAttribute("herAddress", new String[] {"seoul"});
+    }
 
-
-
+    @RequestMapping("sub3")
+    public void method3(Model model) {
+        model.addAttribute("names", List.of("두식", "봉석", "희수"));
     }
 }
