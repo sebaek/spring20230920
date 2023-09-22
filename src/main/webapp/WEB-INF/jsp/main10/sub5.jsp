@@ -17,6 +17,8 @@
 </c:forEach>
 
 <hr>
-
+<c:forEach items="${names}" var="name">
+    <p>${name}</p>
+</c:forEach>
 </body>
 </html>
