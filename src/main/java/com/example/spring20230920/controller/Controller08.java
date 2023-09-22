@@ -22,4 +22,11 @@ public class Controller08 {
         model.addAttribute("propTWO", "🙄");
 
     }
+
+    @RequestMapping("sub3")
+    public void method3() {
+
+        // view name : /main8/sub3
+        // /WEB-INF/jsp/main8/sub3.jsp
+    }
 }
