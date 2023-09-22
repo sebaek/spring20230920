@@ -45,6 +45,7 @@ public class Controller10 {
         o1.setName("doosik");
         o1.setId(3);
         o1.setFoods(List.of("pizza", "burger", "milk"));
+        o1.setCars(List.of("tesla", "kia", "ss"));
 
         model.addAttribute("person1", o1);
 
