@@ -29,7 +29,7 @@
         margin: 5px;
         padding: 10px;
         display: flex;
-        justify-content: space-between;
+        gap: 10px;
     }
     .box > div {
         border: 2px solid orange;
@@ -51,6 +51,18 @@
         </div>
     </div>
 </c:forEach>
-
+<hr>
+<c:forEach items="${names}" var="name" varStatus="status">
+    <div class="box">
+        <div>name : ${name}</div>
+        <div>
+            <div>count : ${status.count}</div>
+            <div>index : ${status.index}</div>
+            <div>current : ${status.current}</div>
+            <div>first : ${status.first}</div>
+            <div>last : ${status.last}</div>
+        </div>
+    </div>
+</c:forEach>
 </body>
 </html>
