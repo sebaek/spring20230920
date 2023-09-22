@@ -15,8 +15,23 @@
     <h1>forEach tag</h1>
     <p>콘텐츠 반복 출력</p>
     <p>주요 attribute : begin, end, var, items, varStatus</p>
-    <c:forEach begin="1" end="3">
+    <%--
+    begin과 end 포함해서 반복
+    end 는 begin보다 커야함
+    begin은 0보다 크거나 같아야함
+     --%>
+    <c:forEach begin="0" end="3">
         <li>Lorem ipsum.</li>
+    </c:forEach>
+
+    <hr>
+    <c:forEach begin="0" end="2" var="num">
+        <li>num : ${ num }</li>
+    </c:forEach>
+
+    <hr>
+    <c:forEach begin="0" end="2" var="num">
+        <li>car : ${myList[num]}</li>
     </c:forEach>
 </body>
 </html>

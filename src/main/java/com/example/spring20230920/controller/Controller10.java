@@ -52,8 +52,8 @@ public class Controller10 {
     }
 
     @RequestMapping("sub4")
-    public void method4() {
-        
+    public void method4(Model model) {
+        model.addAttribute("myList", List.of("tesla", "kia", "benz"));
     }
 }
 
