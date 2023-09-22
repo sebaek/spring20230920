@@ -74,5 +74,10 @@
   <li> 4 : salad </li>
 </ul>
 --%>
+<ul>
+    <c:forEach items="${foodList}" var="item" varStatus="status">
+        <li> ${status.count} : ${item}</li>
+    </c:forEach>
+</ul>
 </body>
 </html>
