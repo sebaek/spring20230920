@@ -74,5 +74,10 @@
 <p>\${false or true} : ${false or true}</p>
 <p>\${false or false} : ${false or false}</p>
 
+<h4>! (not)</h4>
+<p>\${! true} : ${! true}</p>
+<p>\${! false} : ${! false}</p>
+<p>\${not true} : ${not true}</p>
+<p>\${not false} : ${not false}</p>
 </body>
 </html>
