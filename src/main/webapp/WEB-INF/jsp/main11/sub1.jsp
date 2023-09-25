@@ -27,5 +27,6 @@
 --%>
 <p>\${param.name} : ${param.name}</p>
 <p>\${param.age} : ${param.age}</p>
+<p>\${param.email} : ${param.email}</p>
 </body>
 </html>
