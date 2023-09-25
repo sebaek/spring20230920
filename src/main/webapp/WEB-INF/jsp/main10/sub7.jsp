@@ -31,6 +31,19 @@
     <p>${a} / ${b} = ${a div b}</p>
     <p>${c} / ${d} = ${c div d}</p>
 
+    <h5>% (mod) : 나머지 연산 (modulo, remainder)</h5>
+    <p>${b} % ${a} = ${b % a}</p>
+    <p>${c} % ${a} = ${c % a}</p>
+    <p>${d} % ${a} = ${d % a}</p>
+    <p>${b} % ${a} = ${b mod a}</p>
+    <p>${c} % ${a} = ${c mod a}</p>
+    <p>${d} % ${a} = ${d mod a}</p>
+
+    <h5>() : 우선순위 높음</h5>
+    <p>${a * b - c}</p>
+    <p>${a * (b - c)}</p>
+    <p>${(a * b) - c}</p>
+
     <hr>
     <h5>구구단 2단</h5>
     <c:forEach begin="1" end="9" var="i" >
