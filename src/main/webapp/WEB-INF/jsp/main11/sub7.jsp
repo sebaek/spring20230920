@@ -46,5 +46,34 @@
     </table>
 
 </c:if>
+
+<hr>
+<h1>choose 태그 사용</h1>
+<c:choose>
+    <c:when test="${not empty moving}">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>FIRST NAME</th>
+                <th>LAST NAME</th>
+                <th>CLASS</th>
+                <th>PHONE</th>
+            </tr>
+            <c:forEach items="${moving}" var="item">
+                <tr>
+                    <td>${item.id}</td>
+                    <td>${item.firstName}</td>
+                    <td>${item.lastName}</td>
+                    <td>${item.className}</td>
+                    <td>${item.phoneNumber}</td>
+                </tr>
+            </c:forEach>
+        </table>
+    </c:when>
+    <c:otherwise>
+        <h1>데이터가 없습니다.</h1>
+    </c:otherwise>
+</c:choose>
+
 </body>
 </html>
