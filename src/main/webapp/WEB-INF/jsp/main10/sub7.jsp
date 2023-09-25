@@ -40,7 +40,12 @@
     <hr>
     <h5>구구단 2단 ~ 9단</h5>
     <%-- 코드 작성 --%>
-
+    <c:forEach begin="2" end="9" var="i">
+        <h6>구구단 ${i} 단</h6>
+        <c:forEach begin="1" end="9" var="j">
+            <p>${i} X ${j} = ${i * j}</p>
+        </c:forEach>
+    </c:forEach>
     <hr>
     <h5>구구단 9단 ~ 2단</h5>
     <%-- 코드 작성 --%>
