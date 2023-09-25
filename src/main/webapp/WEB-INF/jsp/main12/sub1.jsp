@@ -31,6 +31,15 @@
     전송버튼 클릭시
     ?name=lee&age=44&address=seoul&email=abc@gmail.com
     --%>
+    <%--(input[name]+br)*4--%>
+    <input type="text" name="name">
+    <br>
+    <input type="text" name="age">
+    <br>
+    <input type="text" name="address">
+    <br>
+    <input type="text" name="email">
+    <br>
     <button>전송</button>
 </form>
 
