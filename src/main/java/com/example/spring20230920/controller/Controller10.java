@@ -86,6 +86,13 @@ public class Controller10 {
 
 
     }
+
+    @RequestMapping("sub8")
+    public void method8(Model model) {
+        model.addAttribute("a", 3);
+        model.addAttribute("b", 5);
+
+    }
 }
 
 
