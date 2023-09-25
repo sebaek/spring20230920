@@ -49,5 +49,11 @@
     <hr>
     <h5>구구단 9단 ~ 2단</h5>
     <%-- 코드 작성 --%>
+    <c:forEach begin="0" end="7" var="i">
+        <h6>구구단 ${9 - i} 단</h6>
+        <c:forEach begin="1" end="9" var="j">
+            <p>${9 - i} X ${j} = ${(9 - i) * j}</p>
+        </c:forEach>
+    </c:forEach>
 </body>
 </html>
