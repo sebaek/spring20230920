@@ -21,5 +21,14 @@
 <form action="../..">
     <button>전송</button>
 </form>
+<form action="../dsub3">
+    <button>전송</button>
+</form>
+<form action="../../csub3">
+    <button>전송</button>
+</form>
+<form action="../../csub3/../bsub3">
+    <button>전송</button>
+</form>
 </body>
 </html>
