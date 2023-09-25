@@ -101,6 +101,20 @@ public class Controller10 {
         // ${e > f} : false
         // ${e > g} : true
     }
+
+    @RequestMapping("sub9")
+    public void method9(Model model) {
+        model.addAttribute("a", "java");
+        model.addAttribute("b", "");
+
+        model.addAttribute("c", List.of(3, 4));
+        model.addAttribute("d", List.of());
+
+        model.addAttribute("e", Map.of("name", "son"));
+        model.addAttribute("f", Map.of());
+
+        model.addAttribute("g", null);
+    }
 }
 
 
