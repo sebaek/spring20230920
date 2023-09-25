@@ -27,6 +27,8 @@
 <form action="../../csub3">
     <button>전송</button>
 </form>
+<%-- http://localhost:8080/main12/asub2/bsub2/csub2/dsub2/esub2 --%>
+<%-- http://localhost:8080/main12/asub2/bsub2/bsub3? --%>
 <form action="../../csub3/../bsub3">
     <button>전송</button>
 </form>
