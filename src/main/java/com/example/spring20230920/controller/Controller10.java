@@ -92,6 +92,14 @@ public class Controller10 {
         model.addAttribute("a", 3);
         model.addAttribute("b", 5);
 
+        model.addAttribute("c", "java");
+        model.addAttribute("d", "spring");
+
+        model.addAttribute("e", "11");
+        model.addAttribute("f", "2");
+        model.addAttribute("g", 2);
+        // ${e > f} : false
+        // ${e > g} : true
     }
 }
 
