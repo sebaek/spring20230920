@@ -20,13 +20,13 @@
     구구단 3단 출력
     --%>
 <%--코드 작성--%>
-<c:if test="${(param.dan >= 2) and (param.dan <= 9)}">
+<c:if test="${(param.dan >= 2) and (param.dan <= 9)}" var="okDan">
     <h3>구구단 ${param.dan}단 </h3>
     <c:forEach begin="1" end="9" var="i">
         <p>${param.dan} X ${i} = ${param.dan * i}</p>
     </c:forEach>
 </c:if>
-<c:if test="${(empty param) or (param.dan < 2) or (param.dan > 9)}">
+<c:if test="${not okDan}">
     <h3>구구단의 수를 2~9 사이의 값으로 입력해주세요.</h3>
 </c:if>
 </body>
