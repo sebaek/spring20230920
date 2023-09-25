@@ -20,5 +20,9 @@
     구구단 3단 출력
     --%>
 <%--코드 작성--%>
+<h3>구구단 ${param.dan}단 </h3>
+<c:forEach begin="1" end="9" var="i">
+    <p>${param.dan} X ${i} = ${param.dan * i}</p>
+</c:forEach>
 </body>
 </html>
