@@ -51,6 +51,28 @@
 <p>${e > f}</p>
 <p>${e > g}</p>
 
+<hr>
+<h3>el 논리연산자</h3>
+<h4>&& (and), || (or)</h4>
+<h4>&& (and)</h4>
+<p>\${true && true} : ${true && true}</p>
+<p>\${true && false} : ${true && false}</p>
+<p>\${false && true} : ${false && true}</p>
+<p>\${false && false} : ${false && false}</p>
+<p>\${true and true} : ${true and true}</p>
+<p>\${true and false} : ${true and false}</p>
+<p>\${false and true} : ${false and true}</p>
+<p>\${false and false} : ${false and false}</p>
+
+<h4>|| (or)</h4>
+<p>\${true || true} : ${true || true}</p>
+<p>\${true || false} : ${true || false}</p>
+<p>\${false || true} : ${false || true}</p>
+<p>\${false || false} : ${false || false}</p>
+<p>\${true or true} : ${true or true}</p>
+<p>\${true or false} : ${true or false}</p>
+<p>\${false or true} : ${false or true}</p>
+<p>\${false or false} : ${false or false}</p>
 
 </body>
 </html>
