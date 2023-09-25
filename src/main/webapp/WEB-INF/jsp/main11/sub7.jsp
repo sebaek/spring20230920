@@ -17,5 +17,34 @@
 
 <%-- /main11/sub7--%>
 <%-- 데이터가 없습니다. --%>
+
+<c:if test="${empty moving}">
+
+    <h1>데이터가 없습니다.</h1>
+
+</c:if>
+
+<c:if test="${not empty moving}">
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>FIRST NAME</th>
+            <th>LAST NAME</th>
+            <th>CLASS</th>
+            <th>PHONE</th>
+        </tr>
+        <c:forEach items="${moving}" var="item">
+            <tr>
+                <td>${item.id}</td>
+                <td>${item.firstName}</td>
+                <td>${item.lastName}</td>
+                <td>${item.className}</td>
+                <td>${item.phoneNumber}</td>
+            </tr>
+        </c:forEach>
+    </table>
+
+</c:if>
 </body>
 </html>
