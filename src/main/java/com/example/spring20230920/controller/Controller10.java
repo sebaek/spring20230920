@@ -75,6 +75,17 @@ public class Controller10 {
         model.addAttribute("moving", list);
 
     }
+
+    @RequestMapping("sub7")
+    public void method7(Model model) {
+        model.addAttribute("a", 3);
+        model.addAttribute("b", 5);
+
+        model.addAttribute("c", "8");
+        model.addAttribute("d", "9");
+
+
+    }
 }
 
 
