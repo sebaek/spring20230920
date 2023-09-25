@@ -42,6 +42,22 @@
     <br>
     <button>전송</button>
 </form>
+<hr>
+<h3>action 속성 : request 파라미터들을 어디로 보낼 지 결정</h3>
+<form action="https://search.naver.com/search.naver">
+    <input type="text" name="query">
+    <br>
+    <button>전송</button>
+</form>
+<form action="https://google.com/search">
+    <input type="text" name="q">
+    <br>
+    <button>전송</button>
+</form>
+<form action="">
+    <input type="text" name="q">
+    <button>다음에서 검색</button>
+</form>
 
 </body>
 </html>
