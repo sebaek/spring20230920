@@ -1,6 +1,7 @@
 package com.example.spring20230920.controller;
 
 import com.example.spring20230920.domain.MyDto11;
+import com.example.spring20230920.domain.MyDto12;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,7 +14,7 @@ import java.util.List;
 @Controller
 @RequestMapping("main13")
 public class Controller13 {
-    @RequestMapping({"sub1", "sub2", "sub4"})
+    @RequestMapping({"sub1", "sub2", "sub4", "sub7"})
     public void method1() {}
 
     @RequestMapping("sub3")
@@ -59,5 +60,10 @@ public class Controller13 {
     @RequestMapping("sub6")
     public void mehthod6(MyDto11 user) {
         System.out.println("user = " + user);
+    }
+
+    @RequestMapping("sub8")
+    public void method8(MyDto12 info) {
+        System.out.println("info = " + info);
     }
 }
