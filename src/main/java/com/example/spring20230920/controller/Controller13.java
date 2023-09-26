@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("main13")
 public class Controller13 {
-    @RequestMapping("sub1")
+    @RequestMapping({"sub1", "sub2"})
     public void method1() {}
 }

@@ -117,7 +117,8 @@
       <input type="checkbox" name="" id="check3">
     </div>
   </div>
-  <input type="submit">
+  <input type="submit" value="전송">
+  <button>전송</button>
 </form>
 </body>
 </html>
