@@ -14,8 +14,9 @@ import java.util.List;
 @Controller
 @RequestMapping("main13")
 public class Controller13 {
-    @RequestMapping({"sub1", "sub2", "sub4", "sub7", "sub9"})
-    public void method1() {}
+    @RequestMapping({"sub1", "sub2", "sub4", "sub7", "sub9", "sub11"})
+    public void method1() {
+    }
 
     @RequestMapping("sub3")
     public void method3(
@@ -27,7 +28,7 @@ public class Controller13 {
             @RequestParam(value = "param6", defaultValue = "value1") String param6,
             @RequestParam(value = "param8", required = false) String[] param8,
             @RequestParam("param8") List<String> param9
-            ) {
+    ) {
 
         System.out.println("param1 = " + param1);
         System.out.println("param2 = " + param2);
@@ -74,5 +75,10 @@ public class Controller13 {
     ) {
         System.out.println("title = " + title);
         System.out.println("contentBody = " + contentBody);
+    }
+
+    @RequestMapping("sub12")
+    public void method12(MyDto13 vo) {
+        System.out.println("vo = " + vo);
     }
 }
