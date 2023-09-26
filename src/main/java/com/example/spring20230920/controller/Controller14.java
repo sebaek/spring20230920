@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequestMapping("main14")
 public class Controller14 {
-    @RequestMapping("sub1")
+    @RequestMapping({"sub1",
+            "sub3"})
     public void method1() {
 
     }
@@ -33,5 +34,14 @@ public class Controller14 {
 
         System.out.println("id = " + id);
         System.out.println("password = " + password);
+    }
+
+    @RequestMapping(value = "sub4", method = RequestMethod.POST)
+    public void method4(
+            String title,
+            String content
+    ) {
+        System.out.println("title = " + title);
+        System.out.println("content = " + content);
     }
 }
