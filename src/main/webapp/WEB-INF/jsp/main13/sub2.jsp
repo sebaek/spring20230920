@@ -36,23 +36,23 @@
     </div>
     <div>
         <label for="input6">Doloremque?</label>
-        <input type="" name="param6" id="input6">
+        <input type="radio" name="param6" value="radio value1" id="input6">
     </div>
     <div>
         <label for="input7">Quia!</label>
-        <input type="" name="param7" id="input7">
+        <input type="radio" name="param6" value="radio value2" id="input7">
     </div>
     <div>
         <label for="input8">Quia?</label>
-        <input type="" name="param8" id="input8">
+        <input type="checkbox" name="param8" value="pizza" id="input8">
     </div>
     <div>
         <label for="input9">Optio!</label>
-        <input type="" name="param9" id="input9">
+        <input type="checkbox" name="param8" value="melon" id="input9">
     </div>
     <div>
         <label for="input10">Officia?</label>
-        <input type="" name="param10" id="input10">
+        <input type="checkbox" name="param8" value="coffee" id="input10">
     </div>
     <button>전송</button>
 </form>
