@@ -12,7 +12,7 @@ import java.util.List;
 @Controller
 @RequestMapping("main13")
 public class Controller13 {
-    @RequestMapping({"sub1", "sub2"})
+    @RequestMapping({"sub1", "sub2", "sub4"})
     public void method1() {}
 
     @RequestMapping("sub3")
