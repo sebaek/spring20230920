@@ -16,23 +16,23 @@
     <%--div*10>label[for=input$]>lorem1^input[type][name=param$][id=input$]--%>
     <div>
         <label for="input1">Lorem.</label>
-        <input type="" name="param1" id="input1">
+        <input type="text" name="param1" id="input1">
     </div>
     <div>
         <label for="input2">Aut.</label>
-        <input type="" name="param2" id="input2">
+        <input type="number" name="param2" id="input2">
     </div>
     <div>
         <label for="input3">Quaerat!</label>
-        <input type="" name="param3" id="input3">
+        <input type="password" name="param3" id="input3">
     </div>
     <div>
         <label for="input4">Natus.</label>
-        <input type="" name="param4" id="input4">
+        <input type="date" name="param4" id="input4">
     </div>
     <div>
         <label for="input5">Dolore.</label>
-        <input type="" name="param5" id="input5">
+        <input type="datetime-local" name="param5" id="input5">
     </div>
     <div>
         <label for="input6">Doloremque?</label>
