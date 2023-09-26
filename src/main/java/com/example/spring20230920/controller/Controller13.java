@@ -41,4 +41,17 @@ public class Controller13 {
         System.out.println("list로 받음");
         param9.forEach(System.out::println);
     }
+
+    @RequestMapping("sub5")
+    public void method5(
+            @RequestParam("userId") String id,
+            @RequestParam("userEmail") String email,
+            @RequestParam("birthDate") LocalDate birth,
+            @RequestParam("hobby") List<String> hobby
+    ) {
+        System.out.println("id = " + id);
+        System.out.println("email = " + email);
+        System.out.println("birth = " + birth);
+        System.out.println("hobby = " + hobby);
+    }
 }
