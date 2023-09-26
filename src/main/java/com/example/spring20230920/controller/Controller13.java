@@ -1,5 +1,6 @@
 package com.example.spring20230920.controller;
 
+import com.example.spring20230920.domain.MyDto11;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -53,5 +54,10 @@ public class Controller13 {
         System.out.println("email = " + email);
         System.out.println("birth = " + birth);
         System.out.println("hobby = " + hobby);
+    }
+
+    @RequestMapping("sub6")
+    public void mehthod6(MyDto11 user) {
+        System.out.println("user = " + user);
     }
 }

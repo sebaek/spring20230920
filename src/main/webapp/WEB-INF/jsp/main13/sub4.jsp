@@ -43,5 +43,38 @@
     </div>
     <button>회원가입</button>
 </form>
+
+<hr>
+
+<form action="/main13/sub6">
+    <%--div*6>label[for=input$]+input#input$[name][type]--%>
+    <div>
+        <label for="input7">아이디</label>
+        <input type="text" id="input7" name="userId">
+    </div>
+    <div>
+        <label for="input8">이메일</label>
+        <input type="email" id="input8" name="userEmail">
+    </div>
+    <div>
+        <label for="input9">생년월일</label>
+        <input type="date" id="input9" name="birthDate">
+    </div>
+
+    <h3>취미</h3>
+    <div>
+        <label for="input10">영화</label>
+        <input type="checkbox" id="input10" name="hobby" value="movie">
+    </div>
+    <div>
+        <label for="input11">음악감상</label>
+        <input type="checkbox" id="input11" name="hobby" value="music">
+    </div>
+    <div>
+        <label for="input12">독서</label>
+        <input type="checkbox" id="input12" name="hobby" value="reading">
+    </div>
+    <button>회원가입</button>
+</form>
 </body>
 </html>
