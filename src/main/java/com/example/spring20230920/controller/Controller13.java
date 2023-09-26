@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.List;
 
 @Controller
 @RequestMapping("main13")
@@ -22,7 +23,8 @@ public class Controller13 {
             @RequestParam(value = "param4", defaultValue = "2023-09-26") LocalDate param4, // 날짜
             @RequestParam(value = "param5", defaultValue = "2023-09-26T11:15:30") LocalDateTime param5, // 날짜시간
             @RequestParam(value = "param6", defaultValue = "value1") String param6,
-            @RequestParam(value = "param8", required = false) String[] param8
+            @RequestParam(value = "param8", required = false) String[] param8,
+            @RequestParam("param8") List<String> param9
             ) {
 
         System.out.println("param1 = " + param1);
@@ -36,5 +38,7 @@ public class Controller13 {
             Arrays.stream(param8).forEach(System.out::println);
         }
 
+        System.out.println("list로 받음");
+        param9.forEach(System.out::println);
     }
 }
