@@ -93,6 +93,32 @@
   </div>
   <button>전송</button>
 </form>
+
+<hr>
+
+<form action="/main13/sub2">
+  <label for="input1">
+    주소
+  </label>
+  <input id="input1" type="text">
+  <br>
+  <%--div>div*3>label[for=check$]>lorem1^input:c#check$--%>
+  <div>
+    <div>
+      <label for="check1">Lorem.</label>
+      <input type="checkbox" name="" id="check1">
+    </div>
+    <div>
+      <label for="check2">Ab.</label>
+      <input type="checkbox" name="" id="check2">
+    </div>
+    <div>
+      <label for="check3">Modi.</label>
+      <input type="checkbox" name="" id="check3">
+    </div>
+  </div>
+  <input type="submit">
+</form>
 </body>
 </html>
 
