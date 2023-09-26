@@ -89,4 +89,13 @@ public class Controller13 {
     public void method12(MyDto13 vo) {
         System.out.println("vo = " + vo);
     }
+
+    @RequestMapping("sub14")
+    public void method14(
+            @RequestParam("hobby") String hobby,
+            @RequestParam("food") List<String> food
+    ) {
+        System.out.println("hobby = " + hobby);
+        System.out.println("food = " + food);
+    }
 }
