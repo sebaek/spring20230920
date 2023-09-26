@@ -49,10 +49,12 @@ public class Controller14 {
     // 1)아래 두 RequestMapping 어노테이션을 줄여서 작성
     // 2)sub5.jsp에 적절한 form 요소 코드 작성해서
     // 전송(submit)시 method6이 실행될 수 있도록....
-    @RequestMapping(value = "sub5", method = RequestMethod.GET)
+//    @RequestMapping(value = "sub5", method = RequestMethod.GET)
+    @GetMapping("sub5")
     public void method5() {}
 
-    @RequestMapping(value = "sub6", method = RequestMethod.POST)
+//    @RequestMapping(value = "sub6", method = RequestMethod.POST)
+    @PostMapping("sub6")
     public void method6(
             String username,
             String password
