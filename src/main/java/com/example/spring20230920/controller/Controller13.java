@@ -14,7 +14,7 @@ import java.util.List;
 @Controller
 @RequestMapping("main13")
 public class Controller13 {
-    @RequestMapping({"sub1", "sub2", "sub4", "sub7"})
+    @RequestMapping({"sub1", "sub2", "sub4", "sub7", "sub9"})
     public void method1() {}
 
     @RequestMapping("sub3")
@@ -65,5 +65,14 @@ public class Controller13 {
     @RequestMapping("sub8")
     public void method8(MyDto12 info) {
         System.out.println("info = " + info);
+    }
+
+    @RequestMapping("sub10")
+    public void method10(
+            @RequestParam("title") String title,
+            @RequestParam("contentBody") String contentBody
+    ) {
+        System.out.println("title = " + title);
+        System.out.println("contentBody = " + contentBody);
     }
 }
