@@ -16,7 +16,7 @@
 <form action="/main13/sub14">
     <%--select>option[value]*3--%>
     <div>
-        <select name="hobby" id="">
+        <select name="hobby">
             <option value="soccer">축구</option>
             <option value="baseball">야구</option>
             <option value="basketball">농구</option>
@@ -24,7 +24,7 @@
     </div>
     <div>
         <%--select[name=food][multiple]>option[value]*5--%>
-        <select name="food" id="" multiple="">
+        <select name="food" multiple="">
             <option value="pizza">피자</option>
             <option value="coffee">커피</option>
             <option value="burger">버거</option>
