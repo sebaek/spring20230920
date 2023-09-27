@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("main16")
@@ -114,6 +115,20 @@ public class Controller16 {
     public void method11(HttpSession session) {
         Object processedValue = session.getAttribute("processedValue");
         System.out.println("processedValue = " + processedValue);
+    }
+
+    @GetMapping("sub12")
+    public String method12(String address, RedirectAttributes rttr) {
+        String processed = address + " 처리 결과";
+
+        rttr.addFlashAttribute("processedValue", processed);
+        return "redirect:/main16/sub13";
+    }
+
+    @GetMapping("sub13")
+    public void method13(Model model) {
+        Object processed = model.getAttribute("processedValue");
+        System.out.println("processed = " + processed);
     }
 }
 
