@@ -89,6 +89,32 @@ public class Controller16 {
     public String method7() {
         return "redirect:https://www.naver.com";
     }
+
+    @GetMapping("sub8")
+    public String method8(String email) {
+        String processed = email + "processed";
+
+        return "redirect:/main16/sub9?p=" + processed;
+    }
+
+    @GetMapping("sub9")
+    public void method9(String p) {
+        System.out.println("p = " + p);
+    }
+
+    @GetMapping("sub10")
+    public String method10(String name, HttpSession session) {
+        String processed = name + " 처리 결과";
+        session.setAttribute("processedValue", processed);
+
+        return "redirect:/main16/sub11";
+    }
+
+    @GetMapping("sub11")
+    public void method11(HttpSession session) {
+        Object processedValue = session.getAttribute("processedValue");
+        System.out.println("processedValue = " + processedValue);
+    }
 }
 
 
