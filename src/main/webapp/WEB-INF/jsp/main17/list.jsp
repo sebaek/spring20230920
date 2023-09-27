@@ -17,23 +17,26 @@
         <a href="/main17/new">글쓰기</a>
     </div>
 </div>
-    <h1>글 목록</h1>
+<div>
+    ${message}
+</div>
+<h1>글 목록</h1>
 <%--table>tr>th*2--%>
-    <table>
+<table>
+    <tr>
+        <th>id</th>
+        <th>제목</th>
+    </tr>
+    <c:forEach items="${postList}" var="post" varStatus="status">
         <tr>
-            <th>id</th>
-            <th>제목</th>
-        </tr>
-        <c:forEach items="${postList}" var="post" varStatus="status">
-            <tr>
-                <td>${status.index}</td>
-                <td>
-                    <a href="/main17/view?id=${status.index}">
+            <td>${status.index}</td>
+            <td>
+                <a href="/main17/view?id=${status.index}">
                         ${post.title}
-                    </a>
-                </td>
-            </tr>
-        </c:forEach>
-    </table>
+                </a>
+            </td>
+        </tr>
+    </c:forEach>
+</table>
 </body>
 </html>

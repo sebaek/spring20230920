@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,10 +38,12 @@ public class Controller17 {
     }
 
     @PostMapping("new")
-    public String newPost(MyDto14 post) {
+    public String newPost(MyDto14 post, RedirectAttributes rttr) {
         Object posts = application.getAttribute("posts");
         List<MyDto14> list = (List<MyDto14>) posts;
         list.add(post);
+
+        rttr.addFlashAttribute("message", "새 글이 등록되었습니다.");
 
         return "redirect:/main17/list";
     }
