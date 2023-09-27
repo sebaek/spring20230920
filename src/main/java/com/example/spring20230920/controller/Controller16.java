@@ -70,6 +70,25 @@ public class Controller16 {
         System.out.println("System.identityHashCode(model) = " + System.identityHashCode(model));
         System.out.println("System.identityHashCode(session) = " + System.identityHashCode(session));
     }
+
+    @GetMapping("sub5")
+    public String method5() {
+
+        return "/main16/sub5"; // view name
+    }
+
+    @GetMapping("sub6")
+    public String method6() {
+
+        // redirection
+        // 다른 곳(location)으로 가!!! 라는 응답(response, 302)
+        return "redirect:/main16/sub5";
+    }
+
+    @GetMapping("sub7")
+    public String method7() {
+        return "redirect:https://www.naver.com";
+    }
 }
 
 
