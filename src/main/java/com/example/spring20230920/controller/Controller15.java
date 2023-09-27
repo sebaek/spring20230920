@@ -98,5 +98,16 @@ public class Controller15 {
 
     }
 
+    @GetMapping("sub11")
+    public void method11(Model model, HttpSession session) {
+        model.addAttribute("items", List.of("두식", "봉석"));
+        session.setAttribute("items", List.of("피자", "햄버거", "돈까스"));
+    }
+    /*
+    sub11.jsp 에서
+    두식, 봉석 출력
+    피자, 햄버거, 돈까스 출력
+    */
+
 
 }
