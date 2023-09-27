@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("main16")
 public class Controller16 {
@@ -133,11 +135,11 @@ public class Controller16 {
 
     //첫 요청을 /main16/sub14
     @GetMapping("sub14")
-    public String method14() {
+    public String method14(RedirectAttributes rttr) {
         // /main16/sub15 요청할 때
         // foodList 라는 attribute를 꺼낼 수 있게
         // 코드작성
-
+        rttr.addFlashAttribute("foodList", List.of("피자", "버거"));
         return "redirect:/main16/sub15";
     }
 
