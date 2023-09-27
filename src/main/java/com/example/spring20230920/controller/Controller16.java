@@ -47,6 +47,29 @@ public class Controller16 {
             application.setAttribute("count", countInt);
         }
     }
+
+    @GetMapping("sub3")
+    public void method3(Model model, HttpSession session) {
+        model.addAttribute("modelAttr1", "보름달");
+        session.setAttribute("sessionAttr1", "송편");
+
+        System.out.println("Controller16.method3");
+        System.out.println("System.identityHashCode(model) = " + System.identityHashCode(model));
+        System.out.println("System.identityHashCode(session) = " + System.identityHashCode(session));
+    }
+
+    @GetMapping("sub4")
+    public void method4(Model model, HttpSession session) {
+        Object modelAttr1 = model.getAttribute("modelAttr1");
+        Object sessionAttr1 = session.getAttribute("sessionAttr1");
+
+        System.out.println("modelAttr1 = " + modelAttr1);
+        System.out.println("sessionAttr1 = " + sessionAttr1);
+
+        System.out.println("Controller16.method4");
+        System.out.println("System.identityHashCode(model) = " + System.identityHashCode(model));
+        System.out.println("System.identityHashCode(session) = " + System.identityHashCode(session));
+    }
 }
 
 
