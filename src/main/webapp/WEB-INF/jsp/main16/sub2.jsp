@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: admin
   Date: 2023-09-27
-  Time: 오전 11:21
+  Time: 오전 11:29
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -12,12 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-  <h4>\${modelAttr1} : ${modelAttr1}</h4>
-  <h4>\${sessionAttr1} : ${sessionAttr1}</h4>
-  <h4>\${appAttr1} : ${appAttr1}</h4>
-  <hr>
-  <h4>\${attr1} : ${attr1}</h4>
-  <h4>\${sessionScope.attr1} : ${sessionScope.attr1}</h4>
-  <h4>\${applicationScope.attr1} : ${applicationScope.attr1}</h4>
+    <h4>내 방문 횟수 ${sessionScope.count} 번</h4>
+    <h4>이 서버에 요청한 횟수 ${applicationScope.count}</h4>
 </body>
 </html>
