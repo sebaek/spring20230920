@@ -13,18 +13,21 @@
 </head>
 <body>
 <div>
-  <div>
-    <a href="/main17/list">목록 보기</a>
-  </div>
+    <div>
+        <a href="/main17/list">목록 보기</a>
+    </div>
 </div>
-  <h1>글 보기</h1>
-  <div>
+<div>
+    ${message}
+</div>
+<h1>글 보기</h1>
+<div>
     <label for="titleInput">제목</label>
     <input type="text" name="title" id="titleInput" readonly value="${post.title}">
-  </div>
-  <div>
+</div>
+<div>
     <%--textarea[placeholder=본문][name=body]--%>
     <textarea name="body" cols="30" rows="10" readonly>${post.body}</textarea>
-  </div>
+</div>
 </body>
 </html>

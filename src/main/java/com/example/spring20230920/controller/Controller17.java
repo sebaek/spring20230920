@@ -44,8 +44,9 @@ public class Controller17 {
         list.add(post);
 
         rttr.addFlashAttribute("message", "새 글이 등록되었습니다.");
-
-        return "redirect:/main17/list";
+        rttr.addAttribute("id", list.size() - 1);
+//        return "redirect:/main17/list";
+        return "redirect:/main17/view";
     }
 
     @GetMapping("view")
