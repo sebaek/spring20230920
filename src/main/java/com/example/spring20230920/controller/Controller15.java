@@ -59,5 +59,10 @@ public class Controller15 {
 
     }
 
+    @GetMapping("sub7")
+    public void method7() {
+
+    }
+
 
 }
