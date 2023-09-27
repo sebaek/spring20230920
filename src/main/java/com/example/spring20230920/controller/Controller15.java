@@ -64,5 +64,16 @@ public class Controller15 {
 
     }
 
+//    post 요청 /main15/sub8
+//    request parameter foods를
+//    session 에 attribute로 넣고
+//    sub8.jsp 로 포워드하는 메소드 만들기
+
+//    get 요청 /main15/sub9
+//    sub9.jsp로 포워드하는 메소드 만들기
+
+//    단. sub8.jsp와 sub9.jsp에서는 sub7에서 선택한 음식들을 보여주기
+    
+
 
 }
