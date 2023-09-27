@@ -3,6 +3,7 @@ package com.example.spring20230920.controller;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -84,6 +85,16 @@ public class Controller15 {
 //    단. sub8.jsp와 sub9.jsp에서는 sub7에서 선택한 음식들을 보여주기
     @GetMapping("sub9")
     public void method9() {
+
+    }
+
+    @GetMapping("sub10")
+    public void method10(Model model, HttpSession session) {
+        model.addAttribute("modelAttr1", "탕후루");
+        session.setAttribute("sessionAttr1", "마라탕");
+
+        model.addAttribute("attr1", "돈까스");
+        session.setAttribute("attr1", "커피");
 
     }
 
