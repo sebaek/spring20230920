@@ -4,6 +4,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -40,6 +41,22 @@ public class Controller15 {
             System.out.println("username = " + username);
             System.out.println();
         }
+    }
+
+    @GetMapping("sub4")
+    public void method4() {
+
+    }
+
+    @PostMapping("sub5")
+    public void method5(String name, HttpSession session) {
+        session.setAttribute("username", name);
+
+    }
+
+    @GetMapping("sub6")
+    public void method6() {
+
     }
 
 
