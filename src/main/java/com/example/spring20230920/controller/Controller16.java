@@ -130,6 +130,21 @@ public class Controller16 {
         Object processed = model.getAttribute("processedValue");
         System.out.println("processed = " + processed);
     }
+
+    //첫 요청을 /main16/sub14
+    @GetMapping("sub14")
+    public String method14() {
+        // /main16/sub15 요청할 때
+        // foodList 라는 attribute를 꺼낼 수 있게
+        // 코드작성
+
+        return "redirect:/main16/sub15";
+    }
+
+    @GetMapping("sub15")
+    public void method15() {
+
+    }
 }
 
 
