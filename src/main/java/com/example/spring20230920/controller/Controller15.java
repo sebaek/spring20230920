@@ -3,17 +3,19 @@ package com.example.spring20230920.controller;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Controller
 @RequestMapping("main15")
 public class Controller15 {
 
     @GetMapping("sub1")
-    public void method1() {}
+    public void method1() {
+    }
 
     @GetMapping("sub2")
     public void method2(HttpServletRequest request, HttpSession session) {
@@ -64,16 +66,26 @@ public class Controller15 {
 
     }
 
-//    post 요청 /main15/sub8
+    //    post 요청 /main15/sub8
 //    request parameter foods를
 //    session 에 attribute로 넣고
 //    sub8.jsp 로 포워드하는 메소드 만들기
+    @PostMapping("sub8")
+    public void method8(@RequestParam("foods") List<String> foods, HttpSession session) {
+//        System.out.println("Arrays.toString(foods) = " + Arrays.toString(foods));
+        System.out.println("foods = " + foods);
+        session.setAttribute("foodList", foods);
+
+    }
 
 //    get 요청 /main15/sub9
 //    sub9.jsp로 포워드하는 메소드 만들기
 
 //    단. sub8.jsp와 sub9.jsp에서는 sub7에서 선택한 음식들을 보여주기
-    
+    @GetMapping("sub9")
+    public void method9() {
+
+    }
 
 
 }
