@@ -27,7 +27,7 @@ public class Controller18 {
                 FROM customers
                 WHERE customerID = 1
                 """;
-    
+
         Connection connection = DriverManager.getConnection(url, username, password);
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(sql);
