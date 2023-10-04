@@ -1,5 +1,6 @@
 package com.example.spring20230920.controller;
 
+import com.example.spring20230920.domain.MyDto15;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -156,10 +157,10 @@ public class Controller19 {
             while (resultSet.next()) {
                 Map<String, Object> row = new HashMap<>();
 
-                row.put("pid", resultSet.getString(1));
+                row.put("pid", resultSet.getInt(1));
                 row.put("productName", resultSet.getString(2));
                 row.put("unit", resultSet.getString(3));
-                row.put("price", resultSet.getString(4));
+                row.put("price", resultSet.getDouble(4));
 
                 list.add(row);
             }
@@ -167,6 +168,32 @@ public class Controller19 {
         
         // 코드 작성
         model.addAttribute("productList", list);
+    }
+
+    @GetMapping("sub6")
+    public void method6(Model model) throws SQLException {
+        String sql = """
+                SELECT CustomerID, CustomerName, Address, Country
+                FROM customers
+                """;
+
+        Connection connection = dataSource.getConnection();
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(sql);
+
+        List<MyDto15> list = new ArrayList<>();
+        try (connection; statement; resultSet) {
+            while (resultSet.next()) {
+                MyDto15 dto = new MyDto15();
+                dto.setId(resultSet.getInt(1));
+                dto.setName(resultSet.getString(2));
+                dto.setAddress(resultSet.getString(3));
+                dto.setCountry(resultSet.getString(4));
+
+                list.add(dto);
+            }
+        }
+        model.addAttribute("customerList", list);
     }
 
 }
