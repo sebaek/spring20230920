@@ -23,4 +23,21 @@ SELECT * FROM suppliers WHERE City = 'Osaka';
 
 
 
+-- 미국에 사는 고객의 이름들 조회
+SELECT CustomerName FROM customers WHERE Country = 'USA';
+-- 영국에 사는 고객의 이름과, 고객번호 조회
+SELECT CustomerID, CustomerName FROM customers WHERE Country = 'UK';
+
+-- 예) 2번 카테고리에 있는 상품명과 가격 조회
+SELECT ProductName, Price
+FROM products
+WHERE CategoryID = 2;
+-- 예) 일본에 있는 공급자의 이름(SupplierName)과 전화번호 조회
+SELECT SupplierName, Phone
+FROM suppliers
+WHERE Country = 'japan';
+-- 예) 2번 카테고리의 이름(categoryName) 조회
+SELECT CategoryName
+FROM categories
+WHERE CategoryID = 2;
 
