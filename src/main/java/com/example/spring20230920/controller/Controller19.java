@@ -1,5 +1,6 @@
 package com.example.spring20230920.controller;
 
+import jdk.internal.icu.text.UnicodeSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -106,6 +107,36 @@ public class Controller19 {
         }
 
         model.addAttribute("shippers", list);
+    }
+
+    @GetMapping("sub4")
+    public void method4(Model model) throws SQLException {
+        // /main19/sub4.jsp 작성
+
+        String sql = """
+                SELECT CustomerID, CustomerName, City, Country
+                FROM customers
+                """;
+
+        Connection connection = dataSource.getConnection();
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(sql);
+
+        List<Map<String, String>> list = new ArrayList<>();
+
+        try (connection; statement; resultSet) {
+            while (resultSet.next()) {
+                Map<String, String> map = new HashMap<>();
+                map.put("id", resultSet.getString(1));
+                map.put("name", resultSet.getString(2));
+                map.put("city", resultSet.getString(3));
+                map.put("country", resultSet.getString(4));
+
+                list.add(map);
+            }
+        }
+        model.addAttribute("customers", list);
+
     }
 
 }

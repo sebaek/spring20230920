@@ -45,3 +45,6 @@ WHERE CategoryID = 2;
 SELECT *
 FROM shippers   ;
 
+SELECT CustomerID, CustomerName, City, Country
+FROM customers;
+
