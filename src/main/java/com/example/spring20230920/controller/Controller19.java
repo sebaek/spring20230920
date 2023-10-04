@@ -53,8 +53,20 @@ public class Controller19 {
 
         try (connection; statement; resultSet) {
             boolean next1 = resultSet.next();
+            resultSet.getString(1); // "1"
+            resultSet.getString(2); // "Speedy Express"
+            resultSet.getString(3); // "(503) 555-9831"
+
             boolean next2 = resultSet.next();
+            resultSet.getString(1); // "2"
+            resultSet.getString(2); // "United Package"
+            resultSet.getString(3); // "(503) 555-3199"
+
             boolean next3 = resultSet.next();
+            resultSet.getString(1); // "3"
+            resultSet.getString(2); // "Federal Shipping"
+            resultSet.getString(3); // "(503) 555-9931"
+
             boolean next4 = resultSet.next();
 
             System.out.println("next1 = " + next1);
