@@ -57,3 +57,12 @@ SELECT COUNT(DISTINCT Country) FROM customers; -- 21
 SELECT COUNT(*) FROM customers;
 SELECT COUNT(*) FROM employees;
 SELECT COUNT(*) FROM orders;
+
+-- 예) 공급자들이 있는 나라 수
+SELECT DISTINCT Country FROM suppliers;
+-- 예) 주문(Orders) 건수
+SELECT COUNT(*) FROM orders;
+-- 예) 몇 개의 카테고리가 있는 지 조회
+SELECT COUNT(*) FROM categories;
+-- 예) 고객이 있는 도시의 수
+SELECT COUNT(DISTINCT City) FROM customers;
