@@ -10,6 +10,21 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: aqua;
+        }
+
+    </style>
 </head>
 <body>
 <h4>상품 목록</h4>
