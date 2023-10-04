@@ -13,5 +13,6 @@
 </head>
 <body>
 <h1>jdbc 연습!!</h1>
+<h1>고객명 : ${customerName}</h1>
 </body>
 </html>
