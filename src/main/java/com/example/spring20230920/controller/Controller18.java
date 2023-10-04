@@ -39,7 +39,5 @@ public class Controller18 {
                 model.addAttribute("customerName", name);
             }
         }
-
-
     }
 }
