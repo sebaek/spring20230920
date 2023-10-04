@@ -30,5 +30,11 @@ SELECT * -- 전체 컬럼
 FROM customers;
 
 -- 예1) 직원(employees)의 lastName, firstName, birthDate 조회
+SELECT LastName, FirstName, BirthDate
+FROM employees;
 -- 예2) 상품(products)의 이름(productName), 단위(unit), 가격(price) 조회
+SELECT ProductName, Unit, Price
+FROM products;
 -- 예3) 공급자(suppliers)의 이름(supplierName), 주소(address), 국가(country) 조회
+SELECT SupplierName, Address, Country
+FROM suppliers;
