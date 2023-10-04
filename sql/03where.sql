@@ -15,9 +15,12 @@ SELECT * FROM customers WHERE CustomerID = 3; -- 수형식은 따옴표 없이
 SELECT * FROM customers WHERE CustomerID = '3'; -- 써도 됨
 
 -- 예) 영국(UK)에 사는 고객들 조회
+SELECT * FROM customers WHERE Country = 'UK';
 -- 예) 1번 카테고리에 속한 상품(Products)들 조회
+SELECT * FROM products WHERE CategoryID = 1;
 -- 예) Osaka에 있는 공급자들 조회
+SELECT * FROM suppliers WHERE City = 'Osaka';
 
-                                                
+
 
 
