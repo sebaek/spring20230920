@@ -11,6 +11,10 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("main19")
@@ -76,6 +80,32 @@ public class Controller19 {
         }
 
 
+    }
+
+    @GetMapping("sub3")
+    public void method3(Model model) throws SQLException {
+        List<Map<String, String>> list = new ArrayList<>();
+
+        String sql = """
+                SELECT * 
+                FROM shippers
+                """;
+
+        Connection connection = dataSource.getConnection();
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(sql);
+        try (connection; statement; resultSet) {
+            while (resultSet.next()) {
+                Map<String, String> map = new HashMap<>();
+                map.put("id", resultSet.getString(1));
+                map.put("name", resultSet.getString(2));
+                map.put("phone", resultSet.getString(3));
+
+                list.add(map);
+            }
+        }
+
+        model.addAttribute("shippers", list);
     }
 
 }
