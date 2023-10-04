@@ -156,10 +156,10 @@ public class Controller19 {
             while (resultSet.next()) {
                 Map<String, Object> row = new HashMap<>();
 
-                row.put("productName", resultSet.getString(2));
                 row.put("pid", resultSet.getString(1));
-                row.put("price", resultSet.getString(4));
+                row.put("productName", resultSet.getString(2));
                 row.put("unit", resultSet.getString(3));
+                row.put("price", resultSet.getString(4));
 
                 list.add(row);
             }
