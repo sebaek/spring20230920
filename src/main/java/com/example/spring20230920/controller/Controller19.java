@@ -139,7 +139,7 @@ public class Controller19 {
     }
 
     @GetMapping("sub5")
-    public void method5() throws SQLException {
+    public void method5(Model model) throws SQLException {
         String sql = """
                 SELECT ProductID, ProductName, Unit, Price
                 FROM products
@@ -153,9 +153,20 @@ public class Controller19 {
 
         try (connection; statement; resultSet) {
             // 코드 작성
+            while (resultSet.next()) {
+                Map<String, Object> row = new HashMap<>();
+
+                row.put("productName", resultSet.getString(2));
+                row.put("pid", resultSet.getString(1));
+                row.put("price", resultSet.getString(4));
+                row.put("unit", resultSet.getString(3));
+
+                list.add(row);
+            }
         }
         
         // 코드 작성
+        model.addAttribute("productList", list);
     }
 
 }
