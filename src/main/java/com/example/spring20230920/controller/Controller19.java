@@ -138,4 +138,24 @@ public class Controller19 {
 
     }
 
+    @GetMapping("sub5")
+    public void method5() throws SQLException {
+        String sql = """
+                SELECT ProductID, ProductName, Unit, Price
+                FROM products
+                """;
+
+        Connection connection = dataSource.getConnection();
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(sql);
+
+        List<Map<String, Object>> list = new ArrayList<>();
+
+        try (connection; statement; resultSet) {
+            // 코드 작성
+        }
+        
+        // 코드 작성
+    }
+
 }

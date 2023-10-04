@@ -48,3 +48,6 @@ FROM shippers   ;
 SELECT CustomerID, CustomerName, City, Country
 FROM customers;
 
+SELECT ProductID, ProductName, Unit, Price
+FROM products;
+
