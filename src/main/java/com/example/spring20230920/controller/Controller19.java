@@ -196,4 +196,26 @@ public class Controller19 {
         model.addAttribute("customerList", list);
     }
 
+    @GetMapping("sub7")
+    public String method7(Model model) throws SQLException {
+        String sql = """
+                SELECT ProductID, ProductName, Unit, Price
+                FROM products
+                """;
+
+        Connection connection = dataSource.getConnection();
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(sql);
+
+        List<MyDto16> list = new ArrayList<>();
+        try (connection; statement; resultSet) {
+            while (resultSet.next()) {
+
+            }
+        }
+
+        return "/main19/sub5";
+
+    }
+
 }
