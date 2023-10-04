@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 @Controller
@@ -37,6 +38,32 @@ public class Controller19 {
         }
 
         return "/main18/sub1";
+    }
+
+    @GetMapping("sub2")
+    public void method2() throws Exception {
+        String sql = """
+                SELECT *
+                FROM shippers      
+                """;
+
+        Connection connection = dataSource.getConnection();
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(sql);
+
+        try (connection; statement; resultSet) {
+            boolean next1 = resultSet.next();
+            boolean next2 = resultSet.next();
+            boolean next3 = resultSet.next();
+            boolean next4 = resultSet.next();
+
+            System.out.println("next1 = " + next1);
+            System.out.println("next2 = " + next2);
+            System.out.println("next3 = " + next3);
+            System.out.println("next4 = " + next4);
+        }
+
+
     }
 
 }

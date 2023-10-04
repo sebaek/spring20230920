@@ -41,3 +41,7 @@ SELECT CategoryName
 FROM categories
 WHERE CategoryID = 2;
 
+--
+SELECT *
+FROM shippers   ;
+
