@@ -258,4 +258,26 @@ public class Controller20 {
             }
         }
     }
+
+    @GetMapping("sub10")
+    public void method10(Model model) throws SQLException {
+        // 공급자의 국가 목록 조회
+        String sql = """
+                SELECT DISTINCT country 
+                FROM suppliers
+                """;
+
+        Connection connection = dataSource.getConnection();
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(sql);
+
+        List<String> list = new ArrayList<>();
+        try (connection; statement; resultSet) {
+            while (resultSet.next()) {
+                list.add(resultSet.getString(1));
+            }
+        }
+
+        model.addAttribute("countryList", list);
+    }
 }
