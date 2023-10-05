@@ -116,9 +116,28 @@ public class Controller20 {
     }
 
     // /main20/sub5?country=spain
-    // 콘솔에 spain에 사는 고객 이름 출력
+    // 콘솔에 spain에 사는 고객들 이름 출력
     @GetMapping("sub5")
-    public void method5() {
-        
+    public void method5(String country) throws SQLException {
+        String sql = """
+                SELECT customerName
+                FROM customers
+                WHERE country = ?
+                """;
+        Connection connection = dataSource.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setString(1, country);
+
+        ResultSet resultSet = statement.executeQuery();
+
+        try (connection; statement; resultSet) {
+            System.out.println();
+            System.out.println(country + "에 사는 고객들");
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString(1));
+            }
+
+        }
+
     }
 }
