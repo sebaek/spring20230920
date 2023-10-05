@@ -14,8 +14,8 @@
 <body>
 <h4>가격으로 상품조회</h4>
 <form action="/main20/sub8">
-  <input type="number" name="min"> ~
-  <input type="number" name="max">
+  <input type="number" name="min" value="10"> ~
+  <input type="number" name="max" value="30">
   <button>조회</button>
 </form>
 </body>
