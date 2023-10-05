@@ -169,4 +169,9 @@ public class Controller20 {
         }
 
     }
+
+    @GetMapping("sub7")
+    public void method7() {
+
+    }
 }
