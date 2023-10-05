@@ -273,13 +273,16 @@ public class Controller19 {
     }
 
     @GetMapping("sub11")
-    public String method11(Integer cid, Model model) throws SQLException {
+    public String method11(String cid, Model model) throws SQLException {
         // 쿼리 작성 (method6 참고)
         String sql = """
                 SELECT CustomerID, CustomerName, Address, Country
                 FROM customers
                 WHERE CustomerID = 
                 """ + cid;
+
+        System.out.println("sql = " + sql);
+
         // 쿼리 실행
         Connection connection = dataSource.getConnection();
         Statement statement = connection.createStatement();
