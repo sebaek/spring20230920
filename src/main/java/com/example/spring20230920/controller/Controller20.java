@@ -89,4 +89,22 @@ public class Controller20 {
         }
 
     }
+
+    // /main20/sub4?pid=5
+    @GetMapping("sub4")
+    public void method4() {
+        String sql = """
+                SELECT productId, productName
+                FROM products
+                WHERE productId = ?
+                """;
+
+        while (resultSet.next()) {
+            System.out.println();
+            System.out.println("상품 정보");
+            System.out.println("상품번호 = " + resultSet.getInt(1));
+            System.out.println("상품명 = " + resutSet.getString(2));
+        }
+
+    }
 }
