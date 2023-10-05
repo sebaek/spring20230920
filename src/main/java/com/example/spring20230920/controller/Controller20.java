@@ -114,4 +114,11 @@ public class Controller20 {
         }
 
     }
+
+    // /main20/sub5?country=spain
+    // 콘솔에 spain에 사는 고객 이름 출력
+    @GetMapping("sub5")
+    public void method5() {
+        
+    }
 }
