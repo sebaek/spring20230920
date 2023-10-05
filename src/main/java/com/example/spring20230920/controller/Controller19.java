@@ -1,6 +1,7 @@
 package com.example.spring20230920.controller;
 
 import com.example.spring20230920.domain.MyDto15;
+import com.example.spring20230920.domain.MyDto16;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -210,9 +211,17 @@ public class Controller19 {
         List<MyDto16> list = new ArrayList<>();
         try (connection; statement; resultSet) {
             while (resultSet.next()) {
+                MyDto16 row = new MyDto16();
+                row.setPid(resultSet.getInt(1));
+                row.setProductName(resultSet.getString(2));
+                row.setUnit(resultSet.getString(3));
+                row.setPrice(resultSet.getDouble(4));
 
+                list.add(row);
             }
         }
+
+        model.addAttribute("productList", list);
 
         return "/main19/sub5";
 
