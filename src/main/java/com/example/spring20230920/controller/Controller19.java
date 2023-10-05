@@ -267,4 +267,23 @@ public class Controller19 {
         return "/main19/sub5";
     }
 
+    @GetMapping("sub10")
+    public void method10() {
+
+    }
+
+    @GetMapping("sub11")
+    public String method11() {
+        // 쿼리 작성 (method6 참고)
+
+        // 쿼리 실행
+
+        // 실행 결과 처리 (method6 참고, MyDto15 사용)
+
+        // 처리한 결과 model에 attribute로 넣고
+
+        // view 로 forward
+        return "/main19/sub6";
+    }
+
 }
