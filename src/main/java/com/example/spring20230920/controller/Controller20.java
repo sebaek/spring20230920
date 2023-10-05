@@ -62,4 +62,31 @@ public class Controller20 {
 
         return "/main19/sub6";
     }
+
+    @GetMapping("sub3")
+    public void method3(String id) throws SQLException {
+        String sql = """
+                SELECT customerId, customerName, country
+                FROM customers
+                WHERE customerId = ?
+                """;
+
+        Connection connection = dataSource.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        statement.setString(1, id);
+//        statement.setInt(1, 3);
+
+        ResultSet resultSet = statement.executeQuery();
+
+        try (connection; statement; resultSet) {
+            while (resultSet.next()) {
+                System.out.println();
+                System.out.println("고객 정보");
+                System.out.println("id = " + resultSet.getString(1));
+                System.out.println("name = " + resultSet.getString(2));
+            }
+        }
+
+    }
 }
