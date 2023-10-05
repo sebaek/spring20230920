@@ -1,6 +1,7 @@
 package com.example.spring20230920.controller;
 
 import com.example.spring20230920.domain.MyDto15;
+import com.example.spring20230920.domain.MyDto16;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -172,6 +173,40 @@ public class Controller20 {
 
     @GetMapping("sub7")
     public void method7() {
+
+    }
+
+    @GetMapping("sub8")
+    public String method8(Double min, Double max, Model model) throws SQLException {
+        String sql = """
+                SELECT productId, productName, unit, price
+                FROM products
+                WHERE price <= ? AND price >= ?
+                """;
+
+        Connection connection = dataSource.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setDouble(1, max);
+        statement.setDouble(2, min);
+
+        ResultSet resultSet = statement.executeQuery();
+
+        List<MyDto16> list = new ArrayList<>();
+        try (connection; statement; resultSet) {
+            while (resultSet.next()) {
+                MyDto16 dto = new MyDto16();
+                dto.setPid(resultSet.getInt(1));
+                dto.setProductName(resultSet.getString(2));
+                dto.setUnit(resultSet.getString(3));
+                dto.setPrice(resultSet.getDouble(4));
+
+                list.add(dto);
+            }
+        }
+
+        model.addAttribute("productList", list);
+
+        return "/main19/sub5";
 
     }
 }
