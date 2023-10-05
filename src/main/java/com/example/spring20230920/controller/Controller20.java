@@ -140,4 +140,33 @@ public class Controller20 {
         }
 
     }
+
+    @GetMapping("sub6")
+    public void method6(String c1, String c2) throws SQLException {
+        String sql = """
+                SELECT customerName, country
+                FROM customers
+                WHERE country = ? OR country = ?
+                """;
+
+        Connection connection = dataSource.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        statement.setString(1, c1);
+        statement.setString(2, c2);
+
+        ResultSet resultSet = statement.executeQuery();
+
+        try (connection; statement; resultSet) {
+
+            System.out.println();
+            System.out.println("고객 목록");
+            while (resultSet.next()) {
+                String country = resultSet.getString(2);
+                String name = resultSet.getString(1);
+                System.out.println(country + ":" + name);
+            }
+        }
+
+    }
 }
