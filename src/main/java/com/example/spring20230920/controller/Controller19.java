@@ -307,4 +307,63 @@ public class Controller19 {
         return "/main19/sub6";
     }
 
+    @GetMapping("sub12")
+    public void method12(Model model) throws SQLException {
+        String sql = """
+                SELECT DISTINCT country 
+                FROM customers
+                """;
+
+        Connection connection = dataSource.getConnection();
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(sql);
+
+        List<String> list = new ArrayList<>();
+
+        try (connection; statement; resultSet) {
+            while (resultSet.next()) {
+                String country = resultSet.getString(1);
+
+                list.add(country);
+            }
+
+        }
+
+        model.addAttribute("countryList", list);
+    }
+
+    @GetMapping("sub13")
+    public String method13(String country, Model model) throws SQLException {
+        String sql = """
+                SELECT CustomerID, CustomerName, Address, Country
+                FROM customers
+                WHERE Country = '""" + country + "'";
+
+        // 쿼리 실행
+        Connection connection = dataSource.getConnection();
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(sql);
+
+        List<MyDto15> list = new ArrayList<>();
+
+        try (connection; statement; resultSet) {
+
+            // 실행 결과 처리 (method6 참고, MyDto15 사용)
+            while (resultSet.next()) {
+                MyDto15 dto = new MyDto15();
+                dto.setId(resultSet.getInt(1));
+                dto.setName(resultSet.getString(2));
+                dto.setAddress(resultSet.getString(3));
+                dto.setCountry(resultSet.getString(4));
+
+                list.add(dto);
+            }
+        }
+        // 처리한 결과 model에 attribute로 넣고
+        model.addAttribute("customerList", list);
+
+        // view 로 forward
+        return "/main19/sub6";
+    }
+
 }
