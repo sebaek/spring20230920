@@ -44,13 +44,27 @@ public class Controller21 {
     }
 
     @GetMapping("sub2")
-    public void method2() {
+    public void method2() throws SQLException {
         String sql = """
                 SELECT CONCAT(lastName, ', ', firstName) AS fullName,
                        BirthDate AS birth,
                        Notes AS `DESC`
                 FROM employees
                 """;
+        Connection connection = dataSource.getConnection();
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(sql);
+
+        try (connection; statement; resultSet) {
+            System.out.println("직원 목록#");
+            while (resultSet.next()) {
+                String name = resultSet.getString("fullName");
+                String birth = resultSet.getString("birth");
+                String desc = resultSet.getString("desc");
+
+                System.out.println(name + " : " + birth + " : " + desc);
+            }
+        }
     }
 
 
