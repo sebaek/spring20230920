@@ -218,25 +218,25 @@ public class Controller20 {
         for (int i = 0; i < countryList.size(); i++) {
             questionMarks += "?";
 
-            if (i < countryList.size()-1) {
+            if (i < countryList.size() - 1) {
                 questionMarks += ", ";
             }
         }
         // 특정 국가에 속한 고객들 조회
         String sql = """
-                SELECT *
-                FROM customers
-                WHERE country IN ("""
+                             SELECT *
+                             FROM customers
+                             WHERE country IN ("""
 
-                +
+                     +
 
-                questionMarks
+                     questionMarks
 
-                +
+                     +
 
-                """
-                )
-                """;
+                     """
+                             )
+                             """;
 
 //        System.out.println("sql = " + sql);
 
@@ -279,5 +279,49 @@ public class Controller20 {
         }
 
         model.addAttribute("countryList", list);
+    }
+
+    @GetMapping("sub11")
+    public void method11(@RequestParam("country") List<String> countryList) throws SQLException {
+        // /main20/sub11?country=UK&country=USA
+        // /main20/sub11?country=UK&country=Japan&country=USA
+
+        String questionMarks = "";
+
+        for (int i = 0; i < countryList.size(); i++) {
+            questionMarks += "?";
+
+            if (i < countryList.size() - 1) {
+                questionMarks += ", ";
+            }
+
+        }
+
+        String sql = """
+                             SELECT *
+                             FROM suppliers
+                             WHERE country IN (
+                             """
+                     + questionMarks + ")";
+
+        Connection connection = dataSource.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        for (int i = 0; i < countryList.size(); i++) {
+            statement.setString(i + 1, countryList.get(i));
+        }
+
+        ResultSet resultSet = statement.executeQuery();
+
+        try (connection; statement; resultSet) {
+            System.out.println("##########공급자 목록#########");
+            while (resultSet.next()) {
+                String name = resultSet.getString(2);
+                String country = resultSet.getString(7);
+
+                System.out.println(name + " : " + country);
+            }
+        }
+
     }
 }
