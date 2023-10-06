@@ -47,4 +47,8 @@ public class Controller22 {
             }
         }
     }
+
+    // 페이지당 7개 씩 공급자 목록 조회
+    // /main22/sub2?p=2
+    
 }
