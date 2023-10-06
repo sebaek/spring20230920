@@ -33,7 +33,9 @@
     </c:forEach>
 </table>
 <div>
-    <a href="/main22/sub3?p=${prevPageNumber}">이전</a> |
+    <c:if test="${prevPageNumber > 0}">
+        <a href="/main22/sub3?p=${prevPageNumber}">이전</a> |
+    </c:if>
     <c:forEach begin="${leftPageNumber}" end="${rightPageNumber}" var="pageNumber">
         <a
                 <c:if test="${pageNumber == currentPage}">
@@ -42,7 +44,9 @@
                 href="/main22/sub3?p=${pageNumber}">${pageNumber}</a>
         |
     </c:forEach>
-    <a href="/main22/sub3?p=${nextPageNumber}">다음</a>
+    <c:if test="${lastPageNumber >= nextPageNumber}">
+        <a href="/main22/sub3?p=${nextPageNumber}">다음</a>
+    </c:if>
 </div>
 
 </body>
