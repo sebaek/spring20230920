@@ -103,4 +103,11 @@ public class Controller22 {
 
         model.addAttribute("supplierList", list);
     }
+
+    // /main22/sub3?p=2
+    // 2페이지 고객목록을 jsp에 테이블 형식 (id, name)출력
+    // page 번호로 링크 생성
+    // 1페이지에 15개씩
+
+
 }
