@@ -46,3 +46,19 @@ SELECT ProductName, Price
 FROM products
 ORDER BY Price
 LIMIT 3, 3;
+
+-- 페이지 나누기
+SELECT CustomerID, CustomerName FROM customers
+ORDER BY CustomerID; -- 91 개 row
+SELECT CustomerID, CustomerName FROM customers
+ORDER BY CustomerID
+LIMIT 0, 10; -- 1페이지 10개
+SELECT CustomerID, CustomerName FROM customers
+ORDER BY CustomerID
+LIMIT 10, 10; -- 2페이지 10개
+SELECT CustomerID, CustomerName FROM customers
+ORDER BY CustomerID
+LIMIT 20, 10; -- 3페이지 10개
+SELECT CustomerID, CustomerName FROM customers
+ORDER BY CustomerID
+LIMIT 90, 10; -- 마지막 페이지 10개
