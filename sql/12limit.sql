@@ -14,4 +14,12 @@ ORDER BY Price DESC
 LIMIT 10;
 
 -- 예) 가장 어린 3명의 직원 조회
+SELECT * FROM employees
+ORDER BY BirthDate DESC
+LIMIT 3;
+
 -- 예) 2번 카테고리에서 가장 저렴한 상품 조회
+SELECT * FROM products
+WHERE CategoryID = 2
+ORDER BY Price
+LIMIT 1;
