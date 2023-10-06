@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -48,7 +49,34 @@ public class Controller22 {
         }
     }
 
-    // 페이지당 7개 씩 공급자 목록 조회
+    // 페이지당 7개 씩 공급자 목록 조회 (공급자 번호 순)
     // /main22/sub2?p=2
-    
+    @GetMapping("sub2")
+    public void method2(@RequestParam("p") Integer page) throws SQLException {
+        String sql = """
+                SELECT supplierId id,
+                       supplierName name
+                FROM suppliers
+                ORDER BY id
+                LIMIT ?, ?
+                """;
+
+        Connection connection = dataSource.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        statement.setInt(1, (page - 1) * 7);
+        statement.setInt(2, 7);
+
+        ResultSet resultSet = statement.executeQuery();
+
+        try (connection; statement; resultSet) {
+            System.out.println(page + "페이지 공급자 목록");
+            while (resultSet.next()) {
+                String id = resultSet.getString("id");
+                String name = resultSet.getString("name");
+
+                System.out.println(id + " : " + name);
+            }
+        }
+    }
 }
