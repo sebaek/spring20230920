@@ -131,10 +131,11 @@ public class Controller22 {
         Statement statement1 = connection.createStatement();
         ResultSet resultSet1 = statement1.executeQuery(sql1);
 
+        int lastPageNumber = 1;
         try (connection; statement; statement1; resultSet; resultSet1) {
             if (resultSet1.next()) {
                 int countAll = resultSet1.getInt(1);
-                int lastPageNumber = (countAll - 1) / 5 + 1;
+                lastPageNumber = (countAll - 1) / 5 + 1;
 
                 model.addAttribute("lastPageNumber", lastPageNumber);
             }
@@ -151,6 +152,14 @@ public class Controller22 {
         }
 
         model.addAttribute("currentPage", page);
+
+        int leftPageNumber = (page - 1) / 5 * 5 + 1;
+        int rightPageNumber = leftPageNumber + 4;
+
+        rightPageNumber = Math.min(rightPageNumber, lastPageNumber);
+
+        model.addAttribute("leftPageNumber", leftPageNumber);
+        model.addAttribute("rightPageNumber", rightPageNumber);
 
     }
 

@@ -33,7 +33,7 @@
     </c:forEach>
 </table>
 <div>
-    <c:forEach begin="1" end="${lastPageNumber}" var="pageNumber">
+    <c:forEach begin="${leftPageNumber}" end="${rightPageNumber}" var="pageNumber">
     <a
             <c:if test="${pageNumber == currentPage}">
             class="active"
