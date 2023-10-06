@@ -33,15 +33,16 @@
     </c:forEach>
 </table>
 <div>
+    <a href="/main22/sub3?p=${prevPageNumber}">이전</a> |
     <c:forEach begin="${leftPageNumber}" end="${rightPageNumber}" var="pageNumber">
-    <a
-            <c:if test="${pageNumber == currentPage}">
-            class="active"
-            </c:if>
-            href="/main22/sub3?p=${pageNumber}">${pageNumber}</a>
-    |
+        <a
+                <c:if test="${pageNumber == currentPage}">
+                class="active"
+                </c:if>
+                href="/main22/sub3?p=${pageNumber}">${pageNumber}</a>
+        |
     </c:forEach>
-
+    <a href="/main22/sub3?p=${nextPageNumber}">다음</a>
 </div>
 
 </body>

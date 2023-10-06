@@ -155,9 +155,13 @@ public class Controller22 {
 
         int leftPageNumber = (page - 1) / 5 * 5 + 1;
         int rightPageNumber = leftPageNumber + 4;
+        int prevPageNumber = leftPageNumber - 5;
+        int nextPageNumber = rightPageNumber + 1;
 
         rightPageNumber = Math.min(rightPageNumber, lastPageNumber);
 
+        model.addAttribute("prevPageNumber", prevPageNumber);
+        model.addAttribute("nextPageNumber", nextPageNumber);
         model.addAttribute("leftPageNumber", leftPageNumber);
         model.addAttribute("rightPageNumber", rightPageNumber);
 
