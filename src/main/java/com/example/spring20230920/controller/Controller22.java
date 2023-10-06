@@ -56,7 +56,7 @@ public class Controller22 {
     // 페이지당 7개 씩 공급자 목록 조회 (공급자 번호 순)
     // /main22/sub2?p=2
     @GetMapping("sub2")
-    public void method2(@RequestParam("p") Integer page,
+    public void method2(@RequestParam(value = "p", defaultValue = "1") Integer page,
                         Model model) throws SQLException {
         String sql = """
                 SELECT supplierId id,
