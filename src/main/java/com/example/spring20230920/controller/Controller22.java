@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -85,6 +82,25 @@ public class Controller22 {
 //                System.out.println(id + " : " + name);
             }
         }
+
+        String sql1 = """
+                SELECT COUNT(*) 
+                FROM suppliers
+                """;
+        Connection connection1 = dataSource.getConnection();
+        Statement statement1 = connection1.createStatement();
+        ResultSet resultSet1 = statement1.executeQuery(sql1);
+
+        try (connection1; statement1; resultSet1) {
+            if (resultSet1.next()) {
+                int countAll = resultSet1.getInt(1);
+                // 마지막 페이지 번호
+                int lastPageNumber = ((countAll - 1) / 7) + 1;
+
+                model.addAttribute("lastPageNumber", lastPageNumber);
+            }
+        }
+
         model.addAttribute("supplierList", list);
     }
 }

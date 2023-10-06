@@ -37,7 +37,7 @@
 </table>
 
 <div>
-    <c:forEach begin="1" end="10" var="pageNumber">
+    <c:forEach begin="1" end="${lastPageNumber}" var="pageNumber">
         <a href="/main22/sub2?p=${pageNumber}">${pageNumber}</a>
         |
     </c:forEach>
