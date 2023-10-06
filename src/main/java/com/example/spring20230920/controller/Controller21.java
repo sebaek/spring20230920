@@ -47,6 +47,7 @@ public class Controller21 {
     public void method2() throws SQLException {
         String sql = """
                 SELECT CONCAT(lastName, ', ', firstName) AS fullName,
+                       EmployeeID,
                        BirthDate AS birth,
                        Notes AS `DESC`
                 FROM employees

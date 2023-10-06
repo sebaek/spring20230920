@@ -27,3 +27,16 @@ SELECT supplierName,
        CONCAT(Address, ' ', City, ' ', Country) address,
        Phone `phone number`
 FROM suppliers;
+
+SELECT * FROM products;
+SELECT * FROM categories;
+
+SELECT products.ProductName,
+       categories.CategoryName
+FROM products JOIN categories
+    ON products.CategoryID = categories.CategoryID;
+
+SELECT p.ProductName,
+       c.CategoryName
+FROM products p JOIN categories c
+    ON p.CategoryID = c.CategoryID;
