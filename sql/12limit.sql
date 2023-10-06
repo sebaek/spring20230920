@@ -23,3 +23,26 @@ SELECT * FROM products
 WHERE CategoryID = 2
 ORDER BY Price
 LIMIT 1;
+
+-- LIMIT n : n 개
+-- LIMIT n, m : n부터 m개 (n은 0번부터)
+SELECT ProductName, Price
+FROM products
+ORDER BY Price
+LIMIT 3;
+SELECT ProductName, Price
+FROM products
+ORDER BY Price
+LIMIT 0, 3;
+SELECT ProductName, Price
+FROM products
+ORDER BY Price
+LIMIT 1, 3;
+SELECT ProductName, Price
+FROM products
+ORDER BY Price
+LIMIT 2, 3;
+SELECT ProductName, Price
+FROM products
+ORDER BY Price
+LIMIT 3, 3;
