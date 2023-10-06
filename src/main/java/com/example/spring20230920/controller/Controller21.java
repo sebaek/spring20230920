@@ -43,5 +43,15 @@ public class Controller21 {
         }
     }
 
-    
+    @GetMapping("sub2")
+    public void method2() {
+        String sql = """
+                SELECT CONCAT(lastName, ', ', firstName) AS fullName,
+                       BirthDate AS birth,
+                       Notes AS `DESC`
+                FROM employees
+                """;
+    }
+
+
 }
