@@ -10,6 +10,12 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        .active {
+            background-color: darkblue;
+            color: #eeeeee;
+        }
+    </style>
 </head>
 <body>
 <h4>고객 목록</h4>
@@ -28,7 +34,12 @@
 </table>
 <div>
     <c:forEach begin="1" end="${lastPageNumber}" var="pageNumber">
-        <a href="/main22/sub3?p=${pageNumber}">${pageNumber}</a> |
+    <a
+            <c:if test="${pageNumber == currentPage}">
+            class="active"
+            </c:if>
+            href="/main22/sub3?p=${pageNumber}">${pageNumber}</a>
+    |
     </c:forEach>
 
 </div>

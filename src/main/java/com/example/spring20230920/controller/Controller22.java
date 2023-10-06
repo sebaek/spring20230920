@@ -150,6 +150,8 @@ public class Controller22 {
             model.addAttribute("customerList", list);
         }
 
+        model.addAttribute("currentPage", page);
+
     }
 
 }
