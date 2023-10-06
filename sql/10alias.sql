@@ -38,5 +38,5 @@ FROM products JOIN categories
 
 SELECT p.ProductName,
        c.CategoryName
-FROM products p JOIN categories c
+FROM products AS p JOIN categories AS c -- AS 생략 가능
     ON p.CategoryID = c.CategoryID;
