@@ -107,7 +107,49 @@ public class Controller22 {
     // /main22/sub3?p=2
     // 2페이지 고객목록을 jsp에 테이블 형식 (id, name)출력
     // page 번호로 링크 생성
-    // 1페이지에 15개씩
+    // 1페이지에 5개씩
+    @GetMapping("sub3")
+    public void method3(@RequestParam(value = "p", defaultValue = "1") Integer page,
+                        Model model) throws SQLException {
+        String sql = """
+                SELECT customerId id,
+                       customerName name
+                FROM customers
+                ORDER BY id
+                LIMIT ?, 5
+                """;
 
+        String sql1 = """
+                SELECT COUNT(*) FROM customers
+                """;
+
+        Connection connection = dataSource.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setInt(1, (page - 1) * 5);
+        ResultSet resultSet = statement.executeQuery();
+
+        Statement statement1 = connection.createStatement();
+        ResultSet resultSet1 = statement1.executeQuery(sql1);
+
+        try (connection; statement; statement1; resultSet; resultSet1) {
+            if (resultSet1.next()) {
+                int countAll = resultSet1.getInt(1);
+                int lastPageNumber = (countAll - 1) / 5 + 1;
+
+                model.addAttribute("lastPageNumber", lastPageNumber);
+            }
+
+            List<Map<String, Object>> list = new ArrayList<>();
+
+            while (resultSet.next()) {
+                Integer id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+
+                list.add(Map.of("id", id, "name", name));
+            }
+            model.addAttribute("customerList", list);
+        }
+
+    }
 
 }
