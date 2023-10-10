@@ -25,8 +25,36 @@ INSERT INTO employees (EmployeeID, FirstName, LastName)
 INSERT INTO employees (EmployeeID, FirstName, LastName)
     VALUE (16, '김');
 
-SELECT * FROM employees ORDER BY EmployeeID DESC;
 
 -- 값의 타입에 따라 넣는 방법이 다름
+INSERT INTO employees (EmployeeID)
+VALUE (15); -- 권장
 
+INSERT INTO employees (EmployeeID)
+VALUE ('16'); -- 되긴 됨...
+
+INSERT INTO employees (LastName)
+VALUE ('son');
+
+INSERT INTO employees (LastName)
+VALUE ('10000'); -- 따옴표 사용 권장
+
+INSERT INTO employees (LastName)
+    VALUE (10000); -- 되긴 됨...
+
+INSERT INTO employees (BirthDate)
+VALUE ('2000-01-01');
+
+SELECT * FROM employees ORDER BY EmployeeID DESC;
+
+SELECT * FROM products;
+
+INSERT INTO products (Price)
+VALUE (20.10);
+
+INSERT INTO products (Price)
+VALUE ('30.33'); -- 되긴 됨...
+
+INSERT INTO products (Price)
+VALUE ('thirteen');
 
