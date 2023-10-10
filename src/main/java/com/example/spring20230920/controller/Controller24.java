@@ -13,6 +13,7 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 
 @Controller
 @RequestMapping("main24")
@@ -107,7 +108,7 @@ public class Controller24 {
         try (connection; statement) {
             statement.setString(1, employee.getLastName());
             statement.setString(2, employee.getFirstName());
-            statement.setString(3, employee.getBirthDate());
+            statement.setTimestamp(3, Timestamp.valueOf(employee.getBirthDate().atStartOfDay()));
             statement.setString(4, employee.getPhoto());
             statement.setString(5, employee.getNotes());
 
