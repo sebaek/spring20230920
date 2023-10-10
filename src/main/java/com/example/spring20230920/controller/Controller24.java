@@ -1,6 +1,7 @@
 package com.example.spring20230920.controller;
 
 import com.example.spring20230920.domain.MyDto17Supplier;
+import com.example.spring20230920.domain.MyDto18Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -91,5 +92,32 @@ public class Controller24 {
     @GetMapping("sub4")
     public void method4() {
 
+    }
+
+    @PostMapping("sub4")
+    public void method5(MyDto18Employee employee) throws SQLException {
+        String sql = """
+                INSERT INTO employees (LastName, FirstName, BirthDate, Photo, Notes)
+                VALUE (?, ?, ?, ?, ?)
+                """;
+
+        Connection connection = dataSource.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        try (connection; statement) {
+            statement.setString(1, employee.getLastName());
+            statement.setString(2, employee.getFirstName());
+            statement.setString(3, employee.getBirthDate());
+            statement.setString(4, employee.getPhoto());
+            statement.setString(5, employee.getNotes());
+
+            int count = statement.executeUpdate();
+
+            if (count == 1) {
+                System.out.println("잘 입력됨!!");
+            } else {
+                System.out.println("뭔가 잘 못됨@@@@");
+            }
+        }
     }
 }

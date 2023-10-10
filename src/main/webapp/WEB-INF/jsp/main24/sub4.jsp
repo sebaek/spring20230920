@@ -25,7 +25,7 @@
             <input type="date" name="birthDate" value="2002-02-02">
         </div>
         <div>
-            <input type="text" name="photo" value="사진🎨">
+            <input type="text" name="photo" value="사진">
         </div>
         <div>
             <textarea name="notes" id="" cols="30" rows="10"></textarea>

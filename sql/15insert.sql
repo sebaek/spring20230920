@@ -74,3 +74,5 @@ INSERT INTO products
 SELECT * FROM products ORDER BY ProductID DESC;
 
 SELECT * FROM suppliers ORDER BY 1 DESC ;
+
+SELECT * FROM employees ORDER BY 1 DESC ;
