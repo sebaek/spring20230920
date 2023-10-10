@@ -1,9 +1,11 @@
 package com.example.spring20230920.controller;
 
+import com.example.spring20230920.domain.MyDto17Supplier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -50,7 +52,7 @@ public class Controller24 {
     // suppliers 테이블에 하나의 레코드 추가하는 메소드 작성
 
     @GetMapping("sub2")
-    public void method2() throws SQLException {
+    public void method2(MyDto17Supplier supplier) throws SQLException {
         String sql = """
                 INSERT INTO suppliers 
                 (SupplierName, ContactName, Address, City, PostalCode, Country, Phone)
@@ -60,13 +62,13 @@ public class Controller24 {
         PreparedStatement statement = connection.prepareStatement(sql);
 
         try (connection; statement;) {
-            statement.setString(1, "손흥민");
-            statement.setString(2, "sonny");
-            statement.setString(3, "토트넘");
-            statement.setString(4, "런던");
-            statement.setString(5, "12345");
-            statement.setString(6, "영국");
-            statement.setString(7, "01099999999");
+            statement.setString(1, supplier.getSupplierName());
+            statement.setString(2, supplier.getContactName());
+            statement.setString(3, supplier.getAddress());
+            statement.setString(4, supplier.getCity());
+            statement.setString(5, supplier.getPostalCode());
+            statement.setString(6, supplier.getCountry());
+            statement.setString(7, supplier.getPhone());
 
             int count = statement.executeUpdate();
 
@@ -77,6 +79,11 @@ public class Controller24 {
             }
 
         }
+
+    }
+
+    @GetMapping("sub3")
+    public void method3() {
 
     }
 }
