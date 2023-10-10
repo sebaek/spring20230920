@@ -4,6 +4,7 @@ import com.example.spring20230920.domain.MyDto17Supplier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -51,7 +52,7 @@ public class Controller24 {
     // /main24/sub2 로 요청시
     // suppliers 테이블에 하나의 레코드 추가하는 메소드 작성
 
-    @GetMapping("sub2")
+    @PostMapping("sub2")
     public void method2(MyDto17Supplier supplier) throws SQLException {
         String sql = """
                 INSERT INTO suppliers 

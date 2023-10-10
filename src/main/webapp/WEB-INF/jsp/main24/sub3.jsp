@@ -13,7 +13,7 @@
 </head>
 <body>
 <h3>공급자 입력</h3>
-<form action="/main24/sub2">
+<form action="/main24/sub2" method="post">
   <%--div*8>input[name]--%>
     <div>
       공급자명
