@@ -87,4 +87,9 @@ public class Controller24 {
     public void method3() {
 
     }
+
+    @GetMapping("sub4")
+    public void method4() {
+
+    }
 }
