@@ -72,3 +72,5 @@ INSERT INTO products
     VALUE (83, '김치', 2, 2, '1 포기', 50.55);
 
 SELECT * FROM products ORDER BY ProductID DESC;
+
+SELECT * FROM suppliers ORDER BY 1 DESC ;

@@ -49,4 +49,34 @@ public class Controller24 {
     // /main24/sub2 로 요청시
     // suppliers 테이블에 하나의 레코드 추가하는 메소드 작성
 
+    @GetMapping("sub2")
+    public void method2() throws SQLException {
+        String sql = """
+                INSERT INTO suppliers 
+                (SupplierName, ContactName, Address, City, PostalCode, Country, Phone)
+                VALUE (?, ?, ?, ?, ?, ?, ?)
+                """;
+        Connection connection = dataSource.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        try (connection; statement;) {
+            statement.setString(1, "손흥민");
+            statement.setString(2, "sonny");
+            statement.setString(3, "토트넘");
+            statement.setString(4, "런던");
+            statement.setString(5, "12345");
+            statement.setString(6, "영국");
+            statement.setString(7, "01099999999");
+
+            int count = statement.executeUpdate();
+
+            if (count == 1) {
+                System.out.println("잘 입력됨");
+            } else {
+                System.out.println("뭔가 잘 못됨@@");
+            }
+
+        }
+
+    }
 }
