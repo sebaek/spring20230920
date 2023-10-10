@@ -65,4 +65,10 @@ INSERT INTO products (ProductID, ProductName, SupplierID, CategoryID, Unit, Pric
 INSERT INTO products (ProductName, SupplierID, CategoryID, Unit, Price)
     VALUE ('김치', 2, 2, '1 포기', 50.55);
 
+INSERT INTO products (ProductID, ProductName, SupplierID, CategoryID, Unit, Price)
+    VALUE (82, '김치', 2, 2, '1 포기', 50.55);
+
+INSERT INTO products
+    VALUE (83, '김치', 2, 2, '1 포기', 50.55);
+
 SELECT * FROM products ORDER BY ProductID DESC;
