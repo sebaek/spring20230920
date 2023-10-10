@@ -77,7 +77,7 @@ public class Controller23 {
 
     // /main23/sub3?st=name2&k=red
     @GetMapping("sub3")
-    public void method3(@RequestParam("st") String searchType,
+    public void method3(@RequestParam(value = "st", defaultValue = "name1") String searchType,
                         @RequestParam(value = "k", defaultValue = "") String keyword,
                         Model model) throws SQLException {
         String sql = """
