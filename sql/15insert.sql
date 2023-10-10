@@ -47,7 +47,6 @@ VALUE ('2000-01-01');
 
 SELECT * FROM employees ORDER BY EmployeeID DESC;
 
-SELECT * FROM products;
 
 INSERT INTO products (Price)
 VALUE (20.10);
@@ -57,4 +56,8 @@ VALUE ('30.33'); -- 되긴 됨...
 
 INSERT INTO products (Price)
 VALUE ('thirteen');
+
+SELECT * FROM products ORDER BY ProductID DESC;
+-- 예) 80 번 상품 입력 (productId, productName, supplierId, categoryId, unit, price)
+-- 예) 새 상품 입력 (productName, supplierId, categoryId, unit, price)
 
