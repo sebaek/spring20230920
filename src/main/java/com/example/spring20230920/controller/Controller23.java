@@ -112,4 +112,9 @@ public class Controller23 {
 
     }
 
+    @GetMapping("sub4")
+    public void method4() {
+
+    }
+
 }
