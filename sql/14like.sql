@@ -36,3 +36,8 @@ WHERE ProductName LIKE '%use%';
 -- 예) 두번째 글자가 u인 상품명 조회
 SELECT * FROM products
 WHERE ProductName LIKE '_u%';
+
+SELECT * FROM customers
+WHERE CustomerName LIKE '%red%';
+SELECT * FROM customers
+WHERE ContactName LIKE '%red%';

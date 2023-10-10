@@ -14,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("main23")
@@ -74,5 +75,41 @@ public class Controller23 {
         }
     }
 
+    // /main23/sub3?st=name2&k=red
+    @GetMapping("sub3")
+    public void method3(@RequestParam("st") String searchType,
+                        @RequestParam(value = "k", defaultValue = "") String keyword,
+                        Model model) throws SQLException {
+        String sql = """
+                SELECT * FROM customers
+                WHERE
+                """;
+
+        if (searchType.equals("name1")) {
+            sql += "customerName LIKE ?";
+        } else if (searchType.equals("name2")) {
+            sql += "contactName LIKE ?";
+        }
+
+        Connection connection = dataSource.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setString(1, "%" + keyword + "%");
+
+        ResultSet resultSet = statement.executeQuery();
+
+        List<Map<String, Object>> list = new ArrayList<>();
+        try (connection; statement; resultSet) {
+            while (resultSet.next()) {
+                String customerName = resultSet.getString("customerName");
+                String contactName = resultSet.getString("contactName");
+
+                list.add(Map.of("customerName", customerName, "contactName", contactName));
+            }
+            model.addAttribute("searchType", searchType);
+            model.addAttribute("keyword", keyword);
+            model.addAttribute("customers", list);
+        }
+
+    }
 
 }
