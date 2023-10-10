@@ -39,4 +39,10 @@ public class Controller23 {
             }
         }
     }
+
+    // /main23/sub2?k=erd
+    // erd 라는 텍스트가 중간에 있는 고객명 조회하는
+    // 2번째 메소드 작성
+    
+
 }
