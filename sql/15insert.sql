@@ -57,7 +57,12 @@ VALUE ('30.33'); -- 되긴 됨...
 INSERT INTO products (Price)
 VALUE ('thirteen');
 
-SELECT * FROM products ORDER BY ProductID DESC;
 -- 예) 80 번 상품 입력 (productId, productName, supplierId, categoryId, unit, price)
--- 예) 새 상품 입력 (productName, supplierId, categoryId, unit, price)
+INSERT INTO products (ProductID, ProductName, SupplierID, CategoryID, Unit, Price)
+    VALUE (80, '두부', 1, 1, '1 모', 30.33);
 
+-- 예) 새 상품 입력 (productName, supplierId, categoryId, unit, price)
+INSERT INTO products (ProductName, SupplierID, CategoryID, Unit, Price)
+    VALUE ('김치', 2, 2, '1 포기', 50.55);
+
+SELECT * FROM products ORDER BY ProductID DESC;
