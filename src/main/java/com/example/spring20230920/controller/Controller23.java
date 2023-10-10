@@ -113,7 +113,48 @@ public class Controller23 {
     }
 
     @GetMapping("sub4")
-    public void method4() {
+    public void method4(@RequestParam(value = "t", defaultValue = "lname") String searchType,
+                        @RequestParam(value = "k", defaultValue = "") String searchKeyword,
+                        Model model) throws SQLException {
+        String sql = """
+                SELECT * FROM employees
+                WHERE
+                """;
+
+        switch (searchType) {
+            case "lname":
+                sql += "LastName LIKE ?";
+                break;
+            case "fname":
+                sql += "FirstName LIKE ?";
+                break;
+            case "note":
+                sql += "Notes LIKE ?";
+        }
+
+        Connection connection = dataSource.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        statement.setString(1, "%" + searchKeyword + "%");
+        ResultSet resultSet = statement.executeQuery();
+
+        try (connection; statement; resultSet) {
+            List<Map<String, Object>> list = new ArrayList<>();
+
+            while (resultSet.next()) {
+                String lastName = resultSet.getString("LastName");
+                String firstName = resultSet.getString("FirstName");
+                String notes = resultSet.getString("notes");
+
+                list.add(Map.of("lastName", lastName,
+                        "firstName", firstName,
+                        "notes", notes));
+            }
+
+            model.addAttribute("keyword", searchKeyword);
+            model.addAttribute("type", searchType);
+            model.addAttribute("employees", list);
+        }
 
     }
 
