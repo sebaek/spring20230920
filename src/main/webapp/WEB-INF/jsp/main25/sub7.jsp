@@ -14,6 +14,13 @@
 <body>
 
 <h3>직원 정보 변경</h3>
+
+<c:if test="${not empty message}">
+    <div style="border: 1px solid gold; background-color: chartreuse;">
+        ${message}
+    </div>
+</c:if>
+
 <form action="/main25/sub7">
     변경할 직원 번호
     <input type="number" name="id">

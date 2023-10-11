@@ -1,5 +1,6 @@
 package com.example.spring20230920.controller;
 
+import com.example.spring20230920.domain.MyDto18Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,10 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.time.LocalDate;
 import java.util.Map;
 
@@ -204,5 +202,43 @@ public class Controller25 {
             }
         }
 
+    }
+
+    @PostMapping("sub7")
+    public String method8(MyDto18Employee employee, RedirectAttributes rttr) throws SQLException {
+        String sql = """
+                UPDATE employees
+                SET
+                    lastName = ?,
+                    firstName = ?,
+                    photo = ?,
+                    birthDate = ?,
+                    notes = ?
+                WHERE
+                    employeeId = ?
+                """;
+        Connection connection = dataSource.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+        try (connection; statement) {
+            statement.setString(1, employee.getLastName());
+            statement.setString(2, employee.getFirstName());
+            statement.setString(3, employee.getPhoto());
+            statement.setTimestamp(4, Timestamp.valueOf(employee.getBirthDate().atStartOfDay()));
+            statement.setString(5, employee.getNotes());
+            statement.setInt(6, employee.getId());
+
+            int rows = statement.executeUpdate();
+
+            if (rows == 1) {
+                rttr.addFlashAttribute("message", "직원 정보가 변경되었습니다.");
+            } else {
+                rttr.addFlashAttribute("message", "직원 정보가 변경되지 않았습니다.");
+            }
+
+        }
+
+        rttr.addAttribute("id", employee.getId());
+
+        return "redirect:/main25/sub7";
     }
 }
