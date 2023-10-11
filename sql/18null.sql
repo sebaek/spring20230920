@@ -41,5 +41,11 @@ ORDER BY ProductID DESC ;
 SELECT * FROM customers ORDER BY 1 DESC;
 
 -- 예) contactName이 null인 고객들 조회
+SELECT * FROM customers
+WHERE ContactName IS NULL;
 -- 예) address가 null인 고객들 조회
+SELECT * FROM customers
+WHERE  Address IS NULL ;
 -- 예) 고객들 조회 (customerName, country 컬럼만), 단 country가 null이면 '없음' 표시
+SELECT CustomerName, IFNULL(Country, '없음') Country
+FROM customers;
