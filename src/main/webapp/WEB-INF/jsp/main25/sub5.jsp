@@ -16,15 +16,15 @@
 <form action="" method="post">
     <div>
         번호
-        <input type="number" name="id">
+        <input type="number" name="id" value="${shipper.shipperId}" readonly>
     </div>
     <div>
         이름
-        <input type="text" name="name">
+        <input type="text" name="name" value="${shipper.shipperName}">
     </div>
     <div>
         전화번호
-        <input type="text" name="phone">
+        <input type="text" name="phone" value="${shipper.phone}">
     </div>
     <div>
         <button>수정</button>
