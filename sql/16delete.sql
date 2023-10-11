@@ -14,4 +14,8 @@ SELECT * FROM employees;
 DELETE FROM employees;
 
 -- 예) 직원테이블에 오늘 입력한 레코드들 지우기
+SELECT * FROM employees WHERE EmployeeID > 9;
+DELETE FROM employees WHERE EmployeeID > 9;
 -- 예) 상품테이블에 오늘 입력한 레코드들 지우기
+SELECT * FROM products WHERE ProductID > 77;
+DELETE FROM products WHERE ProductID > 77;
