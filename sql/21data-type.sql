@@ -34,9 +34,60 @@ VALUE (123.456);
 
 SELECT * FROM my_table5;
 
+-- 예) my_table6 만들기
+-- age 컬럼 정수 타입
+-- score 컬럼 총길이 7 소숫점 이하 길이 2인 숫자형
+CREATE TABLE my_table6 (
+    age INT,
+    score DEC(7, 2)
+);
+INSERT INTO my_table6 (age, score)
+VALUE (300, 2342.33);
+INSERT INTO my_table6 (age, score)
+VALUE (300, 2342.334);
+SELECT * FROM my_table6;
+
+-- 문자열 : VARCHAR
+CREATE TABLE my_table7 (
+    col1 VARCHAR(1),
+    col2 VARCHAR(2),
+    col3 VARCHAR(16000)
+);
+CREATE TABLE my_table8 (
+    col1 VARCHAR(8000),
+    col2 VARCHAR(8000)
+);
+
+INSERT INTO my_table7 (col1)
+VALUE ('a');
+INSERT INTO my_table7 (col1)
+    VALUE ('가');
+
+INSERT INTO my_table7 (col1)
+VALUE ('ab');
+
+INSERT INTO my_table7 (col2)
+VALUE ('a');
+INSERT INTO my_table7 (col2)
+VALUE ('ab');
+INSERT INTO my_table7 (col2)
+    VALUE ('가');
+INSERT INTO my_table7 (col2)
+    VALUE ('나다');
+INSERT INTO my_table7 (col2)
+VALUE ('abc');
+INSERT INTO my_table7 (col2)
+VALUE ('가나다');
+INSERT INTO my_table7 (col2)
+VALUE ('🎈🎆');
+
+SELECT * FROM my_table7;
 
 
-
+-- 예) my_table9 만들기
+-- name 문자열 최대길이 100자
+-- 주소 문자열 최대길이 200자
+-- 전화번호 문자열 최대길이 100자
 
 
 
