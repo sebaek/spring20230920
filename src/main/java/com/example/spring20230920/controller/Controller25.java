@@ -41,4 +41,9 @@ public class Controller25 {
             }
         }
     }
+
+    @GetMapping("sub2")
+    public void method2() {
+
+    }
 }
