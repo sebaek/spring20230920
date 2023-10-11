@@ -88,6 +88,42 @@ SELECT * FROM my_table7;
 -- name 문자열 최대길이 100자
 -- 주소 문자열 최대길이 200자
 -- 전화번호 문자열 최대길이 100자
+CREATE TABLE my_table9 (
+    name VARCHAR(100),
+    address VARCHAR(200),
+    phone_number VARCHAR(100)
+);
+
+-- 날짜
+CREATE TABLE my_table10 (
+    col1 DATE
+);
+INSERT INTO my_table10 (col1)
+VALUE ('2000-01-01');
+
+INSERT INTO my_table10 (col1)
+VALUE ('1500-03-01');
+INSERT INTO my_table10 (col1)
+VALUE (NOW());
+
+SELECT * FROM my_table10;
+
+-- 날짜시간 : DATETIME
+CREATE TABLE my_table11 (
+    col1 DATETIME
+);
+INSERT INTO my_table11 (col1)
+VALUE ('2002-12-30 14:05:12');
+INSERT INTO my_table11 (col1)
+VALUE ('1002-12-30 14:05:12');
+INSERT INTO my_table11 (col1)
+VALUE ('9992-12-30 14:05:12');
+
+INSERT INTO my_table11 (col1)
+VALUE (NOW());
+SELECT * FROM my_table11;
+
+SELECT NOW();
 
 
 
