@@ -3,6 +3,7 @@ package com.example.spring20230920.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -45,5 +46,26 @@ public class Controller25 {
     @GetMapping("sub2")
     public void method2() {
 
+    }
+
+    @PostMapping("sub2")
+    public void method3(@RequestParam("pid") Integer productId) throws SQLException {
+        String sql = """
+                DELETE FROM products
+                WHERE productId = ?
+                """;
+
+        Connection connection = dataSource.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+        try (connection; statement;) {
+            statement.setInt(1, productId);
+            int rows = statement.executeUpdate();
+
+            if (rows == 1) {
+                System.out.println("잘 지워짐");
+            } else {
+                System.out.println("뭔가 문제 생김");
+            }
+        }
     }
 }
