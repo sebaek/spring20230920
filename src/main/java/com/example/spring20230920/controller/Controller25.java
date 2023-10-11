@@ -241,4 +241,30 @@ public class Controller25 {
 
         return "redirect:/main25/sub7";
     }
+
+    @GetMapping("sub9")
+    public String method9(RedirectAttributes rttr) {
+        // Controller의 request handler 메소드의 리턴이
+        // void(또는 null 리턴)이면 view의 이름으로 해석
+
+        // String 이면 view의 이름으로 해석
+        // "redirect:" 접두어가 붙으면
+        // 응답코드가 302이고 location 응답헤더의 값이 접두어 이후의 값으로 셋팅
+
+        // 쿼리스트링에 request parameter로 붙음
+        rttr.addAttribute("abc", "def");
+        rttr.addAttribute("address", "seoul");
+
+        // 모델에 붙임 (session을 잠깐 거침)
+        rttr.addFlashAttribute("email", "abc@gmail.com");
+
+        return "redirect:/main25/sub10";
+    }
+
+    @GetMapping("sub10")
+    public void method10(Model model) {
+        Object email = model.getAttribute("email");
+        System.out.println("email = " + email);
+        System.out.println("Controller25.method10");
+    }
 }
