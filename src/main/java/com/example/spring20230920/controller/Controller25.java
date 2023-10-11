@@ -14,6 +14,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.Map;
 
 @Controller
@@ -164,5 +165,44 @@ public class Controller25 {
 
         rttr.addAttribute("id", shipperId);
         return "redirect:/main25/sub5";
+    }
+
+    @GetMapping("sub7")
+    public void method7(@RequestParam(value = "id", required = false) Integer employeeId, Model model) throws SQLException {
+        if (employeeId == null) {
+            return;
+        }
+        String sql = """
+                SELECT * FROM employees
+                WHERE employeeId = ?
+                """;
+
+        Connection connection = dataSource.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        try (connection; statement) {
+            statement.setInt(1, employeeId);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            try (resultSet) {
+                if (resultSet.next()) {
+                    String lastName = resultSet.getString("lastName");
+                    String firstName = resultSet.getString("firstName");
+                    LocalDate birthDate = resultSet.getTimestamp("birthDate").toLocalDateTime().toLocalDate();
+                    String photo = resultSet.getString("photo");
+                    String notes = resultSet.getString("notes");
+
+                    model.addAttribute("employee", Map.of("lastName", lastName,
+                            "firstName", firstName,
+                            "birthDate", birthDate,
+                            "photo", photo,
+                            "notes", notes,
+                            "employeeId", employeeId));
+
+                }
+            }
+        }
+
     }
 }
