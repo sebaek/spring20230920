@@ -68,4 +68,70 @@ public class Controller25 {
             }
         }
     }
+
+    @GetMapping("sub4")
+    public void method4() throws SQLException {
+        String sql = """
+                UPDATE shippers
+                SET
+                    shipperName = ?,
+                    phone = ?
+                WHERE
+                    shipperId = ?
+                """;
+        Connection connection = dataSource.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        try (connection; statement) {
+            statement.setString(1, "이강인");
+            statement.setString(2, "01077778888");
+            statement.setInt(3, 1);
+
+            int rows = statement.executeUpdate();
+
+            if (rows == 1) {
+                System.out.println("잘 변경됨");
+            } else {
+                System.out.println("뭔가 잘 못됨");
+            }
+
+        }
+
+    }
+
+    @GetMapping("sub5")
+    public void method5() {
+
+    }
+
+    @PostMapping("sub5")
+    public void method6(
+            @RequestParam("id") Integer shipperId,
+            @RequestParam("name") String shipperName,
+            @RequestParam("phone") String phone
+    ) throws SQLException {
+        String sql = """
+                UPDATE shippers
+                SET shipperName = ?,
+                    phone = ?
+                WHERE
+                    shipperId = ?
+                """;
+        Connection connection = dataSource.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+        try (connection; statement) {
+            statement.setString(1, shipperName);
+            statement.setString(2, phone);
+            statement.setInt(1, shipperId);
+
+            int rows = statement.executeUpdate();
+            
+            if (rows == 1) {
+                System.out.println("잘 변경됨");
+            } else {
+                System.out.println("문제 생김");
+            }
+
+        }
+    }
 }
