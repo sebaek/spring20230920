@@ -120,3 +120,6 @@ CREATE TABLE `my_table35_person` (
                                      CONSTRAINT `my_table35_person_ibfk_1` FOREIGN KEY (`school_id`) REFERENCES `my_table36_school` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- 외래키, 참조키, FK (foreign key)
+
+
