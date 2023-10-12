@@ -74,4 +74,5 @@ FROM products p JOIN categories c
 WHERE ProductName = 'chais';
 
 -- 예) chais 상품의 공급자명, 전화번호
--- 예) 
+-- 예) 1996년 7월 4일 에 주문한 고객명 (customers, orders)
+-- 예) 1996년 7월 4일 에 주문을 담당한 직원명 (employees, orders)
