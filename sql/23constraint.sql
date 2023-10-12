@@ -92,3 +92,22 @@ SELECT * FROM my_table18;
 CREATE TABLE my_table19 (
     col1 INT NOT NULL UNIQUE DEFAULT 100
 );
+
+-- 테이블의 컬럼과 타입,제약사항 등을 확인
+-- DESCRIBE, DESC
+DESCRIBE my_table18;
+DESC my_table18;
+
+DESC my_table15;
+
+-- TABLE 생성 쿼리 확인
+SHOW CREATE TABLE my_table15;
+CREATE TABLE `my_table15` (
+                              `col1` int(11) DEFAULT NULL,
+                              `col2` int(11) NOT NULL,
+                              `col3` int(11) DEFAULT NULL,
+                              `col4` int(11) NOT NULL,
+                              UNIQUE KEY `col4` (`col4`),
+                              UNIQUE KEY `col3` (`col3`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+;
