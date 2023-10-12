@@ -52,6 +52,43 @@ INSERT INTO my_table15 (col1, col2, col3, col4)
 VALUE (11, 22, 44, NULL); -- not ok
 INSERT INTO my_table15 (col1, col2, col3, col4)
 VALUE (11, 22, 44, 55); -- ok
+INSERT INTO my_table15 (col1, col3, col4)
+VALUE (11, 44, 55); -- not ok
 
 SELECT * FROM my_table15;
 
+-- 예) my_table16 로 연습
+
+-- DEFAULT : 기본값
+CREATE TABLE my_table17 (
+    col1 INT,
+    col2 INT DEFAULT 100, -- 값을 넣지 않으면 100
+    col3 VARCHAR(10) DEFAULT 'empty', -- 값을 넣지 않으면 'empty'
+    col4 DATETIME DEFAULT NOW() -- 값을 넣지 않으면 현재 일시
+);
+
+INSERT INTO my_table17 (col1, col2, col3, col4)
+VALUE (22, 33, 'son', '2023-11-11 22:23:24');
+INSERT INTO my_table17 (col1)
+VALUE (222);
+INSERT INTO my_table17 (col1, col2, col3, col4)
+VALUE (333, NULL, NULL, NULL);
+
+SELECT * FROM my_table17;
+
+CREATE TABLE my_table18 (
+    col1 INT,
+    col2 INT DEFAULT 300,
+    col3 INT NOT NULL DEFAULT 500
+);
+INSERT INTO my_table18 (col1, col2, col3)
+VALUE (3, NULL, NULL); -- not ok
+INSERT INTO my_table18 (col1, col3)
+VALUE (3, 222); -- ok
+INSERT INTO my_table18 (col1)
+VALUE (4);
+SELECT * FROM my_table18;
+
+CREATE TABLE my_table19 (
+    col1 INT NOT NULL UNIQUE DEFAULT 100
+);
