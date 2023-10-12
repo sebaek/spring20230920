@@ -139,5 +139,42 @@ WHERE p.ProductName = 'chais';
 
 
 -- 예) 'Chang'상품의 공급자명, 카테고리명 조회
+SELECT p.ProductName, s.SupplierName, c.CategoryName
+FROM products p
+         JOIN suppliers s
+              ON p.SupplierID = s.SupplierID
+         JOIN categories c
+              ON p.CategoryID = c.CategoryID
+WHERE p.ProductName = 'Chang';
 -- 예) 1996년 7월 9일에 주문한 고객명과, 처리한 직원명
+SELECT c.CustomerName, e.LastName, e.FirstName
+FROM orders o
+         JOIN customers c
+              ON o.CustomerID = c.CustomerID
+         JOIN employees e
+              ON o.EmployeeID = e.EmployeeID
+WHERE o.OrderDate = '1996-07-09';
 -- 예) 1996년 7월 9일에 주문한 상품명 (orders, orderDetails, products)
+SELECT ProductName
+FROM orders o
+         JOIN orderdetails od
+              ON o.OrderID = od.OrderID
+         JOIN products p
+              ON od.ProductID = p.ProductID
+WHERE o.OrderDate = '1996-07-09';
+
+-- 예) 'Chang' 상품이 주문된 날짜들
+SELECT p.ProductName,
+       o.OrderDate,
+       c.CustomerName,
+       CONCAT(e.FirstName, ' ', e.LastName) FullName
+FROM products p
+         JOIN orderdetails od
+              ON p.ProductID = od.ProductID
+         JOIN orders o
+              ON od.OrderID = o.OrderID
+         JOIN customers c
+              ON o.CustomerID = c.CustomerID
+         JOIN employees e
+              ON o.EmployeeID = e.EmployeeID
+WHERE ProductName = 'Chang';
