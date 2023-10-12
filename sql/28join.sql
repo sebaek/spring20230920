@@ -74,5 +74,21 @@ FROM products p JOIN categories c
 WHERE ProductName = 'chais';
 
 -- 예) chais 상품의 공급자명, 전화번호
+DESC products;
+DESC suppliers;
+SELECT SupplierName, Phone
+FROM products p JOIN suppliers s
+    ON p.SupplierID = s.SupplierID
+WHERE ProductName = 'chais';
 -- 예) 1996년 7월 4일 에 주문한 고객명 (customers, orders)
+SELECT CustomerName
+FROM customers c JOIN orders o
+    ON c.CustomerID = o.CustomerID
+WHERE o.OrderDate = '1996-07-04';
 -- 예) 1996년 7월 4일 에 주문을 담당한 직원명 (employees, orders)
+SELECT e.LastName, e.FirstName
+FROM employees e JOIN orders o
+    ON e.EmployeeID = o.EmployeeID
+WHERE o.OrderDate = '1996-07-08';
+
+SELECT * FROM orders WHERE OrderDate = '1996-07-08';
