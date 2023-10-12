@@ -111,3 +111,28 @@ CREATE TABLE `my_table15` (
                               UNIQUE KEY `col3` (`col3`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 ;
+
+-- CHECK : 값의 유효범위 체크
+CREATE TABLE my_table20 (
+    col1 INT,
+    col2 INT CHECK ( col2 > 100 ),
+    col3 INT CHECK ( col3 > 1000 AND col3 < 2000 )
+);
+DESC my_table20;
+SHOW CREATE TABLE my_table20;
+CREATE TABLE `my_table20` (
+                              `col1` int(11) DEFAULT NULL,
+                              `col2` int(11) DEFAULT NULL CHECK (`col2` > 100),
+                              `col3` int(11) DEFAULT NULL CHECK (`col3` > 1000 and `col3` < 2000)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO my_table20 (col1, col2, col3)
+VALUE (10000, 50, -10); -- not ok
+
+INSERT INTO my_table20 (col1, col2, col3)
+VALUE (10000, 150, 1500); -- ok
+
+
+
+
+
