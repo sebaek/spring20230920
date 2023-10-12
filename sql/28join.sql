@@ -60,4 +60,18 @@ WHERE product_name = '콜라'
 
 SELECT *
 FROM table_a JOIN table_b
-WHERE table_a.category_id = table_b.category_id;
+    ON table_a.category_id = table_b.category_id -- join 조건
+WHERE product_name = '콜라';
+
+SELECT ProductID, ProductName, CategoryName
+FROM products JOIN categories
+     ON products.CategoryID = categories.CategoryID
+WHERE ProductName = 'chais';
+
+SELECT ProductID, ProductName, CategoryName
+FROM products p JOIN categories c
+     ON p.CategoryID = c.CategoryID
+WHERE ProductName = 'chais';
+
+-- 예) chais 상품의 공급자명, 전화번호
+-- 예) 
