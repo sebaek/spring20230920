@@ -136,3 +136,8 @@ FROM products p
          JOIN categories c
               ON p.CategoryID = c.CategoryID
 WHERE p.ProductName = 'chais';
+
+
+-- 예) 'Chang'상품의 공급자명, 카테고리명 조회
+-- 예) 1996년 7월 9일에 주문한 고객명과, 처리한 직원명
+-- 예) 1996년 7월 9일에 주문한 상품명 (orders, orderDetails, products)
