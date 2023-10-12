@@ -91,6 +91,16 @@ VALUE ('080101', '흥민', '대학', '노래');
 INSERT INTO my_table25_person (ssn, name, school, skill)
     VALUE ('090101', '강인', '대학', '농구');
 INSERT INTO my_table25_person (ssn, name, school, skill)
-    VALUE ('090101', '흥민', '대학', '축구');
+    VALUE ('090101', '강인', '대학', '축구');
 
 SELECT * FROM my_table25_person;
+
+CREATE TABLE my_table26_person (
+   id INT PRIMARY KEY AUTO_INCREMENT, -- PRIMARY KEY : NOT NULL UNIQUE
+   ssn VARCHAR(10) NOT NULL ,
+   name VARCHAR(10) NOT NULL ,
+   school VARCHAR(10),
+   skill VARCHAR(10)
+);
+DESC my_table25_person;
+DESC my_table26_person;
