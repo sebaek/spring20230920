@@ -68,3 +68,37 @@ FROM orders o JOIN orderdetails od ON o.OrderID = od.OrderID
 WHERE p.CategoryID = 1;
 
 SELECT * FROM orderdetails;
+
+-- 예) 주문한 적 없는 고객들
+SELECT CustomerID FROM orders;
+
+SELECT * FROM customers WHERE CustomerID NOT IN (SELECT CustomerID FROM orders);
+
+-- 행여러개 열여러개
+SELECT * FROM customers;
+
+SELECT SupplierName, Address, Country FROM suppliers;
+
+INSERT INTO customers (CustomerName, Address, Country)
+(SELECT SupplierName, Address, Country FROM suppliers);
+
+INSERT INTO customers (CustomerName, Address, Country)
+(SELECT ContactName, City, Phone FROM suppliers);
+
+INSERT INTO customers (CustomerName, Address, Country)
+(SELECT ContactName, City, Phone, Country FROM suppliers);
+
+SELECT * FROM customers
+WHERE (City, Country)
+          IN (SELECT City, Country FROM suppliers);
+
+CREATE TABLE table_c
+SELECT CustomerName, City, Country FROM customers;
+
+SELECT * FROM table_c;
+DESC table_c;
+
+-- 예) 1번 카테고리에 있는 상품들로 새 테이블을 만드는데
+--     새로운 테이블(table_d)은 productName, categoryName, price 컬럼이 있도록...
+
+SELECT * FROM products;
