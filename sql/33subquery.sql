@@ -58,11 +58,13 @@ SELECT ProductID FROM products WHERE CategoryID = 1;
 SELECT OrderID FROM orderdetails
          WHERE ProductID IN (SELECT ProductID FROM products WHERE CategoryID = 1);
 -- 예) 1번 카테고리에 있는 상품이 주문된 날짜 (orderDetails, products)
-SELECT OrderDate FROM orders
+SELECT OrderID, OrderDate FROM orders
 WHERE OrderID IN (SELECT OrderID FROM orderdetails
                   WHERE ProductID IN (SELECT ProductID FROM products WHERE CategoryID = 1));
 
-SELECT *
+SELECT DISTINCT o.OrderID, o.OrderDate
 FROM orders o JOIN orderdetails od ON o.OrderID = od.OrderID
      JOIN products p ON od.ProductID = p.ProductID
 WHERE p.CategoryID = 1;
+
+SELECT * FROM orderdetails;
