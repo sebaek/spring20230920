@@ -25,3 +25,9 @@ FROM suppliers s;
 
 -- 예) 각 직원보다 나이가 많은 직원의 수 (lastName, NumberOfEmp)
 SELECT * FROM employees;
+SELECT
+    LastName,
+    (SELECT COUNT(*) FROM employees e2
+     WHERE e1.BirthDate > e2.BirthDate) NumbrOfEmp
+    FROM employees e1;
+
