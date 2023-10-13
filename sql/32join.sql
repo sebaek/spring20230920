@@ -13,6 +13,7 @@ SELECT ProductID, ProductName, Price FROM products
 WHERE ProductName = 'Ipoh Coffee';
 SELECT ProductID, ProductName, Price FROM products
 WHERE Price > 46.00;
+
 SELECT p1.ProductID, p1.ProductName, p1.Price
 FROM products p1 JOIN products p2
 WHERE p1.Price > p2.Price
