@@ -100,5 +100,11 @@ DESC table_c;
 
 -- 예) 1번 카테고리에 있는 상품들로 새 테이블을 만드는데
 --     새로운 테이블(table_d)은 productName, categoryName, price 컬럼이 있도록...
+CREATE TABLE table_d
+SELECT p.ProductName, c.CategoryName, p.Price FROM products p JOIN categories c
+ON p.CategoryID = c.CategoryID
+WHERE p.CategoryID = 1;
+
+SELECT * FROM table_d;
 
 SELECT * FROM products;
