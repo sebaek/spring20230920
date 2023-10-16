@@ -50,6 +50,17 @@ SELECT *
 FROM products
 WHERE IFNULL(Price, 0) = (SELECT MIN(IFNULL(Price, 0)) FROM products);
 
+-- SUM : 합
+SELECT * FROM products;
+SELECT SUM(Price) FROM products;
+
+SELECT SUM(od.Quantity)
+FROM orders o JOIN orderdetails od
+  ON o.OrderID = od.OrderID
+WHERE o.OrderDate = '1996-07-04';
+
+-- 예) 96년 7월 4일 매출액 구하기
+
 
 
 
