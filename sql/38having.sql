@@ -17,3 +17,7 @@ FROM customers c JOIN orders o ON c.CustomerID = o.CustomerID
 GROUP BY c.CustomerID
 HAVING `총 주문금액` >= 100000
 ORDER BY `총 주문금액` DESC;
+
+
+-- 예) 총 처리 금액이 10만 달러 미만인 직원 조회
+-- orders, orderDetails, products, employees
