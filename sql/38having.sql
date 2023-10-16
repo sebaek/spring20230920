@@ -21,3 +21,10 @@ ORDER BY `총 주문금액` DESC;
 
 -- 예) 총 처리 금액이 10만 달러 미만인 직원 조회
 -- orders, orderDetails, products, employees
+SELECT e.LastName, e.FirstName, SUM(p.Price * od.Quantity) `총 처리금액`
+FROM employees e JOIN orders o ON e.EmployeeID = o.EmployeeID
+                 JOIN orderdetails od ON o.OrderID = od.OrderID
+                 JOIN products p ON p.ProductID = od.ProductID
+GROUP BY e.EmployeeID
+HAVING SUM(p.Price * od.Quantity) < 100000;
+-- HAVING `총 처리금액` < 100000;
