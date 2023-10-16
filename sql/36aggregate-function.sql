@@ -66,11 +66,13 @@ FROM orders o JOIN orderdetails od
      JOIN products p ON od.ProductID = p.ProductID
 WHERE o.OrderDate = '1996-07-04';
 
-SELECT SUM(p.Price * od.Quantity)
-FROM orders o JOIN orderdetails od
-                   ON o.OrderID = od.OrderID
-              JOIN products p ON od.ProductID = p.ProductID
+SELECT SUM(p.Price * od.Quantity) 매출액
+FROM orders o
+         JOIN orderdetails od ON o.OrderID = od.OrderID
+         JOIN products p ON od.ProductID = p.ProductID
 WHERE o.OrderDate = '1996-07-04';
+
+
 
 
 
