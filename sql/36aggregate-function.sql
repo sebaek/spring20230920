@@ -72,7 +72,11 @@ FROM orders o
          JOIN products p ON od.ProductID = p.ProductID
 WHERE o.OrderDate = '1996-07-04';
 
-
+-- AVG : 평균
+SELECT AVG(Price) FROM products; -- 28.866364
+SELECT SUM(Price) FROM products; -- 2222.71
+SELECT COUNT(ProductID) FROM products; -- 78
+SELECT COUNT(Price) FROM products; -- 77
 
 
 
