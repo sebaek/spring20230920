@@ -32,12 +32,24 @@ ORDER BY o.OrderDate;
 
 -- 예) 직원별 총 주문 처리액 조회
 --     직원명, 직원별 주문 처리액
+SELECT e.LastName, e.FirstName, SUM(p.Price * od.Quantity) `총 처리금액`
+FROM employees e JOIN orders o ON e.EmployeeID = o.EmployeeID
+                 JOIN orderdetails od ON o.OrderID = od.OrderID
+                 JOIN products p ON p.ProductID = od.ProductID
+WHERE o.OrderDate >= '1996-08-01' AND o.OrderDate < '1996-09-01'
+GROUP BY e.EmployeeID
+ORDER BY `총 처리금액` DESC ;
 
 
 
 -- 예) 고객별 총 주문 금액 조회
 --     고객명, 고객별 주문 금액
-
+SELECT c.CustomerName, SUM(p.Price * od.Quantity) `총 주문금액`
+FROM customers c JOIN orders o ON c.CustomerID = o.CustomerID
+                 JOIN orderdetails od ON o.OrderID = od.OrderID
+                 JOIN products p ON od.ProductID = p.ProductID
+GROUP BY c.CustomerID
+ORDER BY 2 DESC;
 
 
 
