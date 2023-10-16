@@ -60,6 +60,17 @@ FROM orders o JOIN orderdetails od
 WHERE o.OrderDate = '1996-07-04';
 
 -- 예) 96년 7월 4일 매출액 구하기
+SELECT o.OrderDate, p.ProductName, p.Price, od.Quantity
+FROM orders o JOIN orderdetails od
+                   ON o.OrderID = od.OrderID
+     JOIN products p ON od.ProductID = p.ProductID
+WHERE o.OrderDate = '1996-07-04';
+
+SELECT SUM(p.Price * od.Quantity)
+FROM orders o JOIN orderdetails od
+                   ON o.OrderID = od.OrderID
+              JOIN products p ON od.ProductID = p.ProductID
+WHERE o.OrderDate = '1996-07-04';
 
 
 
