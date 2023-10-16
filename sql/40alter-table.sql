@@ -33,6 +33,7 @@ ALTER col3 SET DEFAULT 100;
 ALTER TABLE my_table46
 ALTER col3 DROP DEFAULT ;
 
-DESC my_table46;
+-- 예) col4에 기본값 0 제약사항 추가
+-- 예) col4의 default 제약사항 삭제
 
--- 예) 
+DESC my_table46;
