@@ -15,6 +15,11 @@ public class MyApp6 {
 
         MyClass9 myClass9 = context.getBean("myClass9", MyClass9.class);
         myClass9.method9();
+
+        System.out.println("myClass9.getField1() = " + myClass9.getField1());
+
+        Object myClass10 = context.getBean("myClass10");
+        System.out.println("myClass10 = " + myClass10);
     }
 }
 
@@ -40,6 +45,10 @@ class MyClass9 {
     @Autowired // Dependency Injection (DI, 의존성 주입)
     public void setField1(MyClass10 field1) {
         this.field1 = field1;
+    }
+
+    public MyClass10 getField1() {
+        return field1;
     }
 
     public void method9() {
