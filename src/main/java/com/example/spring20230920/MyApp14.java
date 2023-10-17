@@ -13,6 +13,9 @@ public class MyApp14 {
         ApplicationContext context = SpringApplication.run(MyApp14.class, args);
         Object bean1 = context.getBean("myBean1");
         System.out.println("bean1 = " + bean1);
+
+        Object bean2 = context.getBean("myBean2");
+        System.out.println("bean2 = " + bean2);
     }
 }
 
@@ -25,6 +28,11 @@ class Configuration1 {
     // bean의 이름은 메소드명과 같음
     @Bean
     public MyClass27 myBean1() {
+        return new MyClass27();
+    }
+
+    @Bean
+    public MyClass27 myBean2() {
         return new MyClass27();
     }
 }
