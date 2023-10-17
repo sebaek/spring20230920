@@ -16,6 +16,9 @@ public class MyApp3 {
 
         Object bean2 = context.getBean("controller02");
         System.out.println("bean2 = " + bean2);
+
+        Object bean3 = context.getBean("myApp3");
+        System.out.println("bean3 = " + bean3);
     }
 }
 @Component // spring bean의 이름을 명시하지 않으면 클래스이름 -> lowerCamelCase
