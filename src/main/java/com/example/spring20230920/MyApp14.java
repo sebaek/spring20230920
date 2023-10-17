@@ -16,6 +16,22 @@ public class MyApp14 {
 
         Object bean2 = context.getBean("myBean2");
         System.out.println("bean2 = " + bean2);
+
+        Configuration1 conf = context.getBean("configuration1", Configuration1.class);
+        MyClass27 obj1 = conf.myBean1();
+        MyClass27 obj2 = conf.myBean2();
+
+        System.out.println("obj1 = " + obj1);
+        System.out.println("obj2 = " + obj2);
+
+        System.out.println(conf.myBean1());
+        System.out.println(conf.myBean1());
+        System.out.println(new MyClass27());
+        System.out.println(new MyClass27());
+
+        System.out.println("conf = " + conf);
+
+
     }
 }
 
