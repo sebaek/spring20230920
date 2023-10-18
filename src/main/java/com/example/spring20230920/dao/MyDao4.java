@@ -1,6 +1,7 @@
 package com.example.spring20230920.dao;
 
 import com.example.spring20230920.domain.*;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -63,4 +64,10 @@ public interface MyDao4 {
             LIMIT #{dto1.from}, #{dto1.rows}
             """)
     List<String> select7(MyDto29 dto1, MyDto30 dto2);
+
+    @Insert("""
+            INSERT INTO customers (CustomerName, Country)
+            VALUE (#{name}, #{country})
+            """)
+    int insert1(MyDto31 dto);
 }

@@ -80,4 +80,13 @@ public class Controller30 {
         System.out.println("dto1.getPage() = " + dto1.getPage());
         names.forEach(System.out::println);
     }
+
+    // /main30/sub8?name=son&country=korea
+    @GetMapping("sub8")
+    public void method8(MyDto31 dto) {
+
+        int row = dao.insert1(dto);
+
+        System.out.println(row + "행이 입력되었습니다.");
+    }
 }
