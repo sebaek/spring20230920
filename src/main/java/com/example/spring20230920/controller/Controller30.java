@@ -71,6 +71,7 @@ public class Controller30 {
         LIMIT 10, 10
          */
 
+        //코드 작성....
 
         List<String> names = dao.select7(dto1, dto2);
     }
