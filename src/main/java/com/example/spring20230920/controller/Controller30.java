@@ -28,6 +28,7 @@ public class Controller30 {
         names.forEach(System.out::println);
     }
 
+    // /main30/sub3?from=1996-08-01&to=1996-08-31
     @GetMapping("sub3")
     public void method3(LocalDate from, LocalDate to) {
         List<String> list = dao.select3(from, to);
