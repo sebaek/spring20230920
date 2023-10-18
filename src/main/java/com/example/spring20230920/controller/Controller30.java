@@ -45,4 +45,12 @@ public class Controller30 {
         List<String> list = dao.select4(dto);
         System.out.println("list.size() = " + list.size());
     }
+
+    // /main30/sub5?country1=germany&country2=france
+    @GetMapping("sub5")
+    public void method5(MyDto26 dto) {
+        // country1과 country2에 사는 고객명들 출력
+        List<String> list = dao.select5(dto);
+        list.forEach(System.out::println);
+    }
 }
