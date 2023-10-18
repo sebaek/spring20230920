@@ -101,6 +101,19 @@ public interface MyDao3 {
             ORDER BY Price
             """)
     List<Map<String, Object>> select13();
+
+    @Select("""
+SELECT ProductName name,
+       Quantity,
+       Price
+FROM products p JOIN orderdetails od 
+                  ON p.ProductID = od.ProductID
+                JOIN orders o 
+                  ON od.OrderID = o.OrderID
+WHERE o.OrderDate = '1996-07-04'
+ORDER BY name
+""")
+    List<Map<String, Object>> select14();
 }
 
 
