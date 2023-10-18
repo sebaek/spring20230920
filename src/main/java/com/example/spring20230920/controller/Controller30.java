@@ -1,10 +1,7 @@
 package com.example.spring20230920.controller;
 
 import com.example.spring20230920.dao.MyDao4;
-import com.example.spring20230920.domain.MyDto25;
-import com.example.spring20230920.domain.MyDto26;
-import com.example.spring20230920.domain.MyDto27;
-import com.example.spring20230920.domain.MyDto28;
+import com.example.spring20230920.domain.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -62,5 +59,19 @@ public class Controller30 {
     public void method6(MyDto27 dto1, MyDto28 dto2) {
         Integer num = dao.select6(dto1, dto2);
         System.out.println("num = " + num);
+    }
+
+    // /main30/sub7?page=2&rows=10&keyword=a
+    @GetMapping("sub7")
+    public void method7(MyDto29 dto1, MyDto30 dto2) {
+        /*
+        SELECT customerName
+        FROM customers
+        WHERE customerName LIKE '%a%'
+        LIMIT 10, 10
+         */
+
+
+        List<String> names = dao.select7(dto1, dto2);
     }
 }
