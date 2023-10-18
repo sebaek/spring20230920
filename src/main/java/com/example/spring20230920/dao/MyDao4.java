@@ -1,6 +1,9 @@
 package com.example.spring20230920.dao;
 
 import com.example.spring20230920.domain.MyDto25;
+import com.example.spring20230920.domain.MyDto26;
+import com.example.spring20230920.domain.MyDto27;
+import com.example.spring20230920.domain.MyDto28;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -41,4 +44,18 @@ public interface MyDao4 {
         WHERE price BETWEEN #{min} AND #{max}
         """)
     List<String> select4(MyDto25 dto);
+
+    @Select("""
+        SELECT CustomerName
+        FROM customers
+        WHERE Country IN (#{country1}, #{country2})
+        """)
+    List<String> select5(MyDto26 dto);
+
+    @Select("""
+            SELECT COUNT(OrderID)
+            FROM orders
+            WHERE OrderDate BETWEEN #{dto1.from} AND #{dto2.to}
+            """)
+    Integer select6(MyDto27 dto1, MyDto28 dto2);
 }

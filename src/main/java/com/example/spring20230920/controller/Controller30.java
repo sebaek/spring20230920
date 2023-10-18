@@ -2,6 +2,9 @@ package com.example.spring20230920.controller;
 
 import com.example.spring20230920.dao.MyDao4;
 import com.example.spring20230920.domain.MyDto25;
+import com.example.spring20230920.domain.MyDto26;
+import com.example.spring20230920.domain.MyDto27;
+import com.example.spring20230920.domain.MyDto28;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -49,8 +52,15 @@ public class Controller30 {
     // /main30/sub5?country1=germany&country2=france
     @GetMapping("sub5")
     public void method5(MyDto26 dto) {
-        // country1과 country2에 사는 고객명들 출력
+        // country1또는 country2에 사는 고객명들 출력
         List<String> list = dao.select5(dto);
         list.forEach(System.out::println);
+    }
+
+    // /main30/sub6?from=1996-09-01&to=1996-09-30
+    @GetMapping("sub6")
+    public void method6(MyDto27 dto1, MyDto28 dto2) {
+        Integer num = dao.select6(dto1, dto2);
+        System.out.println("num = " + num);
     }
 }
