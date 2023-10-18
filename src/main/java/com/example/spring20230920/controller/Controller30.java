@@ -5,6 +5,7 @@ import com.example.spring20230920.domain.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDate;
@@ -88,5 +89,16 @@ public class Controller30 {
         int row = dao.insert1(dto);
 
         System.out.println(row + "행이 입력되었습니다.");
+    }
+
+    @GetMapping("sub9")
+    public void method9() {
+
+    }
+
+    @PostMapping("sub10")
+    public void method10(MyDto32 emp) {
+        int row = dao.insert2(emp);
+        System.out.println(row + "행이 입력됨");
     }
 }
