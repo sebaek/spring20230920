@@ -58,4 +58,11 @@ public interface MyDao3 {
             WHERE CustomerID = 1
             """)
     Map<String, Object> select8();
+
+    @Select("""
+            SELECT productName pname, price, CategoryName category
+            FROM products p JOIN categories c ON p.CategoryID = c.CategoryID
+            WHERE p.ProductID = 1
+            """)
+    Map<String, Object> select9();
 }

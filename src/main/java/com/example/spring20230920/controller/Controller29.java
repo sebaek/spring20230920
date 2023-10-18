@@ -74,6 +74,7 @@ public class Controller29 {
     @GetMapping("sub9")
     public void method9() {
         // 1번 상품의 상품명, 가격, 카테고리명
-        dao3.select9();
+        Map<String, Object> map = dao3.select9();
+        map.entrySet().forEach(System.out::println);
     }
 }
