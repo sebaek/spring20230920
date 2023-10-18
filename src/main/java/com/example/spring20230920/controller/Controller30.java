@@ -72,7 +72,12 @@ public class Controller30 {
          */
 
         //코드 작성....
+//        dto1.setFrom((dto1.getPage() - 1) * dto1.getRows());
+//        dto2.setKeyword("%" + dto2.getKeyword() + "%");
 
         List<String> names = dao.select7(dto1, dto2);
+
+        System.out.println("dto1.getPage() = " + dto1.getPage());
+        names.forEach(System.out::println);
     }
 }
