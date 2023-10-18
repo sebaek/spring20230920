@@ -33,6 +33,7 @@ public class Controller30 {
     public void method3(LocalDate from, LocalDate to) {
         List<String> list = dao.select3(from, to);
         list.forEach(System.out::println);
+        System.out.println("list.size() = " + list.size());
 
         // from~to 에 주문된 상품명 출력 (정렬해서, 중복없이)
     }
