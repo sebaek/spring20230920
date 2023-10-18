@@ -70,4 +70,10 @@ public interface MyDao4 {
             VALUE (#{name}, #{country})
             """)
     int insert1(MyDto31 dto);
+
+    @Insert("""
+            INSERT INTO employees (LastName, FirstName)
+            VALUE (#{lastName}, #{firstName})
+            """)
+    int insert2(MyDto32 emp);
 }
