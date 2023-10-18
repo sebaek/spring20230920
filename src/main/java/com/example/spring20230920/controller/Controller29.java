@@ -54,11 +54,13 @@ public class Controller29 {
     public void method6() {
         // 직원들의 생일 조회
         List<LocalDate> births = dao3.select6();
+        System.out.println("births = " + births.size());
     }
 
     @GetMapping("sub7")
     public void method7() {
         // 상품의 가격들 조회
         List<Double> priceList = dao3.select7();
+        System.out.println("priceList = " + priceList.size());
     }
 }

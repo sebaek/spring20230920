@@ -40,4 +40,14 @@ public interface MyDao3 {
             ORDER BY 1 
             """)
     List<String> select5();
+
+    @Select("""
+        SELECT BirthDate FROM employees
+        """)
+    List<LocalDate> select6();
+
+    @Select("""
+        SELECT Price FROM products
+        """)
+    List<Double> select7();
 }
