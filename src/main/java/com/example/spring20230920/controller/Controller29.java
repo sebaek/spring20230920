@@ -1,9 +1,7 @@
 package com.example.spring20230920.controller;
 
 import com.example.spring20230920.dao.MyDao3;
-import com.example.spring20230920.domain.MyDto19;
-import com.example.spring20230920.domain.MyDto20;
-import com.example.spring20230920.domain.MyDto21;
+import com.example.spring20230920.domain.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -118,5 +116,25 @@ public class Controller29 {
         // orders, orderDetails, products
 
         list.forEach(System.out::println);
+    }
+
+    @GetMapping("sub15")
+    public void method15() {
+        List<MyDto22> list = dao3.select15();
+        // 1996년 7월 4일에 주문된 상품명, 상품의수량, 상품의 가격
+        // orders, orderDetails, products
+
+        list.forEach(System.out::println);
+    }
+
+    // sub16 요청시
+    // 1번 카테고리 상품들이 주문된 날짜, 상품명, 카테고리명, 수량, 가격
+    // 날짜, 상품명 순으로 정렬
+    @GetMapping("sub16")
+    public void method16() {
+        List<MyDto23> list = dao3.select16();
+        list.forEach(System.out::println);
+
+        System.out.println("list.size() = " + list.size());
     }
 }
