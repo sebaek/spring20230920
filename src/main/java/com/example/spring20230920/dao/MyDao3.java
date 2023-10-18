@@ -4,6 +4,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Mapper
 public interface MyDao3 {
@@ -33,4 +34,10 @@ public interface MyDao3 {
             WHERE EmployeeID = 2
             """)
     LocalDate select4();
+
+    @Select("""
+            SELECT DISTINCT Country FROM customers
+            ORDER BY 1 
+            """)
+    List<String> select5();
 }

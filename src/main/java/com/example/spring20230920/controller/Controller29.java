@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -40,5 +41,24 @@ public class Controller29 {
         // 2번 직원의 생일 조회 후 출력
         LocalDate birth = dao3.select4();
         System.out.println("birth = " + birth);
+    }
+
+    @GetMapping("sub5")
+    public void method5() {
+        List<String> countrys = dao3.select5();
+
+        countrys.forEach(System.out::println);
+    }
+
+    @GetMapping("sub6")
+    public void method6() {
+        // 직원들의 생일 조회
+        List<LocalDate> births = dao3.select6();
+    }
+
+    @GetMapping("sub7")
+    public void method7() {
+        // 상품의 가격들 조회
+        List<Double> priceList = dao3.select7();
     }
 }
