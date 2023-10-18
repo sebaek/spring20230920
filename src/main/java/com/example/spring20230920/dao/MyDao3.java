@@ -13,4 +13,10 @@ public interface MyDao3 {
             WHERE CustomerID = 1
             """)
     String select1();
+
+    @Select("""
+            SELECT price FROM products
+            WHERE ProductID = 1
+            """)
+    Double select2();
 }

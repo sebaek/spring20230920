@@ -18,4 +18,23 @@ public class Controller29 {
         String name = dao3.select1();
         System.out.println("name = " + name);
     }
+
+    @GetMapping("sub2")
+    public void method2() {
+        Double price = dao3.select2();
+
+        System.out.println("price = " + price);
+    }
+
+    @GetMapping("sub3")
+    public void method3() {
+        // 1번 직원의 LastName 조회 후 출력
+        dao3.select3();
+    }
+
+    @GetMapping("sub4")
+    public void method4() {
+        // 2번 직원의 생일 조회 후 출력
+        dao3.select4();
+    }
 }
