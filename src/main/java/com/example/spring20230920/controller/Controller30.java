@@ -39,12 +39,9 @@ public class Controller30 {
         // from~to 에 주문된 상품명 출력 (정렬해서, 중복없이)
     }
 
+    // /main30/sub4?min=1.00&max=80.00
     @GetMapping("sub4")
-    public void method4() {
-        MyDto25 dto = new MyDto25();
-        dto.setMin(1.00);
-        dto.setMax(80.00);
-
+    public void method4(MyDto25 dto) {
         List<String> list = dao.select4(dto);
         System.out.println("list.size() = " + list.size());
     }
