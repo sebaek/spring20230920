@@ -110,4 +110,11 @@ public class Controller29 {
             System.out.println("row = " + row);
         }
     }
+
+    @GetMapping("sub14")
+    public void method14() {
+        dao3.select14();
+        // 1996년 7월 4일에 주문된 상품명, 상품의수량, 상품의 가격
+        // orders, orderDetails, products
+    }
 }
