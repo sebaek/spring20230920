@@ -1,6 +1,8 @@
 package com.example.spring20230920.controller;
 
 import com.example.spring20230920.dao.MyDao3;
+import com.example.spring20230920.domain.MyDto19;
+import com.example.spring20230920.domain.MyDto20;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -76,5 +78,24 @@ public class Controller29 {
         // 1번 상품의 상품명, 가격, 카테고리명
         Map<String, Object> map = dao3.select9();
         map.entrySet().forEach(System.out::println);
+    }
+
+    @GetMapping("sub10")
+    public void method10() {
+        MyDto19 dto = dao3.select10();
+        System.out.println("dto = " + dto);
+    }
+
+    @GetMapping("sub11")
+    public void method11() {
+        MyDto20 dto = dao3.select11();
+        System.out.println("dto = " + dto);
+    }
+
+    @GetMapping("sub12")
+    public void method12() {
+        MyDto21 dto = dao3.select12();
+        // 2번 고객의 id, name, country 조회
+        // MyDto21 의 property (id, name, country)
     }
 }
