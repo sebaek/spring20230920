@@ -1,6 +1,7 @@
 package com.example.spring20230920.controller;
 
 import com.example.spring20230920.dao.MyDao4;
+import com.example.spring20230920.domain.MyDto25;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,5 +37,15 @@ public class Controller30 {
         System.out.println("list.size() = " + list.size());
 
         // from~to 에 주문된 상품명 출력 (정렬해서, 중복없이)
+    }
+
+    @GetMapping("sub4")
+    public void method4() {
+        MyDto25 dto = new MyDto25();
+        dto.setMin(1.00);
+        dto.setMax(80.00);
+
+        List<String> list = dao.select4(dto);
+        System.out.println("list.size() = " + list.size());
     }
 }

@@ -1,5 +1,6 @@
 package com.example.spring20230920.dao;
 
+import com.example.spring20230920.domain.MyDto25;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -33,4 +34,11 @@ public interface MyDao4 {
             ORDER BY 1
             """)
     List<String> select3(LocalDate min, LocalDate max);
+
+    @Select("""
+        SELECT ProductName
+        FROM products
+        WHERE price BETWEEN #{min} AND #{max}
+        """)
+    List<String> select4(MyDto25 dto);
 }
