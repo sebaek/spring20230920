@@ -91,6 +91,7 @@ public class Controller30 {
         System.out.println(row + "행이 입력되었습니다.");
     }
 
+    // /main30/sub9
     @GetMapping("sub9")
     public void method9() {
 
