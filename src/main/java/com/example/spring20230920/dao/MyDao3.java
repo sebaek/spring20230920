@@ -168,7 +168,7 @@ public interface MyDao3 {
                    CustomerName name,
                    Country
             FROM customers
-            WHERE CustomerID = 1
+            WHERE CustomerID > 1
             """)
     MyDto24 select20();
 }

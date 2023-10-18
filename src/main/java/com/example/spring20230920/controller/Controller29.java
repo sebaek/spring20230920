@@ -158,6 +158,6 @@ public class Controller29 {
 
     @GetMapping("sub20")
     public void method20() {
-        dao3.select20();
+        MyDto24 myDto24 = dao3.select20();
     }
 }
