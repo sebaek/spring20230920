@@ -139,6 +139,38 @@ public interface MyDao3 {
             ORDER BY `date`, name
             """)
     List<MyDto23> select16();
+
+    @Select("""
+        SELECT CustomerName 
+        FROM customers
+        WHERE CustomerID = 100
+        """)
+    String select17();
+
+    @Select("""
+        SELECT CustomerID
+        FROM customers
+        WHERE CustomerID = 100
+        """)
+    Integer select18();
+
+    @Select("""
+            SELECT CustomerID id,
+                   CustomerName name,
+                   Country
+            FROM customers
+            WHERE CustomerID = 1
+            """)
+    MyDto24 select19();
+
+    @Select("""
+            SELECT CustomerID id,
+                   CustomerName name,
+                   Country
+            FROM customers
+            WHERE CustomerID = 1
+            """)
+    MyDto24 select20();
 }
 
 

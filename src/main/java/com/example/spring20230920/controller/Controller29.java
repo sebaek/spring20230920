@@ -137,4 +137,27 @@ public class Controller29 {
 
         System.out.println("list.size() = " + list.size());
     }
+
+    @GetMapping("sub17")
+    public void method17() {
+        String s = dao3.select17();
+        System.out.println("s = " + s);
+    }
+
+    @GetMapping("sub18")
+    public void method18() {
+        Integer s = dao3.select18();
+        System.out.println("s = " + s);
+    }
+
+    @GetMapping("sub19")
+    public void method19() {
+        MyDto24 dto = dao3.select19();
+        System.out.println("dto = " + dto);
+    }
+
+    @GetMapping("sub20")
+    public void method20() {
+        dao3.select20();
+    }
 }
