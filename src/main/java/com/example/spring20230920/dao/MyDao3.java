@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Select;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface MyDao3 {
@@ -50,4 +51,11 @@ public interface MyDao3 {
         SELECT Price FROM products
         """)
     List<Double> select7();
+
+    @Select("""
+            SELECT CustomerID, CustomerName, Address 
+            FROM customers
+            WHERE CustomerID = 1
+            """)
+    Map<String, Object> select8();
 }

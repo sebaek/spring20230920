@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
@@ -62,5 +63,17 @@ public class Controller29 {
         // 상품의 가격들 조회
         List<Double> priceList = dao3.select7();
         System.out.println("priceList = " + priceList.size());
+    }
+
+    @GetMapping("sub8")
+    public void method8() {
+        Map<String, Object> row = dao3.select8();
+        System.out.println("row = " + row);
+    }
+
+    @GetMapping("sub9")
+    public void method9() {
+        // 1번 상품의 상품명, 가격, 카테고리명
+        dao3.select9();
     }
 }
