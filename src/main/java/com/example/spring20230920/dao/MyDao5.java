@@ -106,4 +106,24 @@ public interface MyDao5 {
         </script>
         """)
     String select6();
+
+    @Select("""
+        <script>
+        SELECT * 
+        FROM customers
+        WHERE
+            country IN 
+            
+            <foreach collection="args" 
+                     item="elem" 
+                     separator=", "
+                     open="("
+                     close=")">
+                #{elem}
+            </foreach>
+            
+            
+        </script>
+        """)
+    String select7(List args);
 }

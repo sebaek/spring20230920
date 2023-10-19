@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(classes = Spring20230920Application.class)
@@ -21,5 +23,15 @@ class MyDao5Test {
     @Test
     void select6test1() {
         dao.select6();
+    }
+
+    @Test
+    void select7test1() {
+        dao.select7(List.of("mexico", "uk"));
+    }
+
+    @Test
+    void select7test2() {
+        dao.select7(List.of("uk", "usa", "korea"));
     }
 }
