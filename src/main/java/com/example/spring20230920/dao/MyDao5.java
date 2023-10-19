@@ -121,9 +121,22 @@ public interface MyDao5 {
                      close=")">
                 #{elem}
             </foreach>
-            
-            
         </script>
         """)
     String select7(List args);
+
+    @Select("""
+        <script>
+        SELECT * 
+        FROM customers
+        WHERE
+            <trim prefixOverrides="OR">
+                <foreach collection="args"
+                         item="elem">
+                    OR country = #{elem}
+                </foreach>
+            </trim>
+        </script>
+        """)
+    String select8(List args);
 }
