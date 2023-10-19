@@ -149,4 +149,13 @@ public class Controller30 {
         return "redirect:/main30/sub13";
     }
 
+    // GET /main30/sub15?id=3
+
+    // 3번 고객 조회 -> view로 포워딩
+
+
+    // POST /main30/sub16
+
+    // 고객 정보 수정 -> /main30/sub15?id=3 로 redirect
+
 }
