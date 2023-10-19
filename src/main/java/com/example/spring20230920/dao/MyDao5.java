@@ -1,5 +1,6 @@
 package com.example.spring20230920.dao;
 
+import com.example.spring20230920.domain.MyDto36;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -169,4 +170,45 @@ public interface MyDao5 {
             </script>
             """)
     String select10(String word);
+
+    @Select("""
+        SELECT DISTINCT city 
+        FROM customers
+        WHERE city IS NOT NULL AND city != ''
+        ORDER BY 1 
+        """)
+    List<String> listCustomerCity();
+
+    @Select("""
+        SELECT DISTINCT country
+        FROM customers
+        WHERE country IS NOT NULL AND country != ''
+        ORDER BY 1
+        """)
+    List<String> listCustomerCountry();
+
+    @Select("""
+            <script>
+                SELECT customerName name, city, country
+                FROM customers
+                <trim prefix="WHERE">
+                    <if test='type == "1"'>
+                        city 
+                        <foreach collection="city" item="elem" open=" IN ( "
+                                 separator="," close=")">
+                            #{elem}
+                         </foreach>
+                    </if>
+                    <if test='type == "2"'>
+                        country
+                        <foreach collection="country" item="elem" open=" IN ( "
+                                 separator="," close=")">
+                            #{elem}
+                        </foreach>
+                    </if>
+                </trim>
+                ORDER BY name, country, city
+            </script>
+            """)
+    List<Map<String, Object>> listCustomer(MyDto36 dto);
 }
