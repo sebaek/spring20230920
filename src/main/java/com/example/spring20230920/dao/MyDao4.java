@@ -83,4 +83,10 @@ public interface MyDao4 {
             WHERE CustomerID = #{id}
             """)
     int delete1(Integer id);
+
+    @Delete("""
+            DELETE FROM products
+            WHERE ProductID = #{pid}
+            """)
+    int delete2(Integer pid);
 }

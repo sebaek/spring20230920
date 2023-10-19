@@ -114,6 +114,10 @@ public class Controller30 {
 
     // 3번 상품이 삭제되는 메소드 완성
     //   dao에 delete2 메소드도 작성
-    
+    @GetMapping("sub12")
+    public void method12(Integer pid) {
+        int rows = dao.delete2(pid);
+        System.out.println(rows + "개 상품 지워짐");
+    }
 
 }
