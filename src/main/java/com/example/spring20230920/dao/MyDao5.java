@@ -4,6 +4,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface MyDao5 {
@@ -49,4 +50,22 @@ public interface MyDao5 {
             </script>
             """)
     List<String> select2(Integer num);
+
+    @Select("""
+            <script>
+                SELECT customerName, contactName
+                FROM customers
+                
+                <if test='code == 1'>
+                    WHERE customerName 
+                </if>
+                
+                <if test='code == 2'>
+                    WHERE contactName 
+                </if>
+                
+                    LIKE #{k}
+            </script>
+            """)
+    List<Map<String, Object>> select3(Integer code, String k);
 }

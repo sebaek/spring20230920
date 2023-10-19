@@ -4,8 +4,12 @@ import com.example.spring20230920.dao.MyDao5;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
@@ -29,9 +33,9 @@ public class Controller31 {
     }
 
     // /main31/sub3?code=1&k=ro
-    // /main31/sub4?code=2&k=ro
+    // /main31/sub3?code=2&k=ro
     @GetMapping("sub3")
-    public void method3(Integer code, String k) {
+    public void method3(Integer code, String k, Model model) {
         // code 가 1이면
         /*
         SELECT customerName, contactName
@@ -47,5 +51,8 @@ public class Controller31 {
         WHERE
             contactName LIKE '%ro%'
          */
+        List<Map<String, Object>> rows = dao.select3(code, "%" + k + "%");
+
+        model.addAttribute("names", rows);
     }
 }
