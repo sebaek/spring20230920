@@ -129,8 +129,7 @@ public interface MyDao5 {
         <script>
         SELECT * 
         FROM customers
-        WHERE
-            <trim prefixOverrides="OR">
+            <trim prefix="WHERE" prefixOverrides="OR">
                 <foreach collection="args"
                          item="elem">
                     OR country = #{elem}

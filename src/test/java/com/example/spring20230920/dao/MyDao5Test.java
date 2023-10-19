@@ -39,4 +39,9 @@ class MyDao5Test {
     void select8test1() {
         dao.select8(List.of("uk", "usa", "korea"));
     }
+
+    @Test
+    void select8test2() {
+        dao.select8(List.of());
+    }
 }
