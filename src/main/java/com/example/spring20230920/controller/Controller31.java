@@ -27,4 +27,25 @@ public class Controller31 {
     public void method2(Integer num) {
         dao.select2(num);
     }
+
+    // /main31/sub3?code=1&k=ro
+    // /main31/sub4?code=2&k=ro
+    @GetMapping("sub3")
+    public void method3(Integer code, String k) {
+        // code 가 1이면
+        /*
+        SELECT customerName, contactName
+        FROM customers
+        WHERE
+            customerName LIKE '%ro%'
+         */
+
+        // code가 2이면
+        /*
+        SELECT customerName, contactName
+        FROM customers
+        WHERE
+            contactName LIKE '%ro%'
+         */
+    }
 }
