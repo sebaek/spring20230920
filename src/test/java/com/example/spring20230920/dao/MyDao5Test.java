@@ -17,4 +17,9 @@ class MyDao5Test {
     void select5test1() {
         dao.select5();
     }
+
+    @Test
+    void select6test1() {
+        dao.select6();
+    }
 }

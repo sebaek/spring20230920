@@ -93,4 +93,17 @@ public interface MyDao5 {
         WHERE customerName < 'a';
         """)
     String select5();
+
+    // CDATA : 문자로만 판단, 마크업 코드로 해석하지말라!!
+    // "a section of element content that is marked for the parser to interpret as only character data, not markup."
+    @Select("""
+        <script>
+            <![CDATA[
+                SELECT *
+                FROM customers
+                WHERE customerName < 'a';
+            ]]>
+        </script>
+        """)
+    String select6();
 }
