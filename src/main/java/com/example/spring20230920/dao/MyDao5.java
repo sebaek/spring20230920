@@ -149,4 +149,24 @@ public interface MyDao5 {
             </script>
             """)
     String select9(String keyword);
+
+    @Select("""
+            <script>
+                SELECT * FROM customers
+                WHERE
+                    <if test="word == 'abc'">
+                        -- word는 abc
+                    </if>
+                    <if test='word == "def"'>
+                        -- word는 def
+                    </if>
+                    <if test="word == 'q'">
+                        -- word는 q
+                    </if>
+                    <if test='word == "k"'>
+                        -- word는 k
+                    </if>
+            </script>
+            """)
+    String select10(String word);
 }

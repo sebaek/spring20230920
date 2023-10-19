@@ -54,4 +54,24 @@ class MyDao5Test {
     void select9test2() {
         dao.select9("com");
     }
+
+    @Test
+    void select10test1() {
+        dao.select10("abc");
+    }
+
+    @Test
+    void select10test2() {
+        dao.select10("def");
+    }
+
+    @Test
+    void select10test3() {
+        dao.select10("q");
+    }
+
+    @Test
+    void select10test4() {
+        dao.select10("k");
+    }
 }
