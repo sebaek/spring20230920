@@ -68,4 +68,21 @@ public interface MyDao5 {
             </script>
             """)
     List<Map<String, Object>> select3(Integer code, String k);
+
+    @Select("""
+            <script>
+                SELECT COUNT(*) FROM customers
+                WHERE
+                    <if test='i gt 10'>
+                    -- i가 10보다 큼
+                    </if>
+                    <if test='i lt 10'>
+                    -- i가 10보다 작음
+                    </if>
+                    <if test='(i gt 0) and (i lt 100)'>
+                    -- i가 0보다 크고 100보다 작음
+                    </if>
+            </script>
+            """)
+    String select4(int i);
 }

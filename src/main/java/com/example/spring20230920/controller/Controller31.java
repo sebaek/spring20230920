@@ -55,4 +55,9 @@ public class Controller31 {
 
         model.addAttribute("names", rows);
     }
+
+    @GetMapping("sub4")
+    public void method4() {
+        dao.select4(30);
+    }
 }
