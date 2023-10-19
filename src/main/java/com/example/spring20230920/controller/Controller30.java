@@ -109,4 +109,11 @@ public class Controller30 {
         int rows = dao.delete1(id);
         System.out.println(rows + "개 행이 지워짐");
     }
+
+    // /main30/sub12?pid=3
+
+    // 3번 상품이 삭제되는 메소드 완성
+    //   dao에 delete2 메소드도 작성
+    
+
 }
