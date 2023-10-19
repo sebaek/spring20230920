@@ -109,4 +109,30 @@ public interface MyDao4 {
             WHERE EmployeeID = #{id}  
             """)
     int update1(MyDto33Employee employee);
+
+    @Select("""
+            SELECT  customerid id,
+                    customername name,
+                    contactname,
+                    address,
+                    city,
+                    postalcode,
+                    country
+            FROM customers
+            WHERE CustomerID = #{id}
+            """)
+    MyDto34Customer select9(Integer id);
+
+    @Update("""
+            UPDATE customers
+            SET CustomerName = #{name},
+                ContactName = #{contactName},
+                Address = #{address},
+                City = #{city},
+                PostalCode = #{postalCode},
+                Country = #{country}
+            WHERE
+                CustomerID = #{id}
+            """)
+    int update2(MyDto34Customer customer);
 }

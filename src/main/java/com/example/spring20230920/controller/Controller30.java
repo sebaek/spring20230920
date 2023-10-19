@@ -150,12 +150,25 @@ public class Controller30 {
     }
 
     // GET /main30/sub15?id=3
-
     // 3번 고객 조회 -> view로 포워딩
+    @GetMapping("sub15")
+    public void method15(Integer id, Model model) {
+        MyDto34Customer customer = dao.select9(id);
+        model.addAttribute("customer", customer);
+    }
 
 
     // POST /main30/sub16
-
     // 고객 정보 수정 -> /main30/sub15?id=3 로 redirect
+    @PostMapping("sub16")
+    public String method16(MyDto34Customer customer, RedirectAttributes rttr) {
+        int rows = dao.update2(customer);
 
+        if (rows == 1) {
+            rttr.addFlashAttribute("message", "고객정보가 수정되었습니다");
+        }
+
+        rttr.addAttribute("id", customer.getId());
+        return "redirect:/main30/sub15";
+    }
 }
