@@ -138,4 +138,15 @@ public interface MyDao5 {
         </script>
         """)
     String select8(List args);
+
+
+    @Select("""
+            <script>
+            <bind name="alterKeyword" value="'%' + keyword + '%'" />
+            SELECT *
+            FROM customers
+            WHERE customerName LIKE #{alterKeyword}
+            </script>
+            """)
+    String select9(String keyword);
 }
