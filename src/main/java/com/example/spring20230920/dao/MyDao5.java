@@ -85,4 +85,12 @@ public interface MyDao5 {
             </script>
             """)
     String select4(int i);
+
+
+    @Select("""
+        SELECT * 
+        FROM customers
+        WHERE customerName < 'a';
+        """)
+    String select5();
 }
