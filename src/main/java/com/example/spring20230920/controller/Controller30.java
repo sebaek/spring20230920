@@ -4,9 +4,11 @@ import com.example.spring20230920.dao.MyDao4;
 import com.example.spring20230920.domain.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -118,6 +120,33 @@ public class Controller30 {
     public void method12(Integer pid) {
         int rows = dao.delete2(pid);
         System.out.println(rows + "개 상품 지워짐");
+    }
+
+    // /main30/sub13?id=2
+    @GetMapping("sub13")
+    public void method13(Integer id, Model model) {
+        // 직원 조회
+        MyDto33Employee employee = dao.select8(id);
+
+        model.addAttribute("employee", employee);
+    }
+
+    @PostMapping("sub14")
+    public String method14(MyDto33Employee employee, RedirectAttributes rttr) {
+        // 직원 수정
+        int rows = dao.update1(employee);
+
+        // 모델에 추가
+        if (rows == 1) {
+            rttr.addFlashAttribute("message", "정보가 수정되었습니다.");
+        } else {
+            rttr.addFlashAttribute("message", "정보가 수정되지 않았습니다.");
+        }
+
+        // 쿼리스트링 추가
+        rttr.addAttribute("id", employee.getId());
+
+        return "redirect:/main30/sub13";
     }
 
 }
