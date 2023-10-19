@@ -102,4 +102,11 @@ public class Controller30 {
         int row = dao.insert2(emp);
         System.out.println(row + "행이 입력됨");
     }
+
+    // /main30/sub11?id=5
+    @GetMapping("sub11")
+    public void method11(Integer id) {
+        int rows = dao.delete1(id);
+        System.out.println(rows + "개 행이 지워짐");
+    }
 }

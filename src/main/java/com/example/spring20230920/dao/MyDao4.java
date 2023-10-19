@@ -1,6 +1,7 @@
 package com.example.spring20230920.dao;
 
 import com.example.spring20230920.domain.*;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -76,4 +77,10 @@ public interface MyDao4 {
             VALUE (#{lastName}, #{firstName})
             """)
     int insert2(MyDto32 emp);
+
+    @Delete("""
+            DELETE FROM customers
+            WHERE CustomerID = #{id}
+            """)
+    int delete1(Integer id);
 }
