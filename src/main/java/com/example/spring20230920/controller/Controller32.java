@@ -17,6 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class Controller32 {
 
     private final MyDao6 dao;
+    private final MyConponent1 conponent;
 
     @GetMapping("sub1")
     public void method1(MyDto37 dto) {
@@ -51,19 +52,12 @@ public class Controller32 {
     @GetMapping("sub5")
     public void method5() {
         try {
-            tx1();
+            conponent.tx1();
         } finally {
             System.out.println("dao.select3() = " + dao.select3());
         }
     }
 
-    @Transactional
-    public void tx1() {
-        dao.update1();
 
-        int c = 1 / 0; // runtimeException
-
-        dao.update2();
-    }
 
 }
