@@ -107,4 +107,16 @@ public class Controller33 {
             }
         }
     }
+
+    @GetMapping("sub7")
+    public void method7() {
+
+    }
+
+    public void method8() {
+        // 여러 업로드된 파일을
+        // C:\\Temp\\upload\\
+        // 에 저장
+        
+    }
 }
