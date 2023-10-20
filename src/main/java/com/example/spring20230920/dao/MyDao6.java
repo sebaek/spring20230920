@@ -1,6 +1,7 @@
 package com.example.spring20230920.dao;
 
 import com.example.spring20230920.domain.MyDto37;
+import com.example.spring20230920.domain.MyDto38;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Options;
@@ -14,4 +15,11 @@ public interface MyDao6 {
             """)
     @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert1(MyDto37 dto);
+
+    @Insert("""
+            INSERT INTO employees (lastName)
+            VALUES (#{lastName})
+            """)
+    @Options(useGeneratedKeys = true, keyProperty = "eid")
+    int insert2(MyDto38 dto);
 }
