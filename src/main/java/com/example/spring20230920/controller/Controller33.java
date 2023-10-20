@@ -55,7 +55,25 @@ public class Controller33 {
     }
 
     // post /main33/sub4
-    public void method4() {
+    @PostMapping("sub4")
+    public void method4(MultipartFile upload) throws IOException {
         // 업로드한 파일을 C:\\Temp\\ 폴더내에 저장하기
+        if (upload != null) {
+            String fileName = upload.getOriginalFilename();
+            String path = "C:\\Temp\\";
+
+            BufferedInputStream bis = new BufferedInputStream(upload.getInputStream());
+            BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(path + fileName));
+            try (bis; bos) {
+                byte[] data = new byte[2048];
+                int len = 0;
+
+                while ((len = bis.read(data)) != -1) {
+                    bos.write(data, 0, len);
+                }
+                bos.flush();
+            }
+
+        }
     }
 }

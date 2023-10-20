@@ -13,7 +13,7 @@
 </head>
 <body>
 <h3>파일 전송</h3>
-<form action="/main33/sub4">
+<form action="/main33/sub4" enctype="multipart/form-data" method="post">
   <input type="file" name="upload">
   <input type="submit" value="전송">
 </form>
