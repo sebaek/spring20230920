@@ -76,4 +76,35 @@ public class Controller33 {
 
         }
     }
+
+    @GetMapping("sub5")
+    public void method5() {
+
+    }
+    
+    @PostMapping("sub6")
+    public void method6(MultipartFile[] files) throws IOException {
+//        System.out.println("files.length = " + files.length);
+        System.out.println("업로드 파일 크기들.");
+        for (MultipartFile file : files) {
+//            System.out.println("file.getSize() = " + file.getSize());
+
+            if (file.getSize() > 0) {
+                String path = "C:\\Temp\\";
+                BufferedInputStream bis = new BufferedInputStream(file.getInputStream());
+                BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(path + file.getOriginalFilename()));
+
+                try (bos; bis) {
+                    int len = 0;
+                    byte[] data = new byte[2048];
+
+                    while ((len = bis.read(data)) != -1) {
+                        bos.write(data, 0, len);
+                    }
+                    bos.flush();
+
+                }
+            }
+        }
+    }
 }
