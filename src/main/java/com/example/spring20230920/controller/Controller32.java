@@ -5,6 +5,7 @@ import com.example.spring20230920.domain.MyDto37;
 import com.example.spring20230920.domain.MyDto38;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,6 +46,24 @@ public class Controller32 {
                 dto.getEid() + "번 직원이 등록되었습니다.");
 
         return "redirect:/main32/sub3";
+    }
+
+    @GetMapping("sub5")
+    public void method5() {
+        try {
+            tx1();
+        } finally {
+            System.out.println("dao.select3() = " + dao.select3());
+        }
+    }
+
+    @Transactional
+    public void tx1() {
+        dao.update1();
+
+        int c = 1 / 0; // runtimeException
+
+        dao.update2();
     }
 
 }
