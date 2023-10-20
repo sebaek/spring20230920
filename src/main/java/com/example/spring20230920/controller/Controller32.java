@@ -3,9 +3,9 @@ package com.example.spring20230920.controller;
 import com.example.spring20230920.dao.MyDao6;
 import com.example.spring20230920.domain.MyDto37;
 import com.example.spring20230920.domain.MyDto38;
+import com.example.spring20230920.service.MyService1;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class Controller32 {
 
     private final MyDao6 dao;
-    private final MyConponent1 conponent;
+    private final MyService1 conponent;
 
     @GetMapping("sub1")
     public void method1(MyDto37 dto) {
