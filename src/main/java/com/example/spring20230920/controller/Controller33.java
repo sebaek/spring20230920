@@ -48,4 +48,14 @@ public class Controller33 {
             }
         }
     }
+
+    @GetMapping("sub3")
+    public void method3() {
+
+    }
+
+    // post /main33/sub4
+    public void method4() {
+        // 업로드한 파일을 C:\\Temp\\ 폴더내에 저장하기
+    }
 }
