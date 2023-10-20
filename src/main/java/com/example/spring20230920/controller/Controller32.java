@@ -6,7 +6,9 @@ import com.example.spring20230920.domain.MyDto38;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequiredArgsConstructor
@@ -28,6 +30,21 @@ public class Controller32 {
         dao.insert2(dto); // 직원 테이블에 lastName 입력
 
         System.out.println("dto = " + dto); // 새 직원의 번호(pk)와 lastName 출력
+    }
+
+    @GetMapping("sub3")
+    public void method3() {
+
+    }
+
+    @PostMapping("sub4")
+    public String method4(MyDto38 dto, RedirectAttributes rttr) {
+        dao.insert3(dto);
+
+        rttr.addFlashAttribute("message",
+                dto.getEid() + "번 직원이 등록되었습니다.");
+
+        return "redirect:/main32/sub3";
     }
 
 }

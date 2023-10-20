@@ -22,4 +22,11 @@ public interface MyDao6 {
             """)
     @Options(useGeneratedKeys = true, keyProperty = "eid")
     int insert2(MyDto38 dto);
+
+    @Insert("""
+            INSERT INTO employees (lastName, firstName)
+            VALUES (#{lastName}, #{firstName})
+            """)
+    @Options(useGeneratedKeys = true, keyProperty = "eid")
+    int insert3(MyDto38 dto);
 }
