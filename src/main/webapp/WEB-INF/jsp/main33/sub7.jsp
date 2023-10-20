@@ -13,7 +13,7 @@
 </head>
 <body>
 <h3>여러 파일 올리기</h3>
-<form action="/main33/sub8">
+<form action="/main33/sub8" method="post" enctype="multipart/form-data">
     <input type="file" multiple name="files">
     <input type="submit" value="전송">
 </form>
