@@ -44,6 +44,7 @@ public class Controller33 {
                 while ((len = bis.read(data)) != -1) {
                     bos.write(data, 0, len);
                 }
+                bos.flush();
             }
         }
     }
