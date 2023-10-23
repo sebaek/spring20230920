@@ -59,4 +59,10 @@ public class Controller35 {
     public void method7() {
         System.out.println("Controller35.method7");
     }
+
+    @PostMapping("sub8")
+    public void method8(String city, String country) {
+        System.out.println("city = " + city);
+        System.out.println("country = " + country);
+    }
 }

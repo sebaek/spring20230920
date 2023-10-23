@@ -174,5 +174,21 @@
         }
     </script>
 </div>
+<div>
+    <button onclick="ajax10()">button10</button>
+    <script>
+        // city=서울&country=한국
+        function ajax10() {
+            axios.post("/main35/sub8", {
+                city: "서울",
+                country: "한국"
+            }, {
+                headers: {
+                    "content-type": "application/x-www-form-urlencoded"
+                }
+            });
+        }
+    </script>
+</div>
 </body>
 </html>
