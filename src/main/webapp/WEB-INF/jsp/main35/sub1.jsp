@@ -193,23 +193,54 @@
 
 <div>
     <div>
-        <input type="text" id="input9">
+        <input type="text" id="input9" value="22">
     </div>
     <div>
-        <input type="text" id="input10">
+        <input type="text" id="input10" value="손">
     </div>
     <div>
-        <input type="text" id="input11">
+        <input type="text" id="input11" value="흥민">
     </div>
     <div>
         <button onclick="ajax11()">button11</button>
         <script>
             function ajax11() {
-                axios.post("/main35/sub9")
+                const eid = document.getElementById("input9").value;
+                const lastName = document.getElementById("input10").value;
+                const firstName = document.getElementById("input11").value;
+                axios.post("/main35/sub9", {
+                    eid, lastName, firstName
+                }, {
+                    headers: {
+                        "content-type": "application/x-www-form-urlencoded"
+                    }
+                })
             }
         </script>
     </div>
 
 </div>
+
+<div>
+    <div>
+        <input type="text" id="input12" value="이강인">
+    </div>
+    <div>
+        <input type="file" multiple id="input13" accept="image/*">
+    </div>
+    <div>
+        <button onclick="ajax12()">button12</button>
+        <script>
+            function ajax12() {
+                axios.postForm("/main35/sub10", {
+                    name: document.querySelector("#input12").value,
+                    files: document.querySelector("#input13").files
+                });
+            }
+        </script>
+    </div>
+</div>
+
+
 </body>
 </html>
