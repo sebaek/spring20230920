@@ -30,7 +30,7 @@
     <script>
         function ajax2() {
             axios.request({
-               url: "/main35/sub3?address=seoul&name=son&age=30"
+                url: "/main35/sub3?address=seoul&name=son&age=30"
             });
         }
     </script>
@@ -56,9 +56,52 @@
     <script>
         function ajax4() {
             // ajax 요청 코드 작성
-
+            axios.request({
+                url: "/main35/sub5",
+                params: {
+                    city: "서울",
+                    id: 3,
+                    score: 99.8,
+                    country: "한국"
+                }
+            })
         }
     </script>
+</div>
+<div>
+    <div>
+        <input type="text" id="input1" value="서울">
+    </div>
+    <div>
+        <input type="text" id="input2" value="33">
+    </div>
+    <div>
+        <input type="text" id="input3" value="88.7">
+    </div>
+    <div>
+        <input type="text" id="input4" value="한국">
+    </div>
+    <div>
+        <button onclick="ajax5()">button5</button>
+        <script>
+            function ajax5() {
+                const city = document.querySelector("#input1").value;
+                const id = document.querySelector("#input2").value;
+                const score = document.querySelector("#input3").value;
+                const country = document.querySelector("#input4").value;
+                axios.request({
+                    url: "/main35/sub5",
+                    params: {
+                        city: city,
+                        id: id,
+                        score: score,
+                        country: country
+                    }
+                });
+            }
+        </script>
+    </div>
+
 </div>
 
 </body>
