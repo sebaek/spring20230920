@@ -190,5 +190,26 @@
         }
     </script>
 </div>
+
+<div>
+    <div>
+        <input type="text" id="input9">
+    </div>
+    <div>
+        <input type="text" id="input10">
+    </div>
+    <div>
+        <input type="text" id="input11">
+    </div>
+    <div>
+        <button onclick="ajax11()">button11</button>
+        <script>
+            function ajax11() {
+                axios.post("/main35/sub9")
+            }
+        </script>
+    </div>
+
+</div>
 </body>
 </html>

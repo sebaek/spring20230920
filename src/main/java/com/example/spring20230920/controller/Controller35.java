@@ -65,4 +65,10 @@ public class Controller35 {
         System.out.println("city = " + city);
         System.out.println("country = " + country);
     }
+
+    @PostMapping("sub9")
+    public void method9(MyDto38 dto) {
+        System.out.println("dto = " + dto);
+
+    }
 }
