@@ -155,5 +155,24 @@
         }
     </script>
 </div>
+<div>
+    <button onclick="ajax8()">button8</button>
+    <script>
+        function ajax8() {
+            axios.request({
+                url: "/main35/sub7",
+                method: "post"
+            })
+        }
+    </script>
+</div>
+<div>
+    <button onclick="ajax9()">button9</button>
+    <script>
+        function ajax9() {
+            axios.post("/main35/sub7");
+        }
+    </script>
+</div>
 </body>
 </html>

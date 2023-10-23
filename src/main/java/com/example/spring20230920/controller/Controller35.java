@@ -4,6 +4,7 @@ import com.example.spring20230920.domain.MyDto38;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -52,5 +53,10 @@ public class Controller35 {
     @GetMapping("sub6")
     public void method6(MyDto38 dto) {
         System.out.println("dto = " + dto);
+    }
+
+    @PostMapping("sub7")
+    public void method7() {
+        System.out.println("Controller35.method7");
     }
 }
