@@ -21,7 +21,7 @@ public class AppConfiguration {
         AwsBasicCredentials credentials = AwsBasicCredentials.create(accessKeyId, secretAccessKey);
         AwsCredentialsProvider provider = StaticCredentialsProvider.create(credentials);
 
-        S3Client.builder()
+        return S3Client.builder()
                 .region(Region.AP_NORTHEAST_2)
                 .credentialsProvider(provider)
                 .build();
