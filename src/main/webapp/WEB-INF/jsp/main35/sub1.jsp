@@ -122,8 +122,18 @@
         <button onclick="ajax6()">button6</button>
         <script>
             function ajax6() {
+                const address = document.querySelector("#input5").value;
+                const name = document.querySelector("#input6").value;
+                const age = document.querySelector("#input7").value;
+                const email = document.querySelector("#input8").value;
                 axios.request({
-                    url: "/main35/sub4"
+                    url: "/main35/sub4",
+                    params: {
+                        address: address,
+                        name: name,
+                        age: age,
+                        email: email
+                    }
                 })
             }
         </script>
