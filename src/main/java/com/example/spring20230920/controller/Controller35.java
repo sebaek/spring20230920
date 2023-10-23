@@ -18,4 +18,21 @@ public class Controller35 {
     public void method2() {
         System.out.println("Controller35.method2");
     }
+
+    @GetMapping("sub3")
+    public void methdo3(String address) {
+        System.out.println("address = " + address);
+    }
+
+    @GetMapping("sub4")
+    public void method4(String address,
+                        String name,
+                        Integer age,
+                        String email) {
+        System.out.println("address = " + address);
+        System.out.println("name = " + name);
+        System.out.println("age = " + age);
+        System.out.println("email = " + email);
+
+    }
 }

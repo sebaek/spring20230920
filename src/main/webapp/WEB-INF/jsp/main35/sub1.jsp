@@ -24,5 +24,33 @@
         });
     }
 </script>
+
+<div>
+    <button onclick="ajax2()">button2</button>
+    <script>
+        function ajax2() {
+            axios.request({
+               url: "/main35/sub3?address=seoul&name=son&age=30"
+            });
+        }
+    </script>
+</div>
+<div>
+    <button onclick="ajax3()">button3</button>
+    <script>
+        function ajax3() {
+            axios.request({
+                url: "/main35/sub4",
+                params: {
+                    address: "seoul",
+                    name: "son",
+                    age: 33,
+                    email: "abc@naver.com"
+                }
+            });
+        }
+    </script>
+</div>
+
 </body>
 </html>
