@@ -41,6 +41,7 @@ dependencies {
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2'
     testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.2'
 
+    implementation 'software.amazon.awssdk:s3:2.21.5'
 }
 
 tasks.named('test') {
