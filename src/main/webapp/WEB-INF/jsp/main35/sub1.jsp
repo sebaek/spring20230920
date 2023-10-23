@@ -129,16 +129,31 @@
                 axios.request({
                     url: "/main35/sub4",
                     params: {
-                        address: address,
-                        name: name,
-                        age: age,
-                        email: email
+                        address,
+                        name,
+                        age,
+                        email
                     }
                 })
             }
         </script>
     </div>
 </div>
+<div>
+    <button onclick="ajax7()">button7</button>
+    <script>
+        function ajax7() {
+            axios.request({
+                url: "/main35/sub6",
+                params: {
+                    eid: 9,
+                    lastName: "손",
+                    firstName: "흥민"
+                }
 
+            })
+        }
+    </script>
+</div>
 </body>
 </html>

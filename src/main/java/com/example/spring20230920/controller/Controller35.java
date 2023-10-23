@@ -1,5 +1,6 @@
 package com.example.spring20230920.controller;
 
+import com.example.spring20230920.domain.MyDto38;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,5 +46,11 @@ public class Controller35 {
         System.out.println("id = " + id);
         System.out.println("score = " + score);
         System.out.println("country = " + country);
+    }
+
+    // /main35/sub6?eid=3&lastName=son&firstName=hm
+    @GetMapping("sub6")
+    public void method6(MyDto38 dto) {
+        System.out.println("dto = " + dto);
     }
 }
