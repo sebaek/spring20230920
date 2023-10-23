@@ -51,6 +51,15 @@
         }
     </script>
 </div>
+<div>
+    <button onclick="ajax4()">button4</button>
+    <script>
+        function ajax4() {
+            // ajax 요청 코드 작성
+
+        }
+    </script>
+</div>
 
 </body>
 </html>

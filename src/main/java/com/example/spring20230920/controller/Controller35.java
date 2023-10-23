@@ -35,4 +35,15 @@ public class Controller35 {
         System.out.println("email = " + email);
 
     }
+
+    @GetMapping("sub5")
+    public void method5(String city,
+                        Integer id,
+                        Double score,
+                        String country) {
+        System.out.println("city = " + city);
+        System.out.println("id = " + id);
+        System.out.println("score = " + score);
+        System.out.println("country = " + country);
+    }
 }
