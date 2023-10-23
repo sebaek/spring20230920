@@ -104,5 +104,31 @@
 
 </div>
 
+<div>
+    <%--div*4>input#input$@5--%>
+        <div>
+            <input type="text" id="input5">
+        </div>
+        <div>
+            <input type="text" id="input6">
+        </div>
+        <div>
+            <input type="text" id="input7">
+        </div>
+        <div>
+            <input type="text" id="input8">
+        </div>
+    <div>
+        <button onclick="ajax6()">button6</button>
+        <script>
+            function ajax6() {
+                axios.request({
+                    url: "/main35/sub4"
+                })
+            }
+        </script>
+    </div>
+</div>
+
 </body>
 </html>
