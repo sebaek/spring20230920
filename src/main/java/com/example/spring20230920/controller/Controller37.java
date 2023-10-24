@@ -2,6 +2,7 @@ package com.example.spring20230920.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -48,6 +49,19 @@ public class Controller37 {
      */
     @PostMapping("sub2")
     public void method2(@RequestBody Map<String, Object> map) {
+        System.out.println("map = " + map);
+    }
+
+    /*
+    axios.put("/main37/sub3", {
+        city: "seoul",
+        name: "son",
+        email: "son@gmail.com"
+    })
+     */
+
+    @PutMapping("sub3")
+    public void method3(@RequestBody Map<String, Object> map) {
         System.out.println("map = " + map);
     }
 }
