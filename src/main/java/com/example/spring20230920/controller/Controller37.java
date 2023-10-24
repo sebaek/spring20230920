@@ -1,6 +1,7 @@
 package com.example.spring20230920.controller;
 
 import com.example.spring20230920.domain.MyDto42;
+import com.example.spring20230920.domain.MyDto43;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -89,6 +90,14 @@ public class Controller37 {
     }
 
     // js 로 ajax 요청 하는 코드 실행(axios)
+    /*
+    axios.post("/main37/sub5", {
+        country: "korea",
+        score: 9.8,
+        skills: ["java", "css", "spring"],
+        phone: "010-999-8888"
+    })
+     */
     @PostMapping("sub5")
     public void method5(@RequestBody MyDto43 dto) {
         System.out.println("dto.getCountry() = " + dto.getCountry()); // String
@@ -96,4 +105,18 @@ public class Controller37 {
         System.out.println("dto.getSkills() = " + dto.getSkills()); // List<String>
         System.out.println("dto.getPhone() = " + dto.getPhone()); // String
     }
+
+    /*
+    axios.post("/main37/sub6", {
+        name: "son",
+        email: ["son@gmail.com", "hm@gmail.com"],
+        home: {
+            first: "seoul",
+            second: "london"
+        },
+        price: 35.11,
+        weight: 77.6
+    })
+
+     */
 }
