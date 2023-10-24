@@ -39,4 +39,10 @@ public interface MyDao7 {
             WHERE productId = #{pid}
             """)
     int deleteByProductId(Integer pid);
+
+    @Delete("""
+            DELETE FROM customers
+            WHERE customerId = #{id} 
+            """)
+    int deleteByCustomerId(Integer id);
 }

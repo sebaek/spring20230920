@@ -94,7 +94,7 @@ public class Controller36 {
     axios.delete("/main36/sub6")
      */
 
-//    @RequestMapping(method = RequestMethod.DELETE, value = "sub6")
+    //    @RequestMapping(method = RequestMethod.DELETE, value = "sub6")
     @DeleteMapping("sub6")
     public void method6() {
         System.out.println("Controller36.method6");
@@ -162,6 +162,31 @@ public class Controller36 {
     axios.delete("/main36/sub12/3")
     axios.delete("/main36/sub12/5")
      */
+    // 1, 3, 5, 고객 삭제 되도록 메소드 작성
+    @DeleteMapping("sub12/{customerId}")
+    public void method12(@PathVariable Integer customerId) {
+        int rows = dao.deleteByCustomerId(customerId);
+        System.out.println(rows + "개 행 지움");
+    }
 
+    /*
+    axios.put("/main36/sub13")
+    put /main36/sub13
+     */
+//    @RequestMapping(method = RequestMethod.PUT, value = "sub13")
+    @PutMapping("sub13")
+    public void method13() {
+        System.out.println("Controller36.method13");
+    }
 
+    /*
+    axios.put("/main36/sub14", {
+        name: "son",
+        address: "korea"
+    }, {
+        headers: {
+            "content-type": "application/x-www-form-urlencoded"
+        }
+    })
+     */
 }
