@@ -237,4 +237,18 @@ public class Controller36 {
         System.out.println(rows + "개 데이터 수정됨");
     }
 
+    /*
+    axios.put("/main36/sub17", {
+        lastName: "lee",
+        firstName: "kangin",
+        birthDate: "2020-01-01",
+        id: 5
+    }, {
+        headers : {
+            "content-type": "application/x-www-form-urlencoded"
+        }
+
+    });
+     */
+
 }
