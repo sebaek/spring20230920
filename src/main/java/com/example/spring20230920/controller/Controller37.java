@@ -1,8 +1,11 @@
 package com.example.spring20230920.controller;
 
+import com.example.spring20230920.dao.MyDao7;
+import com.example.spring20230920.domain.MyDto41;
 import com.example.spring20230920.domain.MyDto42;
 import com.example.spring20230920.domain.MyDto43;
 import com.example.spring20230920.domain.MyDto44;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -13,7 +16,10 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("main37")
+@RequiredArgsConstructor
 public class Controller37 {
+
+    private final MyDao7 dao;
 
     /*
     axios.post("/main37/sub1", '{"name":"jones"}', {
@@ -123,5 +129,19 @@ public class Controller37 {
     @PostMapping("sub6")
     public void method6(@RequestBody MyDto44 dto) {
         System.out.println("dto = " + dto);
+    }
+
+    /*
+    axios.put("/main37/sub7", {
+        id: 3,
+        lastName: "kim",
+        firstName: "minjae",
+        birthDate: "1999-09-09"
+    })
+     */
+    @PutMapping("sub7")
+    public void method7(@RequestBody MyDto41 dto) {
+        int i = dao.updateEmployee(dto);
+        System.out.println(dto.getId() + "번 직원 수정됨");
     }
 }
