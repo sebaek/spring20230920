@@ -1,5 +1,6 @@
 package com.example.spring20230920.controller;
 
+import com.example.spring20230920.domain.MyDto42;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -63,5 +64,27 @@ public class Controller37 {
     @PutMapping("sub3")
     public void method3(@RequestBody Map<String, Object> map) {
         System.out.println("map = " + map);
+    }
+
+    /*
+    axios.post("/main37/sub4", {
+        city: "paris",
+        age: 30,
+        married: true,
+        car: null,
+        home: {
+            address: "seoul",
+            price: 1000
+        },
+        foods: [
+            "pizza",
+            "burger",
+            "부침개"
+        ]
+    })
+     */
+    @PostMapping("sub4")
+    public void method4(@RequestBody MyDto42 dto) {
+        System.out.println("dto = " + dto);
     }
 }
