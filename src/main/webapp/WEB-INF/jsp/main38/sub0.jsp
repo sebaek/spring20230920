@@ -26,8 +26,26 @@
     <script>
         function ajax2() {
             axios.get("/main38/sub2")
-                .then(function () {
+                .then(function (response) {
                     console.log("응답 받은 후 해야 하는 일");
+                    console.log(response.data);
+                    console.log(response.status);
+                    console.log(response.statusText);
+                    console.log(response.headers);
+                    console.log(response.config);
+                });
+        }
+    </script>
+</div>
+<div>
+    <button onclick="ajax3()">button3</button>
+    <script>
+        function ajax3() {
+            axios.get("/main38/sub3")
+                .then(function (res) {
+                    console.log(res.data);
+                    console.log(res.data.age);
+                    console.log(res.data.name);
                 });
         }
     </script>
