@@ -115,7 +115,8 @@ public class Controller37 {
             second: "london"
         },
         price: 35.11,
-        weight: 77.6
+        weight: 77.6,
+        married: true
     })
 
      */
