@@ -3,6 +3,7 @@ package com.example.spring20230920.controller;
 import com.example.spring20230920.dao.MyDao7;
 import com.example.spring20230920.domain.MyDto39;
 import com.example.spring20230920.domain.MyDto40;
+import com.example.spring20230920.domain.MyDto41;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -250,5 +251,10 @@ public class Controller36 {
 
     });
      */
+    @PutMapping("sub17")
+    public void method17(MyDto41 dto) {
+        int rows = dao.updateEmployee(dto);
+        System.out.println(rows + "개 수정됨");
+    }
 
 }
