@@ -50,5 +50,19 @@
         }
     </script>
 </div>
+<div>
+    <button onclick="ajax4()">button4</button>
+    <script>
+        function ajax4() {
+            // ajax 요청
+            // get /main38/sub4
+            // 응답된 json 데이터를 js object로 파싱 해서
+            // "seoul"
+            // 3000
+            // "son"
+            // "1999-03-03"
+        }
+    </script>
+</div>
 </body>
 </html>
