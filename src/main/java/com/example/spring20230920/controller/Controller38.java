@@ -80,4 +80,13 @@ public class Controller38 {
     }
 
 
+    /*
+    axios.get("/main38/sub7?id=33")
+    33번 상품의 정보를 json으로 응답
+    id(상품아이디)
+    price(상품가격)
+    category(카테고리명)
+    unit(단위)
+     */
+    // 7번째 메소드와 45번째 dto, dao.selectByProductId2
 }
