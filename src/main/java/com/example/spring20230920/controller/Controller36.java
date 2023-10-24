@@ -189,4 +189,25 @@ public class Controller36 {
         }
     })
      */
+    // put /main36/sub14
+    // name=son&address=korea
+    @PutMapping("sub14")
+    public void method14(String name, String address) {
+        System.out.println("name = " + name);
+        System.out.println("address = " + address);
+
+    }
+
+    /*
+    axios.put("/main36/sub15", {
+        city: "seoul",
+        age: 78,
+        score: 3.14
+    }, {
+        headers: {
+            "content-type": "application/x-www-form-urlencoded"
+        }
+    });
+
+     */
 }
