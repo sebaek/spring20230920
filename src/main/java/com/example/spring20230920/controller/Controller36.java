@@ -1,6 +1,8 @@
 package com.example.spring20230920.controller;
 
 import com.example.spring20230920.dao.MyDao7;
+import com.example.spring20230920.domain.MyDto39;
+import com.example.spring20230920.domain.MyDto40;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -210,4 +212,29 @@ public class Controller36 {
     });
 
      */
+    @PutMapping("sub15")
+    public void method15(MyDto39 dto) {
+        System.out.println("city = " + dto.getCity());
+        System.out.println("age = " + dto.getAge());
+        System.out.println("score = " + dto.getScore());
+    }
+
+    /*
+    axios.put("/main36/sub16", {
+        id: 3,
+        name: "햄버거",
+        category: 2,
+        price: 5000.00
+    }, {
+        headers : {
+            "content-type": "application/x-www-form-urlencoded"
+        }
+    });
+     */
+    @PutMapping("sub16")
+    public void method16(MyDto40 dto) {
+        int rows = dao.updateProduct(dto);
+        System.out.println(rows + "개 데이터 수정됨");
+    }
+
 }
