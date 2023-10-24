@@ -133,5 +133,18 @@ public class Controller36 {
         System.out.println("n = " + n);
     }
 
+    /*
+    axios.delete("/main36/sub10/3")
+    axios.delete("/main36/sub10/5")
+    axios.delete("/main36/sub10/7")
+     */
+    // delete /main36/sub10
+    // 일하는 메소드 작성
+    // 3, 5, 7은 메소드 아규먼트로 받아서 콘솔에 출력
+    @DeleteMapping("sub10/{id}")
+    public void method10(@PathVariable Integer id) {
+        System.out.println("id = " + id);
+    }
+
 
 }
