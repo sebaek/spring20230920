@@ -87,4 +87,13 @@ public class Controller37 {
     public void method4(@RequestBody MyDto42 dto) {
         System.out.println("dto = " + dto);
     }
+
+    // js 로 ajax 요청 하는 코드 실행(axios)
+    @PostMapping("sub5")
+    public void method5(@RequestBody MyDto43 dto) {
+        System.out.println("dto.getCountry() = " + dto.getCountry()); // String
+        System.out.println("dto.getScore() = " + dto.getScore()); // Double
+        System.out.println("dto.getSkills() = " + dto.getSkills()); // List<String>
+        System.out.println("dto.getPhone() = " + dto.getPhone()); // String
+    }
 }
