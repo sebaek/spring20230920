@@ -70,6 +70,18 @@ public class Controller36 {
 
 
     // 브라우저 개발자도구 콘솔에 axios 코드 작성 후 실행
+    /*
+    axios.post("/main36/sub5", {
+        name: "라면",
+        price: 150.00,
+        category: 3
+    }, {
+        headers: {
+            "content-type": "application/x-www-form-urlencoded"
+        }
+    })
+
+     */
     // post /main36/sub5
     // name=라면&price=150.00&category=3
     @PostMapping("sub5")
