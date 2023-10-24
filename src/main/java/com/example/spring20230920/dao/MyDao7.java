@@ -26,4 +26,10 @@ public interface MyDao7 {
             VALUES (#{lastName}, #{firstName}, #{birthDate})
             """)
     int insertEmployee(String lastName, String firstName, LocalDate birthDate);
+
+    @Insert("""
+        INSERT INTO products (productName, price, categoryId)
+        VALUES (#{name}, #{price}, #{category})
+        """)
+    int insertProduct(String name, Double price, Integer category);
 }

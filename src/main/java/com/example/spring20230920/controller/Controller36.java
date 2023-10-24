@@ -67,4 +67,16 @@ public class Controller36 {
         int i = dao.insertEmployee(lastName, firstName, birthDate);
         System.out.println(i + "개 데이터 입력됨");
     }
+
+
+    // 브라우저 개발자도구 콘솔에 axios 코드 작성 후 실행
+    // post /main36/sub5
+    // name=라면&price=150.00&category=3
+    @PostMapping("sub5")
+    public void method5(String name,
+                        Double price,
+                        Integer category) {
+        int r = dao.insertProduct(name, price, category);
+        System.out.println(r + "개 행이 입력됨");
+    }
 }
