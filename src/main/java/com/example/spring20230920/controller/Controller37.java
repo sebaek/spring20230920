@@ -2,6 +2,7 @@ package com.example.spring20230920.controller;
 
 import com.example.spring20230920.domain.MyDto42;
 import com.example.spring20230920.domain.MyDto43;
+import com.example.spring20230920.domain.MyDto44;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -118,6 +119,9 @@ public class Controller37 {
         weight: 77.6,
         married: true
     })
-
      */
+    @PostMapping("sub6")
+    public void method6(@RequestBody MyDto44 dto) {
+        System.out.println("dto = " + dto);
+    }
 }
