@@ -1,5 +1,6 @@
 package com.example.spring20230920.dao;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -32,4 +33,10 @@ public interface MyDao7 {
         VALUES (#{name}, #{price}, #{category})
         """)
     int insertProduct(String name, Double price, Integer category);
+
+    @Delete("""
+            DELETE FROM products
+            WHERE productId = #{pid}
+            """)
+    int deleteByProductId(Integer pid);
 }

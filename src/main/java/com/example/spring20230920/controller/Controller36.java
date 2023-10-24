@@ -146,5 +146,22 @@ public class Controller36 {
         System.out.println("id = " + id);
     }
 
+    /*
+    axios.delete("/main36/sub11/1")
+    axios.delete("/main36/sub11/3")
+    axios.delete("/main36/sub11/5")
+     */
+    @DeleteMapping("sub11/{pid}")
+    public void method11(@PathVariable Integer pid) {
+        int c = dao.deleteByProductId(pid);
+        System.out.println(c + "개 데이터 삭제됨");
+    }
+
+    /*
+    axios.delete("/main36/sub12/1")
+    axios.delete("/main36/sub12/3")
+    axios.delete("/main36/sub12/5")
+     */
+
 
 }
