@@ -1,6 +1,7 @@
 package com.example.spring20230920.dao;
 
 import com.example.spring20230920.domain.MyDto33Employee;
+import com.example.spring20230920.domain.MyDto45;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -27,4 +28,14 @@ public interface MyDao8 {
             WHERE EmployeeId = #{id}
             """)
     MyDto33Employee selectByEmplyeeId(Integer id);
+
+    @Select("""
+            SELECT p.productId id,
+                   p.price price,
+                   c.categoryName category,
+                   p.unit unit
+            FROM products p JOIN categories c ON p.categoryId = c.CategoryId
+            WHERE p.productId = #{id}
+            """)
+    MyDto45 selectByProductId2(Integer id);
 }
