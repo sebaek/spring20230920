@@ -3,9 +3,7 @@ package com.example.spring20230920.controller;
 import com.example.spring20230920.dao.MyDao7;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.Map;
@@ -91,4 +89,49 @@ public class Controller36 {
         int r = dao.insertProduct(name, price, category);
         System.out.println(r + "개 행이 입력됨");
     }
+
+    /*
+    axios.delete("/main36/sub6")
+     */
+
+//    @RequestMapping(method = RequestMethod.DELETE, value = "sub6")
+    @DeleteMapping("sub6")
+    public void method6() {
+        System.out.println("Controller36.method6");
+    }
+
+    /*
+    js 코드 작성 후 브라우저 콘솔에 실행
+    axios.delete("/main36/sub7")
+     */
+
+    @DeleteMapping("sub7")
+    public void method7() {
+        System.out.println("Controller36.method7");
+    }
+
+    /*
+    axios.delete("/main36/sub8?name=son")
+    axios.delete("/main36/sub8", {
+        params: {
+            name: "son"
+        }
+    })
+     */
+    @DeleteMapping("sub8")
+    public void method8(String name) {
+        System.out.println("name = " + name);
+    }
+
+    // PathVariable : 경로에 포함된 데이터
+    /*
+    axios.delete("/main36/sub9/son")
+    axios.delete("/main36/sub9/lee")
+     */
+    @DeleteMapping("sub9/{name}")
+    public void method9(@PathVariable("name") String n) {
+        System.out.println("n = " + n);
+    }
+
+
 }
