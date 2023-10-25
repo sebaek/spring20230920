@@ -191,7 +191,7 @@
         function ajax13() {
             axios.get("/main38/sub4")
                 .then(response => response.data)
-                .then(({}) => {
+                .then(({price, city, country = "korea"}) => {
                     console.log(price); // 3000
                     console.log(city); // seoul
                     console.log(country); // korea
