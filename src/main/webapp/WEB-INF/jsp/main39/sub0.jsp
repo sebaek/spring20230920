@@ -57,9 +57,19 @@
     <p id="result1"></p>
     <script>
         function ajax4() {
+            // 400번대 응답이면 #result1 요소에 "잘못된 요청" 출력
+            // 500번대 응답이면 #resutt1 요소에 "서버 에러" 출력
             axios.get("/main39/sub3")
-                .catch(() => {}); // 400번대 응답이면 #result1 요소에 "잘못된 요청" 출력
-                                  // 500번대 응답이면 #resutt1 요소에 "서버 에러" 출력
+                .catch(function (error) {
+                    const code = error.response.status;
+                    let message = "";
+                    if (400 <= code && code < 500) {
+                        message = "잘못된 요청";
+                    } else if (500 <= code) {
+                        message = "서버 에러";
+                    }
+                    document.querySelector("#result1").textContent = message;
+                });
         }
     </script>
 </div>

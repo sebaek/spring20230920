@@ -33,6 +33,11 @@ public class Controller39 {
 //        return ResponseEntity.internalServerError().build();
     }
 
+    @GetMapping("sub3")
+    public ResponseEntity method3() {
+        return ResponseEntity.internalServerError().build();
+    }
+
 
 
 }
