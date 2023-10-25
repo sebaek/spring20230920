@@ -13,27 +13,27 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
-    <div>
-        <button onclick="ajax1()">button1</button>
-        <script>
-            function ajax1() {
-                axios.get("/main39/sub1")
-                    .then(() => console.log("성공"))
-                    .catch(() => console.log("실패"));
+<div>
+    <button onclick="ajax1()">button1</button>
+    <script>
+        function ajax1() {
+            axios.get("/main39/sub1")
+                .then(() => console.log("성공"))
+                .catch(() => console.log("실패"));
 
-            }
-        </script>
-    </div>
-    <div>
-        <button onclick="ajax2()">button2</button>
-        <script>
-            function ajax2() {
-                axios.get("/main39/sub2")
-                    .then(() => console.log("성공"))
-                    .catch(() => console.log("실패")) // 실패 시 실행되는 메소드
-            }
-        </script>
-    </div>
+        }
+    </script>
+</div>
+<div>
+    <button onclick="ajax2()">button2</button>
+    <script>
+        function ajax2() {
+            axios.get("/main39/sub2")
+                .then(() => console.log("성공"))
+                .catch(() => console.log("실패")) // 실패 시 실행되는 메소드
+        }
+    </script>
+</div>
 <div>
     <button onclick="ajax3()">button3</button>
     <script>
@@ -94,6 +94,54 @@
                 .then(() => console.log("성공#"))
                 .catch(() => console.log("실패!"))
                 .finally(() => console.log("항상$$$$"))
+        }
+    </script>
+</div>
+<hr>
+<div>
+    <h3>직원 등록</h3>
+    <div>
+        <input type="text" id="firstNameInput" placeholder="first name">
+    </div>
+    <div>
+        <input type="text" id="lastNameInput" placeholder="last name">
+    </div>
+    <div>
+        <input type="date" id="birthInput">
+    </div>
+    <div>
+        <textarea id="notesTextArea" cols="30" rows="10" placeholder="notes"></textarea>
+    </div>
+    <div>
+        <button onclick="ajax7AddEmployee()">등록</button>
+    </div>
+    <p id="result2"></p>
+    <script>
+        function ajax7AddEmployee() {
+            const lastName = document.getElementById("lastNameInput").value;
+            const firstName = document.getElementById("firstNameInput").value;
+            const birthDate = document.getElementById("birthInput").value;
+            const notes = document.getElementById("notesTextArea").value;
+
+            axios.post("/main39/sub6", {
+                lastName, firstName, birthDate, notes
+            })
+                .then(() => {
+                    // 성공했을 때 (2xx 응답)
+                    document.getElementById("result2").textContent = "등록 성공";
+                })
+                .catch((error) => {
+                    // 실패했을 때 (2xx 외 응답)
+                    const code = error.response.status;
+                    if (400 <= code && code < 500) {
+                        document.getElementById("result2").textContent = "잘못된 입력"
+                    } else if (500 <= code) {
+                        document.getElementById("result2").textContent = "서버 오류"
+                    }
+                })
+                .finally(() => {
+                    // 항상 실행
+                })
         }
     </script>
 </div>

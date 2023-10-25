@@ -1,13 +1,13 @@
 package com.example.spring20230920.controller;
 
 import com.example.spring20230920.dao.MyDao8;
+import com.example.spring20230920.domain.MyDto33Employee;
 import com.example.spring20230920.domain.MyDto45;
+import com.example.spring20230920.service.MyService2;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequiredArgsConstructor
@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class Controller39 {
 
     private final MyDao8 dao;
+
+    private final MyService2 service;
 
     @GetMapping("sub0")
     public void method0() {
@@ -65,6 +67,19 @@ public class Controller39 {
         }
     }
 
+    @PostMapping("sub6")
+    public ResponseEntity method6(@RequestBody MyDto33Employee dto) {
+        if (service.validate(dto)) {
+            int rows = service.add(dto);
+            if (rows == 1) {
+                return ResponseEntity.ok().build();
+            } else {
+                return ResponseEntity.internalServerError().build();
+            }
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
+    }
 
 
 }
