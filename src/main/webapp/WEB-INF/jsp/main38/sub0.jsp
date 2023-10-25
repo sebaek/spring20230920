@@ -154,5 +154,20 @@
         }
     </script>
 </div>
+<div>
+    <button onclick="ajax10()">button10</button>
+    <script>
+        function ajax10() {
+            axios.get("/main38/sub4")
+                .then(function (response) {
+                    return response.data;
+                })
+                .then(function (data) {
+                    console.log(data.list[1]); // "lee"
+                })
+
+        }
+    </script>
+</div>
 </body>
 </html>
