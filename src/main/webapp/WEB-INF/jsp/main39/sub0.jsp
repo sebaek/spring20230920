@@ -86,5 +86,16 @@
         }
     </script>
 </div>
+<div>
+    <button onclick="ajax6()">button6</button>
+    <script>
+        function ajax6() {
+            axios.get("/main39/sub5")
+                .then(() => console.log("성공#"))
+                .catch(() => console.log("실패!"))
+                .finally(() => console.log("항상$$$$"))
+        }
+    </script>
+</div>
 </body>
 </html>

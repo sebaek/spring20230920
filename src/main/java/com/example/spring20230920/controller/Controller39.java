@@ -56,6 +56,15 @@ public class Controller39 {
         }
     }
 
+    @GetMapping("sub5")
+    public ResponseEntity method5() {
+        if (Math.random() > 0.5) {
+            return ResponseEntity.ok().build(); // 2xx
+        } else {
+            return ResponseEntity.internalServerError().build(); // 5xx
+        }
+    }
+
 
 
 }
