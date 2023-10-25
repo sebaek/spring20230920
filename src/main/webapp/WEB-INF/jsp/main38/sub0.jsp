@@ -164,5 +164,61 @@
         }
     </script>
 </div>
+<div>
+    <button onclick="ajax11()">button11</button>
+    <script>
+        function ajax11() {
+            axios.get("/main38/sub4")
+                .then(response => response.data)
+                .then(({price, birth, list, city}) => console.log(price)); // 3000
+        }
+    </script>
+</div>
+<div>
+    <button onclick="ajax12()">button12</button>
+    <script>
+        function ajax12() {
+            axios.get("/main38/sub4")
+                .then(({data}) => console.log(data.price));
+
+        }
+    </script>
+</div>
+
+<script>
+    // 구조분해할당
+    // Destructuring assignment
+    let a = {
+        name: "son",
+        age: 30
+    };
+
+    console.log(a.name);
+    console.log(a.age);
+
+    let myName = a.name;
+    let myAge = a.age;
+
+    console.log(myName);
+    console.log(myAge);
+
+    let {name, age} = a; // destructuring assignment
+    console.log(name); // son
+    console.log(age); // 30
+
+    let b = {
+        city: "seoul",
+        country: "korea"
+    };
+
+    // console.log(b.city);
+    // console.log(b.country);
+
+    let {city, country} = b; // destructuring assignment
+    console.log(city);
+    console.log(country);
+
+</script>
+
 </body>
 </html>
