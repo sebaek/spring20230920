@@ -40,7 +40,7 @@ public class Controller38 {
     public String method2() {
 
         try {
-            Thread.sleep(5000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
