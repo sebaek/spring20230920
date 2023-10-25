@@ -30,7 +30,9 @@ public class Controller39 {
     @ResponseBody
     public ResponseEntity method2() {
         return ResponseEntity.badRequest().build();
+//        return ResponseEntity.internalServerError().build();
     }
+
 
 
 }

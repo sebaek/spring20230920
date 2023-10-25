@@ -34,5 +34,23 @@
             }
         </script>
     </div>
+<div>
+    <button onclick="ajax3()">button3</button>
+    <script>
+        function ajax3() {
+            axios.get("/main39/sub2")
+                .catch(function (error) {
+                    console.log(error);
+                    console.log(error.response.status);
+                    let status = error.response.status;
+                    if (status >= 400 && status < 500) {
+                        console.log("요청이 잘 못되었습니다.");
+                    } else if (status >= 500 && status <= 599) {
+                        console.log("서버에서 오류가 발생하였습니다.");
+                    }
+                });
+        }
+    </script>
+</div>
 </body>
 </html>
