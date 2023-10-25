@@ -27,7 +27,7 @@
     <div>
         <button onclick="ajax2()">button2</button>
         <script>
-            function ajax() {
+            function ajax2() {
                 axios.get("/main39/sub2")
                     .then(() => console.log("성공"))
                     .catch(() => console.log("실패")) // 실패 시 실행되는 메소드
