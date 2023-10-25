@@ -267,7 +267,23 @@
     console.log(city3);
     console.log(address3);
 
+    let g = [30, 40, 50];
 
+    let [h, i, j] = g; // destructuring assignment
+    console.log(h);
+    console.log(i);
+    console.log(j);
+
+    let [k, l] = g;
+    console.log(k);
+    console.log(l);
+
+    let [m, ...n] = g;
+    console.log(m); // 30
+    console.log(n); // [40, 50]
+
+    let [...o] = g;
+    console.log(o); // [30, 40, 50]
 </script>
 
 </body>
