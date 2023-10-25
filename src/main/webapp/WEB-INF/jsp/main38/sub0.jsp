@@ -218,6 +218,41 @@
     console.log(city);
     console.log(country);
 
+    let c = {
+        email: "abc@gmail.com",
+        price: 300
+    };
+    // let {email, price} = c;
+    let {email} = c; // destructuring assignment
+
+    let d = {
+        name2: "lee",
+        address: "paris",
+        age: 77
+    };
+    let {name2, address} = d; // destructuring assignment
+
+    let e = {
+        city2: "seoul",
+        country2: "korea"
+    };
+
+    let {city2, country2, category} = e;
+    console.log(city2); // seoul
+    console.log(country2); // korea
+    console.log(category); // undefined
+
+    let f = {
+        name3: "kim",
+        city3: "busan"
+    };
+
+    let {name3, city3 = "인천", address3 = "신촌"} = f; // 없을 때 기본값 할당
+    console.log(name3);
+    console.log(city3);
+    console.log(address3);
+
+
 </script>
 
 </body>
