@@ -73,5 +73,18 @@
         }
     </script>
 </div>
+<div>
+    <input type="text" id="input1" value="30">
+    <button onclick="ajax5()">button5</button>
+    <script>
+        function ajax5() {
+            const pid = document.getElementById("input1").value;
+            axios.get("/main39/sub4?id=" + pid)
+                .then(response => response.data)
+                .then(data => console.log(data))
+                .catch(error => console.log(error));
+        }
+    </script>
+</div>
 </body>
 </html>
