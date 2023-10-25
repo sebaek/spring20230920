@@ -52,5 +52,16 @@
         }
     </script>
 </div>
+<div>
+    <button onclick="ajax4()">button4</button>
+    <p id="result1"></p>
+    <script>
+        function ajax4() {
+            axios.get("/main39/sub3")
+                .catch(() => {}); // 400번대 응답이면 #result1 요소에 "잘못된 요청" 출력
+                                  // 500번대 응답이면 #resutt1 요소에 "서버 에러" 출력
+        }
+    </script>
+</div>
 </body>
 </html>
