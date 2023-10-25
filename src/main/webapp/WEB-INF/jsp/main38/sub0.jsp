@@ -159,13 +159,8 @@
     <script>
         function ajax10() {
             axios.get("/main38/sub4")
-                .then(function (response) {
-                    return response.data;
-                })
-                .then(function (data) {
-                    console.log(data.list[1]); // "lee"
-                })
-
+                .then(response => response.data)
+                .then(data => console.log(data.list[1]))
         }
     </script>
 </div>
