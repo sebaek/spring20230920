@@ -185,6 +185,21 @@
     </script>
 </div>
 
+<div>
+    <button onclick="ajax13()">button13</button>
+    <script>
+        function ajax13() {
+            axios.get("/main38/sub4")
+                .then(response => response.data())
+                .then(({}) => {
+                    console.log(price); // 3000
+                    console.log(city); // seoul
+                    console.log(country); // korea
+                })
+        }
+    </script>
+</div>
+
 <script>
     // 구조분해할당
     // Destructuring assignment
