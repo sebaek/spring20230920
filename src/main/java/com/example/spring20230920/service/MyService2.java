@@ -32,6 +32,14 @@ public class MyService2 {
     }
 
     public int add(MyDto33Employee dto) {
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+
         return dao.insertEmployee(dto);
     }
 }

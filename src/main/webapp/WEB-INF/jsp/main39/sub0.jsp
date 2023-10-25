@@ -113,11 +113,14 @@
         <textarea id="notesTextArea" cols="30" rows="10" placeholder="notes"></textarea>
     </div>
     <div>
-        <button onclick="ajax7AddEmployee()">등록</button>
+        <button onclick="ajax7AddEmployee()" id="button1">등록</button>
     </div>
     <p id="result2"></p>
     <script>
         function ajax7AddEmployee() {
+            const button1 = document.getElementById("button1");
+            button1.setAttribute("disabled", "disabled");
+
             const lastName = document.getElementById("lastNameInput").value;
             const firstName = document.getElementById("firstNameInput").value;
             const birthDate = document.getElementById("birthInput").value;
@@ -141,6 +144,7 @@
                 })
                 .finally(() => {
                     // 항상 실행
+                    button1.removeAttribute("disabled");
                 })
         }
     </script>
