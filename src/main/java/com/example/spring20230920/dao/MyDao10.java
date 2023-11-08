@@ -63,4 +63,11 @@ public interface MyDao10 {
             ORDER BY customerId
             """)
     List<Integer> getCustomerIdList();
+
+    @Select("""
+        SELECT employeeId 
+        FROM employees
+        ORDER BY employeeId
+        """)
+    List<Integer> getEmployeeIdList();
 }
